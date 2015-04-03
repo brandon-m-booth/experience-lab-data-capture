@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,16 +104,16 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(game_audio_video_node src/game_audio_video_node.cpp)
+add_executable(game_audio_video_node src/game_audio_video_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(game_audio_video_node game_audio_video_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(game_audio_video_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(game_audio_video_node
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
