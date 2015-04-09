@@ -95,23 +95,26 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
+  include
+  third_party/blackmagic_decklink_sdk_10_4
   ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a cpp library
-# add_library(game_audio_video
-#   src/${PROJECT_NAME}/game_audio_video.cpp
-# )
+add_library(blackmagic_capturer src/blackmagic_capturer.cpp)
+add_library(DeckLinkAPIDispatch third_party/blackmagic_decklink_sdk_10_4/DeckLinkAPIDispatch.cpp)
 
 ## Declare a cpp executable
-add_executable(game_audio_video_node src/game_audio_video_node.cpp)
+add_executable(game_audio_video src/game_audio_video.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(game_audio_video_node game_audio_video_generate_messages_cpp)
+# add_dependencies(game_audio_video game_audio_video_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(game_audio_video_node
+target_link_libraries(game_audio_video
+  blackmagic_capturer
+  DeckLinkAPIDispatch
   ${catkin_LIBRARIES}
 )
 
@@ -130,7 +133,7 @@ target_link_libraries(game_audio_video_node
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS game_audio_video game_audio_video_node
+# install(TARGETS game_audio_video game_audio_video
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

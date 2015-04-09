@@ -4,52 +4,64 @@
 
 #include <vector>
 #include <string>
+#include <pthread.h>
 #include <boost/lockfree/spsc_queue.hpp>
 
-extern class pthread_mutex_t;
-
-static const unsigned int FrameQueueSize = 5;
+#define FrameQueueSize (5)
 
 struct Frame
 {
-	uint8_t* videoBytes;
-	uint8_t* audioBytes;
-	long stride;
-	long height;
-	std::string error;
+   uint8_t* videoBytes;
+   uint8_t* audioBytes;
+   long stride;
+   long height;
+   std::string error;
 };
 
 class BlackMagicCapturer : public IDeckLinkInputCallback
 {
 public:
-   BlackMagicCapturer();
-   ~BlackMagicCapturer();
-	
-	bool Initialize();
-	bool Shutdown();
+   static BlackMagicCapturer* GetInstance();
+
+   bool Initialize(BMDPixelFormat pixelFormat,
+                   BMDVideoInputFlags inputFlags,
+                   int audioSampleDepth,
+                   int numAudioChannels);
+   bool Shutdown();
+
+   bool HasFrame();
+   bool GetNextFrame(Frame& nextFrame);
 
    virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, LPVOID* ppv) { return E_NOINTERFACE; }
    virtual ULONG STDMETHODCALLTYPE AddRef();
    virtual ULONG STDMETHODCALLTYPE Release();
    virtual HRESULT STDMETHODCALLTYPE VideoInputFormatChanged(
                                        BMDVideoInputFormatChangedEvents events,
-                                       IDeckLInkDisplayMode* displayMode,
-                                       BMDDetectedvideoInputFormatFlags flags);
+                                       IDeckLinkDisplayMode* displayMode,
+                                       BMDDetectedVideoInputFormatFlags flags);
    virtual HRESULT STDMETHODCALLTYPE VideoInputFrameArrived(
                                        IDeckLinkVideoInputFrame* frame,
-                                       IDeckLinkaudioInputPacket* packet);
+                                       IDeckLinkAudioInputPacket* packet);
 
 protected:
+   BlackMagicCapturer();
+   ~BlackMagicCapturer();
+
    ULONG referenceCount;
-	IDeckLinkIterator* deckLinkIterator;
-	IDeckLink* deckLink;
-	BMDPixelFormat pixelFormat;
-	BMDVideoInputFlags inputFlags;
-	BMDTimecodeFormat timecodeFormat;
-	const char* displayModeName;
+   IDeckLinkAttributes* deckLinkAttributes;
+   IDeckLinkIterator* deckLinkIterator;
+   IDeckLink* deckLink;
+   IDeckLinkDisplayModeIterator* displayModeIterator;
+   IDeckLinkDisplayMode* displayMode;
+   BMDDisplayModeSupport displayModeSupport;
+   BMDPixelFormat pixelFormat;
+   BMDVideoInputFlags inputFlags;
+   BMDTimecodeFormat timecodeFormat;
+   char* displayModeName;
    pthread_mutex_t mutex;
 
-	boost::lockfree::spsc_queue<Frame, boost::lockfree:capacity<FrameQueueSize>> frameQueue;
+   boost::lockfree::spsc_queue<Frame, boost::lockfree::capacity<FrameQueueSize> > frameQueue;
 
-	static IDeckLinkInput* deckLinkInput;
+   static IDeckLinkInput* deckLinkInput;
+   static BlackMagicCapturer* instance;
 };
