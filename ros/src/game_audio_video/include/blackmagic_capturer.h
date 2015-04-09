@@ -28,6 +28,9 @@ public:
                    int audioSampleDepth,
                    int numAudioChannels);
    bool Shutdown();
+   void Update();
+
+   std::string GetError() { return errorString; }
 
    bool HasFrame();
    bool GetNextFrame(Frame& nextFrame);
@@ -47,6 +50,7 @@ protected:
    BlackMagicCapturer();
    ~BlackMagicCapturer();
 
+   std::string errorString;
    ULONG referenceCount;
    IDeckLinkAttributes* deckLinkAttributes;
    IDeckLinkIterator* deckLinkIterator;

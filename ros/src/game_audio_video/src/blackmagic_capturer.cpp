@@ -49,22 +49,14 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
    if (!deckLinkIterator)
    {
       Shutdown();
+      errorString = "Failed to create deck link iterator instance";
       return false;
    }
 
-   int deckLinkIndex = 0;
-   while ((result = deckLinkIterator->Next(&deckLink)) == S_OK)
-   {
-      if (!deckLinkIndex)
-         break;
-
-      --deckLinkIndex;
-      deckLink->Release();
-   }
-
-   if (result != S_OK || !deckLink)
+   if (deckLinkIterator->Next(&deckLink) != S_OK)
    {
       Shutdown();
+      errorString = "Failed to get deck link instance";
       return false;
    }
 
@@ -72,6 +64,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
    if (deckLink->QueryInterface(IID_IDeckLinkInput, (void**)&deckLinkInput) != S_OK)
    {
       Shutdown();
+      errorString = "Failed to query deck link input interface";
       return false;
    }
 
@@ -82,6 +75,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
       if (result != S_OK || !isFormatDetectionSupported)
       {
          Shutdown();
+         errorString = "Unable to get input format flag or format detection is not supported";
          return false;
       }
       this->inputFlags |= bmdVideoInputEnableFormatDetection;
@@ -90,12 +84,14 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
    if (deckLinkInput->GetDisplayModeIterator(&displayModeIterator) != S_OK)
    {
       Shutdown();
+      errorString = "Failed to get display mode iterator";
       return false;
    }
 
    if (displayModeIterator->Next(&displayMode) != S_OK)
    {
       Shutdown();
+      errorString = "Failed to get display mode";
       return false;
    }
 
@@ -114,6 +110,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
        displayModeSupport == bmdDisplayModeNotSupported)
    {
       Shutdown();
+      errorString = "Video mode not supported!";
       return false;
    }
 
@@ -125,6 +122,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
    if (result != S_OK)
    {
       Shutdown();
+      errorString = "Unable to enable video or audio input";
       return false;
    }
 
@@ -164,6 +162,11 @@ bool BlackMagicCapturer::Shutdown()
       deckLinkIterator->Release();
 
    return true;
+}
+
+void BlackMagicCapturer::Update()
+{
+   sleep(1);
 }
 
 bool BlackMagicCapturer::HasFrame()
@@ -234,7 +237,7 @@ HRESULT STDMETHODCALLTYPE BlackMagicCapturer::VideoInputFrameArrived(
                                     IDeckLinkVideoInputFrame* videoFrame,
                                     IDeckLinkAudioInputPacket* audioPacket)
 {
-   std::string error;
+   std::string error = "";
    void* videoFrameBytes = NULL;
    void* audioFrameBytes = NULL;
 
