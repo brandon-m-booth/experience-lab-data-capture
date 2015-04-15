@@ -45,6 +45,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
    this->pixelFormat = pixelFormat;
    this->inputFlags = inputFlags;
 
+   // Create and get the first DeckLink instance
    deckLinkIterator = CreateDeckLinkIteratorInstance();
    if (!deckLinkIterator)
    {
@@ -68,6 +69,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
       return false;
    }
 
+   // Check whether the input format detection is supported
    if (deckLink->QueryInterface(IID_IDeckLinkAttributes, (void**)&deckLinkAttributes) == S_OK)
    {
       bool isFormatDetectionSupported;
@@ -81,6 +83,7 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
       this->inputFlags |= bmdVideoInputEnableFormatDetection;
    }
 
+   // Get the first display mode
    if (deckLinkInput->GetDisplayModeIterator(&displayModeIterator) != S_OK)
    {
       Shutdown();
@@ -114,8 +117,10 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
       return false;
    }
 
+   // Tell DeckLink to use 'this' as the callback delegate
    deckLinkInput->SetCallback(this);
 
+   // Enable audio and video capture
    result = deckLinkInput->EnableVideoInput(displayMode->GetDisplayMode(), pixelFormat, this->inputFlags);
    result |= deckLinkInput->EnableAudioInput(bmdAudioSampleRate48kHz, audioSampleDepth, numAudioChannels);
 
@@ -123,6 +128,14 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
    {
       Shutdown();
       errorString = "Unable to enable video or audio input";
+      return false;
+   }
+
+   // Start the capture process to begin receiving callbacks
+   if (deckLinkInput->StartStreams() != S_OK)
+   {
+      Shutdown();
+      errorString = "Unable to start streams";
       return false;
    }
 
@@ -166,7 +179,7 @@ bool BlackMagicCapturer::Shutdown()
 
 void BlackMagicCapturer::Update()
 {
-   sleep(1);
+   sleep(1); // Give the DeckLink thread(s) a chance to run
 }
 
 bool BlackMagicCapturer::HasFrame()
