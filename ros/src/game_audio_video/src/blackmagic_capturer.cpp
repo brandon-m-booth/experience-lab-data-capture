@@ -44,6 +44,8 @@ bool BlackMagicCapturer::Initialize(BMDPixelFormat pixelFormat,
 
    this->pixelFormat = pixelFormat;
    this->inputFlags = inputFlags;
+   this->audioSampleDepth = audioSampleDepth;
+   this->numAudioChannels = numAudioChannels;
 
    // Create and get the first DeckLink instance
    deckLinkIterator = CreateDeckLinkIteratorInstance();
@@ -272,10 +274,11 @@ HRESULT STDMETHODCALLTYPE BlackMagicCapturer::VideoInputFrameArrived(
    if (videoFrameBytes || audioFrameBytes || !error.empty())
    {
       Frame frame;
-      frame.videoBytes = (uint8_t*)videoFrameBytes; // BB - WHAT IS THE LIFETIME?
+      frame.videoBytes = (uint8_t*)videoFrameBytes;
       frame.audioBytes = (uint8_t*)audioFrameBytes;
-      frame.stride = videoFrame->GetRowBytes();
-      frame.height = videoFrame->GetHeight();
+      frame.videoStride = videoFrame->GetRowBytes();
+      frame.videoHeight = videoFrame->GetHeight();
+      frame.numAudioBytes = audioPacket->GetSampleFrameCount()*this->numAudioChannels*(audioSampleDepth/8);
       frame.error = error;
 
       frameQueue.push(frame);

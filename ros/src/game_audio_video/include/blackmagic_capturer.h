@@ -13,8 +13,9 @@ struct Frame
 {
    uint8_t* videoBytes;
    uint8_t* audioBytes;
-   long stride;
-   long height;
+   long videoStride;
+   long videoHeight;
+   long numAudioBytes;
    std::string error;
 };
 
@@ -50,10 +51,15 @@ protected:
    ~BlackMagicCapturer();
 
    std::string errorString;
+
+   // Deck Link members
    ULONG referenceCount;
    IDeckLinkAttributes* deckLinkAttributes;
    IDeckLinkIterator* deckLinkIterator;
    IDeckLink* deckLink;
+   pthread_mutex_t mutex;
+
+   // Deck Link display members
    IDeckLinkDisplayModeIterator* displayModeIterator;
    IDeckLinkDisplayMode* displayMode;
    BMDDisplayModeSupport displayModeSupport;
@@ -61,7 +67,10 @@ protected:
    BMDVideoInputFlags inputFlags;
    BMDTimecodeFormat timecodeFormat;
    char* displayModeName;
-   pthread_mutex_t mutex;
+
+   // Deck Link audio members
+   int audioSampleDepth;
+   int numAudioChannels;  
 
    boost::lockfree::spsc_queue<Frame, boost::lockfree::capacity<FrameQueueSize> > frameQueue;
 
