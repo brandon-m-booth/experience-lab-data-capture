@@ -28,7 +28,6 @@ public:
                    int audioSampleDepth,
                    int numAudioChannels);
    bool Shutdown();
-   void Update();
 
    std::string GetError() { return errorString; }
 

@@ -177,11 +177,6 @@ bool BlackMagicCapturer::Shutdown()
    return true;
 }
 
-void BlackMagicCapturer::Update()
-{
-   sleep(1); // Give the DeckLink thread(s) a chance to run
-}
-
 bool BlackMagicCapturer::HasFrame()
 {
    return !frameQueue.empty();

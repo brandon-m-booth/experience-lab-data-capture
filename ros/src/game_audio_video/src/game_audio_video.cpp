@@ -24,8 +24,6 @@ int main(int argc, char** argv)
    uint32_t frameCounter = 0;
    while (ros::ok())
    {
-      BlackMagicCapturer::GetInstance()->Update();
-
       Frame frame;
       while (BlackMagicCapturer::GetInstance()->GetNextFrame(frame))
       {
