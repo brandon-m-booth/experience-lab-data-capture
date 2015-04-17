@@ -115,6 +115,7 @@ add_executable(game_audio_video src/game_audio_video.cpp)
 target_link_libraries(game_audio_video
   blackmagic_capturer
   DeckLinkAPIDispatch
+  mp3lame
   ${catkin_LIBRARIES}
 )
 

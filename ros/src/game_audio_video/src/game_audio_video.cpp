@@ -3,6 +3,22 @@
 #include "sensor_msgs/image_encodings.h"
 #include "audio_common_msgs/AudioData.h"
 #include "blackmagic_capturer.h"
+#include <lame/lame.h>
+
+std::vector<uint8_t> PCMToMP3(lame_t& lame, uint8_t* pcmBuffer, int numPcmBytes, int numAudioChannels)
+{
+   uint8_t* mp3Buffer = static_cast<uint8_t*>(alloca(numPcmBytes));
+   int numBytesEncoded = lame_encode_buffer_interleaved(lame, (short*)pcmBuffer, numPcmBytes/(numAudioChannels*sizeof(short)), mp3Buffer, numPcmBytes);
+
+   std::vector<uint8_t> mp3Vector;
+   mp3Vector.resize(numBytesEncoded);
+   for (int i = 0; i < numBytesEncoded; ++i)
+   {
+      mp3Vector[i] = mp3Buffer[i];
+   }
+   
+   return mp3Vector;
+}
 
 int main(int argc, char** argv)
 {
@@ -10,7 +26,7 @@ int main(int argc, char** argv)
    ros::init(argc, argv, "gameAudioVideo");
    ros::NodeHandle nodeHandle;
    ros::Publisher videoPublisher = nodeHandle.advertise<sensor_msgs::Image>("gameVideo", 5);
-   ros::Publisher audioPublisher = nodeHandle.advertise<audio_common_msgs::AudioData>("gameAudio", 10);
+   ros::Publisher audioPublisher = nodeHandle.advertise<audio_common_msgs::AudioData>("audio", 10);
 
    // Initialize Black Magic capturer
    BMDPixelFormat pixelFormat = bmdFormat8BitYUV;
@@ -21,6 +37,15 @@ int main(int argc, char** argv)
    {
       ROS_ERROR("%s", BlackMagicCapturer::GetInstance()->GetError().c_str());
    }
+
+   // Initialize lame
+   lame_t lame = lame_init();
+   lame_set_in_samplerate(lame, 48000);
+   lame_set_out_samplerate(lame, 48000);
+   lame_set_VBR(lame, vbr_default);
+   lame_init_params(lame);
+   lame_set_num_channels(lame, numAudioChannels);
+   lame_set_mode(lame, STEREO);
 
    // Loop and capture frames
    uint32_t frameCounter = 0;
@@ -53,8 +78,7 @@ int main(int argc, char** argv)
          if (frame.audioBytes)
          {
             audio_common_msgs::AudioData audioData;
-            audioData.data.insert(audioData.data.begin(), &frame.audioBytes[0], &frame.audioBytes[frame.numAudioBytes]);
-
+            audioData.data = PCMToMP3(lame, frame.audioBytes, frame.numAudioBytes, numAudioChannels);
             audioPublisher.publish(audioData);
          }
 
@@ -62,4 +86,6 @@ int main(int argc, char** argv)
       }
       ros::spinOnce();
    }
+
+   lame_close(lame);
 }
