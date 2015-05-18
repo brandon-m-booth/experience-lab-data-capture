@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="game_audio_video" pkg="game_audio_video" type="game_audio_video"/>
+   <include file="$(find audio_play)/launch/play.launch"/>
+</launch>
