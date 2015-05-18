@@ -142,20 +142,7 @@ state =c_int(0)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-input=''
-print "==================================================================="
-print "Example to show how to log EEG Data from EmoEngine/EmoComposer."
-print "==================================================================="
-print "Press '1' to start and connect to the EmoEngine                    "
-print "Press '2' to connect to the EmoComposer                            "
-print ">> "
-
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-option = int(raw_input())
+option = 1
 if option == 1:
    if libEDK.EE_EngineConnect("Emotiv Systems-5") != 0:
        print "Emotiv Engine start up failed."
