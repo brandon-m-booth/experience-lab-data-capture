@@ -1,0 +1,3 @@
+[submodule "ros/src/iai_kinect2"]
+	path = ros/src/iai_kinect2
+	url = https://github.com/code-iai/iai_kinect2.git
