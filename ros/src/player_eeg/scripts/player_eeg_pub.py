@@ -1,19 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-
 import sys,os
 import time
 import ctypes
+import ntpath
 from ctypes import *
 import rospy
 from player_eeg.msg import EEGData
 
 #--------------------------------------------------------------------------
 
-srcDir = os.getcwd()
-libPath = srcDir + "/src/player_eeg/scripts/libedk.so.1.0.0" 
+srcDir = os.path.realpath(__file__)
+headPath, tailPath = ntpath.split(srcDir)
+srcDir = headPath or ntpath.basename(headPath)
+libPath = srcDir + "/../third_party/emotiv_epoc/lib/libedk.so.1.0.0"
 libEDK = CDLL(libPath)
 
 #--------------------------------------------------------------------------
@@ -142,20 +143,7 @@ state =c_int(0)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-input=''
-print "==================================================================="
-print "Example to show how to log EEG Data from EmoEngine/EmoComposer."
-print "==================================================================="
-print "Press '1' to start and connect to the EmoEngine                    "
-print "Press '2' to connect to the EmoComposer                            "
-print ">> "
-
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-option = int(raw_input())
+option = 1
 if option == 1:
    if libEDK.EE_EngineConnect("Emotiv Systems-5") != 0:
        print "Emotiv Engine start up failed."
@@ -172,8 +160,8 @@ print "Start receiving EEG Data! Press any key to stop logging...\n"
 hData = libEDK.EE_DataCreate()
 libEDK.EE_DataSetBufferSizeInSec(secs)
 
-fake_eeg_pub = rospy.Publisher('eeg', EEGData, queue_size=1)
-rospy.init_node('EEG-Node', anonymous=True)	
+fake_eeg_pub = rospy.Publisher('player_eeg', EEGData, queue_size=1)
+rospy.init_node('player_eeg', anonymous=True)	
 rate = rospy.Rate(15)
 while not rospy.is_shutdown():
     state = libEDK.EE_EngineGetNextEvent(eEvent)

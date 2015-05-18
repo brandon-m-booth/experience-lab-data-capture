@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="player_eeg" pkg="player_eeg" type="player_eeg_pub.py"/>
+</launch>
