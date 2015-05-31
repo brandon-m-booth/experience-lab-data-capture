@@ -1,2 +1,2 @@
-uint32 posX
-uint32 posY
+float32 posX
+float32 posY

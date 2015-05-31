@@ -1,5 +1,7 @@
 #include "tobii_eye_tracker.h"
 #include "tobiigaze_discovery.h"
+#include "tobiigaze_error_codes.h"
+#include "tobiigaze.h"
 #include <boost/lockfree/spsc_queue.hpp>
 
 TobiiEyeTracker* TobiiEyeTracker::instance = NULL;
@@ -28,24 +30,21 @@ bool TobiiEyeTracker::Initialize()
 {
    // Check for a connected Tobii eye tracker device
    tobiigaze_error_code errorCode;
-   char* url = static_cast<char*>("--auto");
-   size_t urlSize = strlen(url);
-   tobiigaze_get_connected_eye_tracker(url, urlSize, &errorCode);
+   char urlBuffer[2048];
+   tobiigaze_get_connected_eye_tracker(urlBuffer, sizeof(urlBuffer), &errorCode);
    if (errorCode)
    {
-      Shutdown();
-      errorString = "No eye tracker device found connected to the system";
+      errorString = "No eye tracker device found connected to the system\nError: " + GetErrorCodeString(errorCode);
       return false;
    }
 
    sdkVersionString = tobiigaze_get_version();
 
    // Create an eye tracker instance
-   eyeTracker = tobiigaze_create(url, &errorCode);
+   eyeTracker = tobiigaze_create(urlBuffer, &errorCode);
    if (errorCode)
    {
-      Shutdown();
-      errorString = "Could not create eye tracker object";
+      errorString = "Could not create eye tracker object\nError: " + GetErrorCodeString(errorCode);
       return false;
    }
 
@@ -57,7 +56,7 @@ bool TobiiEyeTracker::Initialize()
    if (errorCode)
    {
       Shutdown();
-      errorString = "Could not connect to eye tracker";
+      errorString = "Could not connect to eye tracker\nError: " + GetErrorCodeString(errorCode);
       return false;
    }
 
@@ -67,7 +66,7 @@ bool TobiiEyeTracker::Initialize()
    if (errorCode)
    {
       Shutdown();
-      errorString = "Unable to retrieve device info";
+      errorString = "Unable to retrieve device info\nError: " + GetErrorCodeString(errorCode);
       return false;
    }
    deviceSerialNumberString = deviceInfo.serial_number;
@@ -77,7 +76,7 @@ bool TobiiEyeTracker::Initialize()
    if (errorCode)
    {
       Shutdown();
-      errorString = "Unable to start eye tracking";
+      errorString = "Unable to start eye tracking\nError: " + GetErrorCodeString(errorCode);
       return false;
    }
 }
@@ -89,7 +88,7 @@ bool TobiiEyeTracker::Shutdown()
    tobiigaze_stop_tracking(eyeTracker, &errorCode);
    if (errorCode)
    {
-      errorString = "Unable to stop eye tracking";
+      errorString = "Unable to stop eye tracking\nError: " + GetErrorCodeString(errorCode);
    }
 
    // Tell the event loop thread to stop running and wait for it to finish
@@ -106,7 +105,7 @@ xthread_retval TobiiEyeTracker::EyeTrackerEventLoop(void* eyeTracker)
    tobiigaze_run_event_loop((tobiigaze_eye_tracker*)eyeTracker, &errorCode);
    if (errorCode)
    {
-      TobiiEyeTracker::GetInstance()->errorString = "Event loop returned an error";
+      TobiiEyeTracker::GetInstance()->errorString = "Event loop returned an error\nError: " + TobiiEyeTracker::GetInstance()->GetErrorCodeString(errorCode);
    }
   
    THREADFUNC_RETURN(errorCode);
@@ -140,6 +139,8 @@ void TobiiEyeTracker::GazeDataCallback(const tobiigaze_gaze_data* tobiiGazeData,
       gazeData.rightEyeX = 0;
       gazeData.rightEyeY = 0;
    }
+
+   TobiiEyeTracker::GetInstance()->gazeDataQueue.push(gazeData);
 }
 
 bool TobiiEyeTracker::HasGazeData()
@@ -150,4 +151,9 @@ bool TobiiEyeTracker::HasGazeData()
 bool TobiiEyeTracker::GetGazeData(GazeData& gazeData)
 {
    return gazeDataQueue.pop(gazeData);
+}
+
+std::string TobiiEyeTracker::GetErrorCodeString(tobiigaze_error_code errorCode)
+{
+   return std::string(tobiigaze_get_error_message(errorCode));
 }

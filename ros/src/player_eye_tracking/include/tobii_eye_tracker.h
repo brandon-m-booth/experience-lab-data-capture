@@ -7,10 +7,10 @@
 
 struct GazeData
 {
-   uint32_t leftEyeX;
-   uint32_t leftEyeY;
-   uint32_t rightEyeX;
-   uint32_t rightEyeY;
+   float leftEyeX;
+   float leftEyeY;
+   float rightEyeX;
+   float rightEyeY;
 };
 
 class TobiiEyeTracker
@@ -31,6 +31,7 @@ public:
 protected:
    TobiiEyeTracker();
    ~TobiiEyeTracker();
+   std::string GetErrorCodeString(tobiigaze_error_code errorCode);
 
    static xthread_retval EyeTrackerEventLoop(void* eyeTracker);
    static void GazeDataCallback(const tobiigaze_gaze_data* tobiiGazeData, const tobiigaze_gaze_data_extensions* extensions, void* userData);

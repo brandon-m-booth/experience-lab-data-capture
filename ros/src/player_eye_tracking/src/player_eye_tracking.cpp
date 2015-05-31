@@ -13,6 +13,7 @@ int main(int argc, char** argv)
    if (!errorString.empty())
    {
       ROS_ERROR("%s", errorString.c_str());
+      return EXIT_FAILURE;
    }
    ROS_INFO("Eye tracking started...");
    ROS_INFO("TobiiGazeCore version: %s", TobiiEyeTracker::GetInstance()->GetSDKVersionString().c_str());
@@ -32,8 +33,8 @@ int main(int argc, char** argv)
              (gazeData.rightEyeX != 0 &&
              gazeData.rightEyeY != 0))
          {
-            eyePosition.posX = (gazeData.leftEyeX + gazeData.rightEyeX)/2;
-            eyePosition.posY = (gazeData.leftEyeY + gazeData.rightEyeY)/2;
+            eyePosition.posX = (gazeData.leftEyeX + gazeData.rightEyeX)/2.0f;
+            eyePosition.posY = (gazeData.leftEyeY + gazeData.rightEyeY)/2.0f;
             
             eyeTrackingPublisher.publish(eyePosition);
          }

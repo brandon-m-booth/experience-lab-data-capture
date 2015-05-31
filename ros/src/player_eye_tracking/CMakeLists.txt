@@ -84,7 +84,7 @@ catkin_package(
 #  LIBRARIES player_eye_tracking
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
-  CATKIN_DEPENDS message_runtime
+  CATKIN_DEPENDS message_runtime roscpp std_msgs 
 )
 
 ###########
@@ -98,6 +98,10 @@ include_directories(
   include
   third_party/TobiiGazeSdk-CApi-4.1.0.806-linux64/include
   ${catkin_INCLUDE_DIRS}
+)
+
+link_directories(
+  third_party/TobiiGazeSdk-CApi-4.1.0.806-linux64/lib
 )
 
 ## Declare a cpp library
