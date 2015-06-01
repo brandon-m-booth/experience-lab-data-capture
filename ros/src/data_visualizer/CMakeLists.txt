@@ -104,16 +104,16 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(data_visualizer_node src/data_visualizer_node.cpp)
+add_executable(visualizeEyePosition src/visualize_eye_position.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(data_visualizer_node data_visualizer_generate_messages_cpp)
+add_dependencies(visualizeEyePosition data_visualizer_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(data_visualizer_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(visualizeEyePosition
+   ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
