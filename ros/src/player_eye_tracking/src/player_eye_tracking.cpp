@@ -4,6 +4,12 @@
 
 int main(int argc, char** argv)
 {
+   const double SmoothingFactor = 0.15; // Smaller means more smoothing
+   const unsigned int LostEyeTrackResetCount = 3000;
+   bool useNextMeasurementAsTruth = true;
+   unsigned int lostEyeTrackCounter = 0;
+   player_eye_tracking::Position2D smoothEyePosition;
+
 	ros::init(argc, argv, "playerEyeTracking");
 	ros::NodeHandle nodeHandle;
 	ros::Publisher eyeTrackingPublisher = nodeHandle.advertise<player_eye_tracking::Position2D>("eye_position", 1);
@@ -27,6 +33,7 @@ int main(int argc, char** argv)
          TobiiEyeTracker::GetInstance()->GetGazeData(gazeData);
 
          // Compute the average gaze location between both the left and right eyes
+         bool hasValidEyePosition = false;
          player_eye_tracking::Position2D eyePosition;
          if (gazeData.leftEyeX != 0 && gazeData.leftEyeY != 0)
          {
@@ -41,16 +48,44 @@ int main(int argc, char** argv)
                eyePosition.posY = gazeData.leftEyeY;
             }
 
-            eyeTrackingPublisher.publish(eyePosition);
+            hasValidEyePosition = true;
          }
          else if (gazeData.rightEyeX != 0 && gazeData.rightEyeY != 0)
          {
             eyePosition.posX = gazeData.rightEyeX;
             eyePosition.posY = gazeData.rightEyeY;
 
-            eyeTrackingPublisher.publish(eyePosition);
+            hasValidEyePosition = true;
          }
 
+         if (hasValidEyePosition)
+         {
+            if (useNextMeasurementAsTruth)
+            {
+               smoothEyePosition = eyePosition;
+            }
+            else
+            {
+               smoothEyePosition.posX = SmoothingFactor*eyePosition.posX + (1.00 - SmoothingFactor)*smoothEyePosition.posX;
+               smoothEyePosition.posY = SmoothingFactor*eyePosition.posY + (1.00 - SmoothingFactor)*smoothEyePosition.posY;
+            }
+
+            lostEyeTrackCounter = 0;
+            useNextMeasurementAsTruth = false;
+            eyeTrackingPublisher.publish(smoothEyePosition);
+         }
+         else
+         {
+            ++lostEyeTrackCounter;
+            if (lostEyeTrackCounter < LostEyeTrackResetCount)
+            {
+               eyeTrackingPublisher.publish(smoothEyePosition);
+            }
+            else
+            {
+               useNextMeasurementAsTruth = true;
+            }
+         }
       }
 
       ros::spinOnce();
