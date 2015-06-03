@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="game_audio_video" pkg="game_audio_video" type="game_audio_video" launch-prefix="xterm -e gdb --args"/>
+</launch>

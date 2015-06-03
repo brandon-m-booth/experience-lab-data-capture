@@ -87,5 +87,10 @@ int main(int argc, char** argv)
       ros::spinOnce();
    }
 
+   if (!BlackMagicCapturer::GetInstance()->Shutdown())
+   {
+      ROS_ERROR("%s", BlackMagicCapturer::GetInstance()->GetError().c_str());
+   }
+
    lame_close(lame);
 }

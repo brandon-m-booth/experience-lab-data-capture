@@ -31,7 +31,6 @@ BlackMagicCapturer::~BlackMagicCapturer()
 {
    pthread_mutex_destroy(&mutex);
 
-   Shutdown();
    instance = NULL;
 }
 
@@ -170,9 +169,6 @@ bool BlackMagicCapturer::Shutdown()
    if (deckLinkAttributes)
       deckLinkAttributes->Release();
 
-   if (deckLink)
-      deckLink->Release();
-
    if(deckLinkIterator)
       deckLinkIterator->Release();
 
@@ -276,9 +272,15 @@ HRESULT STDMETHODCALLTYPE BlackMagicCapturer::VideoInputFrameArrived(
       Frame frame;
       frame.videoBytes = (uint8_t*)videoFrameBytes;
       frame.audioBytes = (uint8_t*)audioFrameBytes;
-      frame.videoStride = videoFrame->GetRowBytes();
-      frame.videoHeight = videoFrame->GetHeight();
-      frame.numAudioBytes = audioPacket->GetSampleFrameCount()*this->numAudioChannels*(audioSampleDepth/8);
+      if (videoFrame)
+      {
+         frame.videoStride = videoFrame->GetRowBytes();
+         frame.videoHeight = videoFrame->GetHeight();
+      }
+      if (audioPacket)
+      {
+         frame.numAudioBytes = audioPacket->GetSampleFrameCount()*this->numAudioChannels*(audioSampleDepth/8);
+      }
       frame.error = error;
 
       frameQueue.push(frame);
