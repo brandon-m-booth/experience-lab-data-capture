@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="eye_position_visualizer" pkg="data_visualizer" type="visualizeEyePosition" launch-prefix="xterm -e gdb --args"/>
+</launch>

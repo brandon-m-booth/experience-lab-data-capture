@@ -5,14 +5,14 @@
 int main(int argc, char** argv)
 {
    const double SmoothingFactor = 0.15; // Smaller means more smoothing
-   const unsigned int LostEyeTrackResetCount = 3000;
-   bool useNextMeasurementAsTruth = true;
-   unsigned int lostEyeTrackCounter = 0;
-   player_eye_tracking::Position2D smoothEyePosition;
+   const ros::Duration DurationUntilLostEyeTrack(0.5);
 
 	ros::init(argc, argv, "playerEyeTracking");
 	ros::NodeHandle nodeHandle;
 	ros::Publisher eyeTrackingPublisher = nodeHandle.advertise<player_eye_tracking::Position2D>("eye_position", 1);
+
+   ros::Time lastEyePositionTime = ros::Time::now();
+   player_eye_tracking::Position2D smoothEyePosition;
 
    TobiiEyeTracker::GetInstance()->Initialize();
    const std::string& errorString = TobiiEyeTracker::GetInstance()->GetErrorString();
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
 
          if (hasValidEyePosition)
          {
-            if (useNextMeasurementAsTruth)
+            if (ros::Time::now() - lastEyePositionTime >= DurationUntilLostEyeTrack)
             {
                smoothEyePosition = eyePosition;
             }
@@ -70,20 +70,14 @@ int main(int argc, char** argv)
                smoothEyePosition.posY = SmoothingFactor*eyePosition.posY + (1.00 - SmoothingFactor)*smoothEyePosition.posY;
             }
 
-            lostEyeTrackCounter = 0;
-            useNextMeasurementAsTruth = false;
+            lastEyePositionTime = ros::Time::now();
             eyeTrackingPublisher.publish(smoothEyePosition);
          }
          else
          {
-            ++lostEyeTrackCounter;
-            if (lostEyeTrackCounter < LostEyeTrackResetCount)
+            if (ros::Time::now() - lastEyePositionTime < DurationUntilLostEyeTrack)
             {
                eyeTrackingPublisher.publish(smoothEyePosition);
-            }
-            else
-            {
-               useNextMeasurementAsTruth = true;
             }
          }
       }
