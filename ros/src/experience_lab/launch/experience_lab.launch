@@ -2,7 +2,8 @@
 <launch>
    <!--<include file="$(find game_audio_video)/launch/game_audio_video.launch"/>-->
    <include file="$(find game_audio_video)/launch/game_audio_video_playback.launch"/>
-   <include file="$(find player_eeg)/launch/player_eeg.launch"/>
-   <include file="$(find player_eye_tracking)/launch/player_eye_tracking.launch"/>
    <include file="$(find player_video)/launch/player_video.launch"/>
+   <include file="$(find player_eye_tracking)/launch/player_eye_tracking.launch"/>
+   <include file="$(find data_visualizer)/launch/eye_position_visualizer.launch"/>
+   <include file="$(find player_eeg)/launch/player_eeg.launch"/>
 </launch>

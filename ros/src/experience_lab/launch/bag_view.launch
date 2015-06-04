@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+   <include file="$(find audio_play)/launch/play.launch"/>
+   <include file="$(find data_visualizer)/launch/eye_position_visualizer.launch"/>
+</launch>
