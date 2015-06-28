@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="player_input" pkg="player_input" type="player_input"/>
+</launch>
