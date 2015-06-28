@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -46,11 +47,10 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  CursorPosition.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -67,10 +67,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -86,6 +86,7 @@ catkin_package(
 #  LIBRARIES player_input
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
+  CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -102,9 +103,9 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(player_input
-#   src/${PROJECT_NAME}/player_input.cpp
-# )
+add_library(inputEvent
+  src/inputEvent.cpp
+)
 
 ## Declare a cpp executable
 add_executable(player_input src/player_input.cpp)
@@ -116,6 +117,7 @@ add_executable(player_input src/player_input.cpp)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(player_input
   zmq
+  inputEvent
   ${catkin_LIBRARIES}
 )
 
