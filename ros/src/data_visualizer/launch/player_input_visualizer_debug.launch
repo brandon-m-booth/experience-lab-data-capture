@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="player_input_visualizer" pkg="data_visualizer" type="visualizePlayerInput" launch-prefix="xterm -e gdb --args"/>
+</launch>
