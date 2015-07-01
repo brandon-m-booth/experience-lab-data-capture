@@ -29,12 +29,15 @@ struct KeyMapping
 sensor_msgs::Image keysNormalImage;
 sensor_msgs::Image keysPressedImage;
 sensor_msgs::Image keyStateImage;
-bool hasKeyStateChanged = false;
+ros::Time cleanUpKeyStateTime;
+bool needCleanUpKeyState = false;
+bool hasKeyStateChanged = true;
 
 // Forward declarations
 bool LoadPNG(sensor_msgs::Image& image, std::string fileName);
-bool GetBoundingBoxFromKeyEvent(Pixel& upperLeftPixel, Pixel& lowerRightPixel, const std::string& keyEventName);
+bool GetBoundingBoxFromKeyEvent(Pixel& upperLeftPixel, Pixel& lowerRightPixel, const std::string& keyEventName, const std::string& keyState);
 void BlitKeyboardPixels(const Pixel& upperLeftPixel, const Pixel& lowerRightPixel, const std::string& keyState);
+void CleanUpKeyState();
 
 void PlayerKeyEventCallback(const std_msgs::String::ConstPtr& playerKeyEvent)
 {
@@ -47,10 +50,18 @@ void PlayerKeyEventCallback(const std_msgs::String::ConstPtr& playerKeyEvent)
 
    // Get the bounding box of the corresponding key in the keyboard image
    Pixel upperLeftPixel, lowerRightPixel;
-   if (GetBoundingBoxFromKeyEvent(upperLeftPixel, lowerRightPixel, keyEventName))
+   if (GetBoundingBoxFromKeyEvent(upperLeftPixel, lowerRightPixel, keyEventName, keyState))
    {
+      if (keyEventName == "MouseWheelScroll")
+      {
+         keyState = "Down"; // This makes the blit call below "press" the button
+         cleanUpKeyStateTime = ros::Time::now() + ros::Duration(0.5);
+         needCleanUpKeyState = true;
+      }
+
       // Blit the pixels inside the bounding box into keyStateImage
       BlitKeyboardPixels(upperLeftPixel, lowerRightPixel, keyState);
+
       hasKeyStateChanged = true;
    }
 }
@@ -80,11 +91,20 @@ int main(int argc, char** argv)
 
    keyStateImage = keysNormalImage;
 
+   cleanUpKeyStateTime = ros::Time::now();
+
    while (ros::ok())
    {
+      if (needCleanUpKeyState && (ros::Time::now() - cleanUpKeyStateTime > ros::Duration(0)))
+      {
+         CleanUpKeyState();
+         needCleanUpKeyState = false;
+      }
+
       if (hasKeyStateChanged)
       {
          playerKeyEventsPub.publish(keyStateImage);
+         hasKeyStateChanged = false;
       }
       
       ros::Time startTime = ros::Time::now();
@@ -167,16 +187,13 @@ bool LoadPNG(sensor_msgs::Image& image, std::string fileName)
    return true;
 }
 
-bool GetBoundingBoxFromKeyEvent(Pixel& upperLeftPixel, Pixel& lowerRightPixel, const std::string& keyEventName)
+bool GetBoundingBoxFromKeyEvent(Pixel& upperLeftPixel, Pixel& lowerRightPixel, const std::string& keyEventName, const std::string& keyState)
 {
    static const KeyMapping keyMappings[] =
    {
-      {"MouseLeft", {1, 1}, {5, 5}},
-      {"MouseRight", {1, 1}, {5, 5}},
-      {"Cancel", {1, 1}, {5, 5}},
-      {"MouseWheel", {1, 1}, {5, 5}},
-      {"MouseX1", {1, 1}, {5, 5}},
-      {"MouseX2", {1, 1}, {5, 5}},
+      {"MouseLeft", {1463, 154}, {1493, 218}},
+      {"MouseRight", {1537, 153}, {1567, 218}},
+      {"MouseWheel", {1508, 169}, {1521, 200}},
       {"Backspace", {778, 116}, {892, 172}},
       {"Tab", {24, 175}, {108, 231}},
       {"Enter", {762, 234}, {892, 290}},
@@ -281,6 +298,8 @@ bool GetBoundingBoxFromKeyEvent(Pixel& upperLeftPixel, Pixel& lowerRightPixel, c
       {"RightBracket", {749, 175}, {804, 231}},
       {"Apostrophe", {704, 234}, {759, 290}}
    };
+   KeyMapping mouseWheelScrollUp = {"MouseWheelScrollUp", {1506, 162}, {1523, 168}};
+   KeyMapping mouseWheelScrollDown = {"MouseWheelScrollDown", {1506, 200}, {1522, 206}};
 
    static const size_t numKeyMappings = sizeof(keyMappings)/sizeof(KeyMapping);
    static std::vector<KeyMapping> keyMappingsSorted(keyMappings, keyMappings+numKeyMappings);
@@ -300,6 +319,21 @@ bool GetBoundingBoxFromKeyEvent(Pixel& upperLeftPixel, Pixel& lowerRightPixel, c
    {
       upperLeftPixel = iter->upperLeftPixel;
       lowerRightPixel = iter->lowerRightPixel;
+      return true;
+   }
+
+   if (keyEventName == "MouseWheelScroll")
+   {
+      if (keyState[0] == '-')
+      {
+         upperLeftPixel = mouseWheelScrollDown.upperLeftPixel;
+         lowerRightPixel = mouseWheelScrollDown.lowerRightPixel;
+      }
+      else
+      {
+         upperLeftPixel = mouseWheelScrollUp.upperLeftPixel;
+         lowerRightPixel = mouseWheelScrollUp.lowerRightPixel;
+      }
       return true;
    }
 
@@ -334,4 +368,23 @@ void BlitKeyboardPixels(const Pixel& upperLeftPixel, const Pixel& lowerRightPixe
          }
       }
    }
+}
+
+void CleanUpKeyState()
+{
+   // Get the bounding box of the corresponding key in the keyboard image
+   Pixel upperLeftPixel, lowerRightPixel;
+   if (GetBoundingBoxFromKeyEvent(upperLeftPixel, lowerRightPixel, "MouseWheelScroll", "1"))
+   {
+      // Blit the pixels inside the bounding box into keyStateImage
+      BlitKeyboardPixels(upperLeftPixel, lowerRightPixel, "Up");
+   }
+
+   if (GetBoundingBoxFromKeyEvent(upperLeftPixel, lowerRightPixel, "MouseWheelScroll", "-1"))
+   {
+      // Blit the pixels inside the bounding box into keyStateImage
+      BlitKeyboardPixels(upperLeftPixel, lowerRightPixel, "Up");
+   }
+
+   hasKeyStateChanged = true;
 }

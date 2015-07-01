@@ -282,12 +282,12 @@ void GetKeyValueStrings(std::string& key, std::string& value, const Input::Input
    }
    else if (inputEvent.inputEventType == Input::CursorPosition)
    {
-      key = "Mouse Move";
+      key = "MouseMove";
       value = "(" + std::to_string(inputEvent.inputDataItem1) + ", " + std::to_string(inputEvent.inputDataItem2) + ")";
    }
    else if (inputEvent.inputEventType == Input::MouseWheelScroll)
    {
-      key = "Mouse Wheel Scroll";
+      key = "MouseWheelScroll";
       value = std::to_string(inputEvent.inputDataItem2);
    }
    else
