@@ -1,3 +1,6 @@
+#include <stdint.h>
+#include <string>
+
 #ifdef _WINDOWS
    typedef __int32 int32_t;
 #endif
@@ -189,4 +192,6 @@ namespace Input
 		int32_t inputDataItem1; // Either the Key or the cursor position X
 		int32_t inputDataItem2; // either the KeyState or the cursor position Y
 	};
+
+   void GetKeyValueStrings(std::string& key, std::string& value, const Input::InputEvent& inputEvent);
 }
