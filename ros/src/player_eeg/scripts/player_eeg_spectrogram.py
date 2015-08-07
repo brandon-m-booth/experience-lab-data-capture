@@ -81,7 +81,7 @@ class EEGSpectrogram:
          freqs, spec_data.e12 = signal.periodogram(e12, self.sample_freq_average, self.window)
          freqs, spec_data.e13 = signal.periodogram(e13, self.sample_freq_average, self.window)
          freqs, spec_data.e14 = signal.periodogram(e14, self.sample_freq_average, self.window)
-         spec_data.timestamp = rospy.Time.now()
+         spec_data.timestamp = cur_time
 
          self.eeg_pub.publish(spec_data)
 
