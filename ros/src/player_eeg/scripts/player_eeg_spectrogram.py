@@ -66,33 +66,24 @@ class EEGSpectrogram:
             e13.append(sample.e13)
             e14.append(sample.e14)
 
-         # Each wave bin here describes its frequency range and nfft window in that order
-         #delta_wave = [range(0,5), ]
-         #for freq_range, nfft in [[range(0, 5), ], [range(], [], [], []]:
-         freqs, power_densities = signal.periodogram(e1, self.sample_freq_average, self.window)
+         spec_data = EEGSpectralData()
+         spec_data.freqs, spec_data.e1 = signal.periodogram(e1, self.sample_freq_average, self.window)
+         freqs, spec_data.e2 = signal.periodogram(e2, self.sample_freq_average, self.window)
+         freqs, spec_data.e3 = signal.periodogram(e3, self.sample_freq_average, self.window)
+         freqs, spec_data.e4 = signal.periodogram(e4, self.sample_freq_average, self.window)
+         freqs, spec_data.e5 = signal.periodogram(e5, self.sample_freq_average, self.window)
+         freqs, spec_data.e6 = signal.periodogram(e6, self.sample_freq_average, self.window)
+         freqs, spec_data.e7 = signal.periodogram(e7, self.sample_freq_average, self.window)
+         freqs, spec_data.e8 = signal.periodogram(e8, self.sample_freq_average, self.window)
+         freqs, spec_data.e9 = signal.periodogram(e9, self.sample_freq_average, self.window)
+         freqs, spec_data.e10 = signal.periodogram(e10, self.sample_freq_average, self.window)
+         freqs, spec_data.e11 = signal.periodogram(e11, self.sample_freq_average, self.window)
+         freqs, spec_data.e12 = signal.periodogram(e12, self.sample_freq_average, self.window)
+         freqs, spec_data.e13 = signal.periodogram(e13, self.sample_freq_average, self.window)
+         freqs, spec_data.e14 = signal.periodogram(e14, self.sample_freq_average, self.window)
+         spec_data.timestamp = rospy.Time.now()
 
-         freq_message = EEGSpectralData()
-         freq_message.freqs = [0]*(self.maximum_freq+1)
-         freq_message.e1 = copy.deepcopy(freq_message.freqs)
-         freq_message.e2 = copy.deepcopy(freq_message.freqs)
-         freq_message.e3 = copy.deepcopy(freq_message.freqs)
-         freq_message.e4 = copy.deepcopy(freq_message.freqs)
-         freq_message.e5 = copy.deepcopy(freq_message.freqs)
-         freq_message.e6 = copy.deepcopy(freq_message.freqs)
-         freq_message.e7 = copy.deepcopy(freq_message.freqs)
-         freq_message.e8 = copy.deepcopy(freq_message.freqs)
-         freq_message.e9 = copy.deepcopy(freq_message.freqs)
-         freq_message.e10 = copy.deepcopy(freq_message.freqs)
-         freq_message.e11 = copy.deepcopy(freq_message.freqs)
-         freq_message.e12 = copy.deepcopy(freq_message.freqs)
-         freq_message.e13 = copy.deepcopy(freq_message.freqs)
-         freq_message.e14 = copy.deepcopy(freq_message.freqs)
-         for i in range(self.maximum_freq+1):
-            freq_message.freqs[i] = freqs[i]
-            freq_message.e1[i] = power_densities[i]
-         freq_message.timestamp = rospy.Time.now()
-
-         self.eeg_pub.publish(freq_message)
+         self.eeg_pub.publish(spec_data)
 
          # Clear out a percentage of the samples
          num_pop_samples = int(len(self.samples)*(1.0 - self.keep_samples_percentage))
@@ -106,8 +97,7 @@ class EEGSpectrogram:
       self.last_timestamp = rospy.Time.now()
       self.sample_freq_average = 0
       self.moving_average_coef = 0.01
-      self.maximum_freq = 60 # Maximum desired output frequency, Hertz
-      self.target_sample_size = self.maximum_freq * 2 # Nyquist
+      self.target_sample_size = 120
       self.window = signal.get_window('hann', self.target_sample_size)
       self.samples = deque()
       self.samples_received = 0
