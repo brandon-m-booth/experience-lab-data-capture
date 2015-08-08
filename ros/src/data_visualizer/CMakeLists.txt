@@ -106,6 +106,7 @@ include_directories(
 ## Declare a cpp executable
 add_executable(visualizeEyePosition src/visualize_eye_position.cpp)
 add_executable(visualizePlayerInput src/visualize_player_input.cpp)
+add_executable(visualizePlayerEEG src/visualize_player_eeg.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -118,6 +119,10 @@ target_link_libraries(visualizeEyePosition
 
 target_link_libraries(visualizePlayerInput
    png
+   ${catkin_LIBRARIES}
+)
+
+target_link_libraries(visualizePlayerEEG
    ${catkin_LIBRARIES}
 )
 
