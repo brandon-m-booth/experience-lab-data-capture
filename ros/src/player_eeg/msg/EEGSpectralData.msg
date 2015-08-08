@@ -1,0 +1,16 @@
+float32[] freqs
+float32[] e1
+float32[] e2
+float32[] e3
+float32[] e4
+float32[] e5
+float32[] e6
+float32[] e7
+float32[] e8
+float32[] e9
+float32[] e10
+float32[] e11
+float32[] e12
+float32[] e13
+float32[] e14
+time timestamp
