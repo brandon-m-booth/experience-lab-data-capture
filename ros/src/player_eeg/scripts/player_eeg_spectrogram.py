@@ -35,52 +35,52 @@ class EEGSpectrogram:
       if len(self.samples) < self.target_sample_size:
          return
       else:
-         e1 = []
-         e2 = []
-         e3 = []
-         e4 = []
-         e5 = []
-         e6 = []
-         e7 = []
-         e8 = []
-         e9 = []
-         e10 = []
-         e11 = []
-         e12 = []
-         e13 = []
-         e14 = []
+         af3 = []
+         f7 = []
+         f3 = []
+         fc5 = []
+         t7 = []
+         p7 = []
+         o1 = []
+         o2 = []
+         p8 = []
+         t8 = []
+         fc6 = []
+         f4 = []
+         f8 = []
+         af4 = []
          for sample in reversed(self.samples):
             # Most recent samples should be at the front of the separate list
-            e1.append(sample.e1)
-            e2.append(sample.e2)
-            e3.append(sample.e3)
-            e4.append(sample.e4)
-            e5.append(sample.e5)
-            e6.append(sample.e6)
-            e7.append(sample.e7)
-            e8.append(sample.e8)
-            e9.append(sample.e9)
-            e10.append(sample.e10)
-            e11.append(sample.e11)
-            e12.append(sample.e12)
-            e13.append(sample.e13)
-            e14.append(sample.e14)
+            af3.append(sample.af3)
+            f7.append(sample.f7)
+            f3.append(sample.f3)
+            fc5.append(sample.fc5)
+            t7.append(sample.t7)
+            p7.append(sample.p7)
+            o1.append(sample.o1)
+            o2.append(sample.o2)
+            p8.append(sample.p8)
+            t8.append(sample.t8)
+            fc6.append(sample.fc6)
+            f4.append(sample.f4)
+            f8.append(sample.f8)
+            af4.append(sample.af4)
 
          spec_data = EEGSpectralData()
-         spec_data.freqs, spec_data.e1 = signal.periodogram(e1, self.sample_freq_average, self.window)
-         freqs, spec_data.e2 = signal.periodogram(e2, self.sample_freq_average, self.window)
-         freqs, spec_data.e3 = signal.periodogram(e3, self.sample_freq_average, self.window)
-         freqs, spec_data.e4 = signal.periodogram(e4, self.sample_freq_average, self.window)
-         freqs, spec_data.e5 = signal.periodogram(e5, self.sample_freq_average, self.window)
-         freqs, spec_data.e6 = signal.periodogram(e6, self.sample_freq_average, self.window)
-         freqs, spec_data.e7 = signal.periodogram(e7, self.sample_freq_average, self.window)
-         freqs, spec_data.e8 = signal.periodogram(e8, self.sample_freq_average, self.window)
-         freqs, spec_data.e9 = signal.periodogram(e9, self.sample_freq_average, self.window)
-         freqs, spec_data.e10 = signal.periodogram(e10, self.sample_freq_average, self.window)
-         freqs, spec_data.e11 = signal.periodogram(e11, self.sample_freq_average, self.window)
-         freqs, spec_data.e12 = signal.periodogram(e12, self.sample_freq_average, self.window)
-         freqs, spec_data.e13 = signal.periodogram(e13, self.sample_freq_average, self.window)
-         freqs, spec_data.e14 = signal.periodogram(e14, self.sample_freq_average, self.window)
+         spec_data.freqs, spec_data.af3 = signal.periodogram(af3, self.sample_freq_average, self.window)
+         freqs, spec_data.f7 = signal.periodogram(f7, self.sample_freq_average, self.window)
+         freqs, spec_data.f3 = signal.periodogram(f3, self.sample_freq_average, self.window)
+         freqs, spec_data.fc5 = signal.periodogram(fc5, self.sample_freq_average, self.window)
+         freqs, spec_data.t7 = signal.periodogram(t7, self.sample_freq_average, self.window)
+         freqs, spec_data.p7 = signal.periodogram(p7, self.sample_freq_average, self.window)
+         freqs, spec_data.o1 = signal.periodogram(o1, self.sample_freq_average, self.window)
+         freqs, spec_data.o2 = signal.periodogram(o2, self.sample_freq_average, self.window)
+         freqs, spec_data.p8 = signal.periodogram(p8, self.sample_freq_average, self.window)
+         freqs, spec_data.t8 = signal.periodogram(t8, self.sample_freq_average, self.window)
+         freqs, spec_data.fc6 = signal.periodogram(fc6, self.sample_freq_average, self.window)
+         freqs, spec_data.f4 = signal.periodogram(f4, self.sample_freq_average, self.window)
+         freqs, spec_data.f8 = signal.periodogram(f8, self.sample_freq_average, self.window)
+         freqs, spec_data.af4 = signal.periodogram(af4, self.sample_freq_average, self.window)
          spec_data.timestamp = cur_time
 
          self.eeg_pub.publish(spec_data)
