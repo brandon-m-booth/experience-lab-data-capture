@@ -67,74 +67,149 @@ void AddHeadMeshMarker(visualization_msgs::MarkerArray& markerArray)
    headMarker.lifetime = ros::Duration();
 }
 
-void AddElectrodeMarkers(visualization_msgs::MarkerArray& markerArray)
+std::string GetElectrodeName(int index)
 {
-   float electrodePosOnModel[NumElectrodes][3] =
+   switch(index)
    {
-      {-24.6043, -26.5649, 140.4051},
-      {-28.0879, 22.0239, 175.0008},
-      {-64.5430, 0.5480, 98.6852},
-      {-68.5718, 22.8922, 120.6030},
-      {-73.6532, 59.0386, 92.5422},
-      {-68.5718, 76.1284, 120.4887},
-      {-37.1192, 140.0839, 120.4487},
-      // Below, these are mirrored about the X-axis
-      {24.6043, -26.5649, 140.4051},
-      {28.0879, 22.0239, 175.0008},
-      {64.5430, 0.5480, 98.6852},
-      {68.5718, 22.8922, 120.6030},
-      {73.6532, 59.0386, 92.5422},
-      {68.5718, 76.1284, 120.4887},
-      {37.1192, 140.0839, 120.4487},
+   case 0:
+      return "AF4";
+      break;
+   case 1:
+      return "F4";
+      break;
+   case 2:
+      return "F8";
+      break;
+   case 3:
+      return "FC6";
+      break;
+   case 4:
+      return "T8";
+      break;
+   case 5:
+      return "P8";
+      break;
+   case 6:
+      return "O2";
+      break;
+   case 7:
+      return "AF3";
+      break;
+   case 8:
+      return "F3";
+      break;
+   case 9:
+      return "F7";
+      break;
+   case 10:
+      return "FC5";
+      break;
+   case 11:
+      return "T7";
+      break;
+   case 12:
+      return "P7";
+      break;
+   case 13:
+      return "O1";
+      break;
+   default:
+      ROS_ERROR("%s", "Unknown index in GetElectrodeName(). Fix me!");
+      break;
+   }
+}
+
+float GetElectrodePower(int index, BrainWaves::BrainWave brainWave)
+{
+    return brainWavePower[brainWave][index];
+}
+
+void GetElectrodePosOnModel(int index, float& posX, float& posY, float& posZ)
+{
+   static float electrodePosOnModel[NumElectrodes][3] =
+   {
+      {-24.6043, -26.5649, 140.4051}, // AF4
+      {-28.0879, 22.0239, 175.0008},  // F4
+      {-64.5430, 0.5480, 98.6852},    // F8
+      {-68.5718, 22.8922, 120.6030},  // FC6
+      {-73.6532, 59.0386, 92.5422},   // T8
+      {-68.5718, 76.1284, 120.4887},  // P8
+      {-37.1192, 140.0839, 120.4487}, // O2
+      {24.6043, -26.5649, 140.4051},  // AF3
+      {28.0879, 22.0239, 175.0008},   // F3
+      {64.5430, 0.5480, 98.6852},     // F7
+      {68.5718, 22.8922, 120.6030},   // FC5
+      {73.6532, 59.0386, 92.5422},    // T7
+      {68.5718, 76.1284, 120.4887},   // P7
+      {37.1192, 140.0839, 120.4487},  // O1
    };
 
-   int32_t startingID = markerArray.markers.size();
+   posX = electrodePosOnModel[index][0];
+   posY = electrodePosOnModel[index][1];
+   posZ = electrodePosOnModel[index][2];
+}
+
+void AddElectrodeMarkers(visualization_msgs::MarkerArray& markerArray)
+{
+   int32_t startingID = std::max((int32_t)markerArray.markers.size(), 1);
    for (int i = 0; i < NumElectrodes; ++i)
    {
-      markerArray.markers.push_back(visualization_msgs::Marker());
-      visualization_msgs::Marker& marker = markerArray.markers.back();
-      markerArray.markers.push_back(visualization_msgs::Marker());
-      visualization_msgs::Marker& textMarker = markerArray.markers.back();
+      float posX, posY, posZ;
+      float brainWavePower = GetElectrodePower(i, BrainWaves::Alpha);
+      std::string electrodeName = GetElectrodeName(i);
+      GetElectrodePosOnModel(i, posX, posY, posZ);
 
       // Create and add electrode sphere marker
+      markerArray.markers.push_back(visualization_msgs::Marker());
+      visualization_msgs::Marker& marker = markerArray.markers.back();
       marker.header.frame_id = "/map";
       marker.header.stamp = ros::Time::now();
-
       marker.ns = "";
       marker.id = startingID + (2*i);
       marker.type = visualization_msgs::Marker::SPHERE;
       marker.action = visualization_msgs::Marker::ADD;
-
-      marker.pose.position.x = electrodePosOnModel[i][0];
-      marker.pose.position.y = electrodePosOnModel[i][1];
-      marker.pose.position.z = electrodePosOnModel[i][2];
+      marker.pose.position.x = posX;
+      marker.pose.position.y = posY;
+      marker.pose.position.z = posZ;
       marker.pose.orientation.x = 0.0f;
       marker.pose.orientation.y = 0.0f;
       marker.pose.orientation.z = 0.0f;
       marker.pose.orientation.w = 1.0f;
-
       marker.scale.x = 15.0f;
       marker.scale.y = 15.0f;
       marker.scale.z = 15.0f;
-
       marker.color.r = 1.0f;
       marker.color.g = 0.0f;
       marker.color.b = 0.0f;
       marker.color.a = 1.0f;
-
       marker.lifetime = ros::Duration();
 
-      textMarker = marker;
+/*
+      // Create and add electrode text marker to display the brain wave power value
+      markerArray.markers.push_back(visualization_msgs::Marker());
+      visualization_msgs::Marker& textMarker = markerArray.markers.back();
       textMarker.header.frame_id = "/map";
       textMarker.header.stamp = ros::Time::now();
+      textMarker.ns = "";
       textMarker.id = startingID + (2*i + 1);
-      textMarker.pose.position.x *= 1.2;
-      textMarker.pose.position.y *= 1.2;
-      textMarker.pose.position.z *= 1.2;
       textMarker.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
+      textMarker.action = visualization_msgs::Marker::ADD;
+      textMarker.pose.position.x = 1.2*posX;
+      textMarker.pose.position.y = 1.2*posY;
+      textMarker.pose.position.z = 1.2*posZ;
+      textMarker.scale.x = 15.0f;
+      textMarker.scale.y = 15.0f;
+      textMarker.scale.z = 15.0f;
+      textMarker.color.r = 1.0f;
+      textMarker.color.g = 0.0f;
+      textMarker.color.b = 0.0f;
+      textMarker.color.a = 1.0f;
+      textMarker.lifetime = ros::Duration();
       std::stringstream stringStream;
-      stringStream << brainWavePower[BrainWaves::Alpha][i];
+      //stringStream << brainWavePower;
+      stringStream << electrodeName;
       textMarker.text = stringStream.str();
+*/
    }
 }
 
@@ -189,25 +264,18 @@ int main(int argc, char** argv)
    ros::Subscriber eegSpectralSub = nodeHandle.subscribe("/player_eeg_spectral", 1, EEGSpectralCallback);
    ros::Publisher eegMarkerPub = nodeHandle.advertise<visualization_msgs::MarkerArray>("/visualization/player_eeg", 1);
 
-   int32_t prevNumSubscribers = 0;
+   ros::Duration updateHeadMeshDuration(1.0);
+   ros::Time updateHeadMeshTimer = ros::Time::now();
    while(ros::ok())
    {
-      int32_t curNumSubscribers = eegMarkerPub.getNumSubscribers();
-      if (curNumSubscribers != 0)
+      visualization_msgs::MarkerArray markerArray;
+      if (ros::Time::now() >= updateHeadMeshTimer + updateHeadMeshDuration)
       {
-         visualization_msgs::MarkerArray markerArray;
-         if (curNumSubscribers != prevNumSubscribers)
-         {
-            AddHeadMeshMarker(markerArray);
-            curNumSubscribers = prevNumSubscribers;
-         }
-         AddElectrodeMarkers(markerArray);
-         eegMarkerPub.publish(markerArray);
+         AddHeadMeshMarker(markerArray);
+         updateHeadMeshTimer = ros::Time::now();
       }
-      else
-      {
-         prevNumSubscribers = 0;
-      }
+      AddElectrodeMarkers(markerArray);
+      eegMarkerPub.publish(markerArray);
 
       ros::spinOnce();
    }
