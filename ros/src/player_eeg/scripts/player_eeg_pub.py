@@ -152,7 +152,7 @@ elif option == 2:
        print "Cannot connect to EmoComposer on"
 else :
     print "option = ?"
-print "Start receiving EEG Data! Press any key to stop logging...\n"
+#print "Start receiving EEG Data! Press any key to stop logging...\n"
 #f = file('ES.csv', 'w')
 #f = open('ES.csv', 'w')
 #print >> f,header
@@ -160,9 +160,10 @@ print "Start receiving EEG Data! Press any key to stop logging...\n"
 hData = libEDK.EE_DataCreate()
 libEDK.EE_DataSetBufferSizeInSec(secs)
 
-fake_eeg_pub = rospy.Publisher('player_eeg', EEGData, queue_size=1)
+fake_eeg_pub = rospy.Publisher('player_eeg', EEGData, queue_size=200)
 rospy.init_node('player_eeg', anonymous=True)	
-rate = rospy.Rate(15)
+rate = rospy.Rate(8)
+startupTime = rospy.Time.now()
 while not rospy.is_shutdown():
     state = libEDK.EE_EngineGetNextEvent(eEvent)
     #print "state =",state
@@ -181,6 +182,7 @@ while not rospy.is_shutdown():
                 arr=(ctypes.c_double*nSamplesTaken[0])()
                 ctypes.cast(arr, ctypes.POINTER(ctypes.c_double))
                 
+                #print nSamplesTaken[0]
                 for sampleIdx in range(nSamplesTaken[0]):
                     eegData = EEGData()
                     for i in range(22): 
@@ -221,7 +223,7 @@ while not rospy.is_shutdown():
                         elif i == 16 :
                             eegData.gyroy = arr[sampleIdx]
                         elif i == 17 :
-                            eegData.timestamp = arr[sampleIdx]
+                            eegData.timestamp = startupTime + rospy.Duration(arr[sampleIdx])
 
                     #print >>f,'\n'
                     fake_eeg_pub.publish(eegData)

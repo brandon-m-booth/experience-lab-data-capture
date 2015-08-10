@@ -14,4 +14,4 @@ float32 f8
 float32 af4
 float32 gyrox
 float32 gyroy
-float32 timestamp
+time timestamp

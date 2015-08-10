@@ -23,13 +23,20 @@ class EEGSpectrogram:
 
       self.samples_received = self.samples_received + 1
       cur_time = rospy.Time.now()
+
       # TODO - There is a big difference from the delta_time reported in the message
       # and the observed rate at which these messages are received - FIX ME!!!
+      # There seems to be an issue with the timestamps reported by the EEG device.  They
+      # indicate a 256Hz sample rate when the device is only really 128Hz.  For now,
+      # we will compute sample rate by averaging samples received over time.  This should
+      # be replaced with the more accurate timestamps from the EEG when they work correctly.
       #delta_time = data.timestamp - self.last_timestamp
-      #if delta_time > 0:
-      #   self.sample_freq_average = (1/delta_time)*self.moving_average_coef + self.sample_freq_average*(1.0-self.moving_average_coef)
+      #if delta_time.to_sec() > 0:
+      #   self.sample_freq_average = (1/delta_time.to_sec())*self.moving_average_coef + self.sample_freq_average*(1.0-self.moving_average_coef)
       #self.last_timestamp = data.timestamp
+
       self.sample_freq_average = self.samples_received/(cur_time - self.start_time).to_sec()
+      #print self.sample_freq_average
 
       self.samples.append(data)
       if len(self.samples) < self.target_sample_size:
@@ -97,7 +104,7 @@ class EEGSpectrogram:
       self.last_timestamp = rospy.Time.now()
       self.sample_freq_average = 0
       self.moving_average_coef = 0.01
-      self.target_sample_size = 120
+      self.target_sample_size = 128
       self.window = signal.get_window('hann', self.target_sample_size)
       self.samples = deque()
       self.samples_received = 0
