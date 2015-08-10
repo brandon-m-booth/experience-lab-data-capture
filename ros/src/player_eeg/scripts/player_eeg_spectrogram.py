@@ -100,7 +100,7 @@ class EEGSpectrogram:
    def DoConvertEEGToSpectrogram(self):
       self.eeg_sub = rospy.Subscriber('player_eeg', EEGData, self.EEGDataCallback)
       self.eeg_pub = rospy.Publisher('player_eeg_spectral', EEGSpectralData, queue_size=3)
-      self.keep_samples_percentage = 0.8 # Percentage of previous samples to keep
+      self.keep_samples_percentage = 0.99 # Percentage of previous samples to keep
       self.last_timestamp = rospy.Time.now()
       self.sample_freq_average = 0
       self.moving_average_coef = 0.01

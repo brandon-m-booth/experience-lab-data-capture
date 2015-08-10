@@ -28,6 +28,15 @@ const float BrainWaveFreqUpperBound[BrainWaves::Count] =
    100   //Gamma ~31-100Hz
 };
 
+const float BrainWavePowerUpperBound[BrainWaves::Count] =
+{
+   50.0, // Delta
+   10.0, // Theta
+   10.0, // Alpha
+   5.0,  // Beta
+   1.0   // Gamma
+};
+
 float brainWavePower[BrainWaves::Count][NumElectrodes];
 
 void AddHeadMeshMarker(visualization_msgs::MarkerArray& markerArray)
@@ -149,15 +158,30 @@ void GetElectrodePosOnModel(int index, float& posX, float& posY, float& posZ)
    posZ = electrodePosOnModel[index][2];
 }
 
+void GetElectrodeColor(float brainWavePower,
+                       BrainWaves::BrainWave brainWave,
+                       float& red, float& green, float& blue)
+{
+   float normalizedPower = brainWavePower/BrainWavePowerUpperBound[brainWave];
+
+   // Green-to-red color gradient
+   normalizedPower = std::max(0.0f, std::min(normalizedPower, 1.0f));
+   red = normalizedPower;
+   green = 1.0 - normalizedPower;
+   blue = 0.0;
+}
+
 void AddElectrodeMarkers(visualization_msgs::MarkerArray& markerArray)
 {
    int32_t startingID = std::max((int32_t)markerArray.markers.size(), 1);
    for (int i = 0; i < NumElectrodes; ++i)
    {
       float posX, posY, posZ;
+      float red, green, blue;
       float brainWavePower = GetElectrodePower(i, BrainWaves::Alpha);
       std::string electrodeName = GetElectrodeName(i);
       GetElectrodePosOnModel(i, posX, posY, posZ);
+      GetElectrodeColor(brainWavePower, BrainWaves::Alpha, red, green, blue);
 
       // Create and add electrode sphere marker
       markerArray.markers.push_back(visualization_msgs::Marker());
@@ -178,9 +202,9 @@ void AddElectrodeMarkers(visualization_msgs::MarkerArray& markerArray)
       marker.scale.x = 15.0f;
       marker.scale.y = 15.0f;
       marker.scale.z = 15.0f;
-      marker.color.r = 1.0f;
-      marker.color.g = 0.0f;
-      marker.color.b = 0.0f;
+      marker.color.r = red;
+      marker.color.g = green;
+      marker.color.b = blue;
       marker.color.a = 1.0f;
       marker.lifetime = ros::Duration();
 
@@ -254,7 +278,7 @@ void EEGSpectralCallback(const player_eeg::EEGSpectralData::ConstPtr& eegSpectra
       brainWave = (BrainWaves::BrainWave)((int)brainWave + 1);
    }
 
-   ROS_ERROR("%f %f %f %f %f", brainWavePower[0][0], brainWavePower[1][0], brainWavePower[2][0], brainWavePower[3][0], brainWavePower[4][0]);
+   //ROS_ERROR("%f %f %f %f %f", brainWavePower[0][0], brainWavePower[1][0], brainWavePower[2][0], brainWavePower[3][0], brainWavePower[4][0]);
 }
 
 int main(int argc, char** argv)
