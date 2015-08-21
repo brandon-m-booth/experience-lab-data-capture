@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="player_eeg_visualizer" pkg="data_visualizer" type="visualizePlayerEEG"/>
+</launch>

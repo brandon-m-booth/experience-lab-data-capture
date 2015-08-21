@@ -152,7 +152,7 @@ elif option == 2:
        print "Cannot connect to EmoComposer on"
 else :
     print "option = ?"
-print "Start receiving EEG Data! Press any key to stop logging...\n"
+#print "Start receiving EEG Data! Press any key to stop logging...\n"
 #f = file('ES.csv', 'w')
 #f = open('ES.csv', 'w')
 #print >> f,header
@@ -160,9 +160,10 @@ print "Start receiving EEG Data! Press any key to stop logging...\n"
 hData = libEDK.EE_DataCreate()
 libEDK.EE_DataSetBufferSizeInSec(secs)
 
-fake_eeg_pub = rospy.Publisher('player_eeg', EEGData, queue_size=1)
+fake_eeg_pub = rospy.Publisher('player_eeg', EEGData, queue_size=200)
 rospy.init_node('player_eeg', anonymous=True)	
-rate = rospy.Rate(15)
+rate = rospy.Rate(8)
+startupTime = rospy.Time.now()
 while not rospy.is_shutdown():
     state = libEDK.EE_EngineGetNextEvent(eEvent)
     #print "state =",state
@@ -181,6 +182,7 @@ while not rospy.is_shutdown():
                 arr=(ctypes.c_double*nSamplesTaken[0])()
                 ctypes.cast(arr, ctypes.POINTER(ctypes.c_double))
                 
+                #print nSamplesTaken[0]
                 for sampleIdx in range(nSamplesTaken[0]):
                     eegData = EEGData()
                     for i in range(22): 
@@ -189,39 +191,39 @@ while not rospy.is_shutdown():
                         # print "Value of above:",arr[sampleIdx]
                         # print >>f,arr[sampleIdx],",",
                         if i == 1 :
-                            eegData.e1 = arr[sampleIdx]
+                            eegData.af3 = arr[sampleIdx]
                         elif i == 2 :
-                            eegData.e2 = arr[sampleIdx]
+                            eegData.f7 = arr[sampleIdx]
                         elif i == 3 :
-                            eegData.e3 = arr[sampleIdx]
+                            eegData.f3 = arr[sampleIdx]
                         elif i == 4 :
-                            eegData.e4 = arr[sampleIdx]
+                            eegData.fc5 = arr[sampleIdx]
                         elif i == 5 :
-                            eegData.e5 = arr[sampleIdx]
+                            eegData.t7 = arr[sampleIdx]
                         elif i == 6 :
-                            eegData.e6 = arr[sampleIdx]
+                            eegData.p7 = arr[sampleIdx]
                         elif i == 7 :
-                            eegData.e7 = arr[sampleIdx]
+                            eegData.o1 = arr[sampleIdx]
                         elif i == 8 :
-                            eegData.e8 = arr[sampleIdx]
+                            eegData.o2 = arr[sampleIdx]
                         elif i == 9 :
-                            eegData.e9 = arr[sampleIdx]
+                            eegData.p8 = arr[sampleIdx]
                         elif i == 10 :
-                            eegData.e10 = arr[sampleIdx]
+                            eegData.t8 = arr[sampleIdx]
                         elif i == 11 :
-                            eegData.e11 = arr[sampleIdx]
+                            eegData.fc6 = arr[sampleIdx]
                         elif i == 12 :
-                            eegData.e12 = arr[sampleIdx]
+                            eegData.f4 = arr[sampleIdx]
                         elif i == 13 :
-                            eegData.e13 = arr[sampleIdx]
+                            eegData.f8 = arr[sampleIdx]
                         elif i == 14 :
-                            eegData.e14 = arr[sampleIdx]
+                            eegData.af4 = arr[sampleIdx]
                         elif i == 15 :
                             eegData.gyrox = arr[sampleIdx]
                         elif i == 16 :
                             eegData.gyroy = arr[sampleIdx]
                         elif i == 17 :
-                            eegData.timestamp = arr[sampleIdx]
+                            eegData.timestamp = startupTime + rospy.Duration(arr[sampleIdx])
 
                     #print >>f,'\n'
                     fake_eeg_pub.publish(eegData)
