@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(game_audio_video)
+project(player_video_overhead)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -8,8 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  sensor_msgs
-  image_transport
 )
 
 ## System dependencies are found with CMake's conventions
@@ -83,7 +81,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES game_audio_video
+#  LIBRARIES player_video_overhead
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
@@ -96,29 +94,25 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
-  include
-  third_party/blackmagic_decklink_sdk_10_4
   ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a cpp library
-add_library(blackmagic_capturer src/blackmagic_capturer.cpp)
-add_library(DeckLinkAPIDispatch third_party/blackmagic_decklink_sdk_10_4/DeckLinkAPIDispatch.cpp)
+# add_library(player_video_overhead
+#   src/${PROJECT_NAME}/player_video_overhead.cpp
+# )
 
 ## Declare a cpp executable
-add_executable(game_audio_video src/game_audio_video.cpp)
+# add_executable(player_video_overhead_node src/player_video_overhead_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(game_audio_video game_audio_video_generate_messages_cpp)
+# add_dependencies(player_video_overhead_node player_video_overhead_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(game_audio_video
-  blackmagic_capturer
-  DeckLinkAPIDispatch
-  mp3lame
-  ${catkin_LIBRARIES}
-)
+# target_link_libraries(player_video_overhead_node
+#   ${catkin_LIBRARIES}
+# )
 
 #############
 ## Install ##
@@ -135,7 +129,7 @@ target_link_libraries(game_audio_video
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS game_audio_video game_audio_video
+# install(TARGETS player_video_overhead player_video_overhead_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -160,7 +154,7 @@ target_link_libraries(game_audio_video
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_game_audio_video.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_player_video_overhead.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

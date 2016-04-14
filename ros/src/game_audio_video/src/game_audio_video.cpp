@@ -1,4 +1,5 @@
 #include "ros/ros.h"
+#include "image_transport/image_transport.h"
 #include "sensor_msgs/Image.h"
 #include "sensor_msgs/image_encodings.h"
 #include "audio_common_msgs/AudioData.h"
@@ -25,7 +26,9 @@ int main(int argc, char** argv)
    // Initialize ROS node and publisher
    ros::init(argc, argv, "gameAudioVideo");
    ros::NodeHandle nodeHandle;
-   ros::Publisher videoPublisher = nodeHandle.advertise<sensor_msgs::Image>("gameVideo", 5);
+   //image_transport::ImageTransport imageTransNodeHandle(nodeHandle);
+   //image_transport::Publisher videoPublisher = imageTransNodeHandle.advertise("game_video_raw", 5);
+   ros::Publisher videoPublisher = nodeHandle.advertise<sensor_msgs::Image>("game_video_raw", 5);
    ros::Publisher audioPublisher = nodeHandle.advertise<audio_common_msgs::AudioData>("audio", 10);
 
    // Initialize Black Magic capturer

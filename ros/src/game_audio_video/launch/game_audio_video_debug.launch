@@ -1,4 +1,15 @@
 <?xml version="1.0"?>
 <launch>
    <node name="game_audio_video" pkg="game_audio_video" type="game_audio_video" launch-prefix="xterm -e gdb --args"/>
+   <node pkg="nodelet" type="nodelet" name="game_video_image_proc" args="standalone image_proc/debayer">
+      <remap from="/image_raw" to="/game_video_raw"/>
+      <remap from="/image_color" to="/game_video/rgb/image"/>
+      <remap from="/image_color/compressed" to="/game_video/rgb/image/compressed"/>
+      <remap from="/image_color/compressedDepth" to="/game_video/rgb/image/compressedDepth"/>
+      <remap from="/image_color/theora" to="/game_video/rgb/image/theora"/>
+      <remap from="/image_mono" to="/game_video/mono/image"/>
+      <remap from="/image_mono/compressed" to="/game_video/mono/image/compressed"/>
+      <remap from="/image_mono/compressedDepth" to="/game_video/mono/image/compressedDepth"/>
+      <remap from="/image_mono/theora" to="/game_video/mono/image/theora"/>
+   </node>
 </launch>
