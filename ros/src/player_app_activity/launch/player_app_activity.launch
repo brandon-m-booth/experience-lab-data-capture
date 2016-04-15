@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="player_app_activity" pkg="player_app_activity" type="player_app_activity"/>
+</launch>

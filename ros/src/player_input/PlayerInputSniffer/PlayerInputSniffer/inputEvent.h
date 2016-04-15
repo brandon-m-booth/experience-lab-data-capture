@@ -1,4 +1,6 @@
+#ifdef _CONSOLE
 typedef __int32 int32_t;
+#endif
 
 namespace Input
 {
