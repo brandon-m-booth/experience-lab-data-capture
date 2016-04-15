@@ -11,6 +11,8 @@ boost::lockfree::spsc_queue<Input::InputEvent, boost::lockfree::capacity<KeysQue
 
 __int32 GetKey(DWORD keyCode);
 
+bool doSafeKeyboardMode = true;
+
 LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
     if (nCode == HC_ACTION)
@@ -34,7 +36,14 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
         }
 
 		PKBDLLHOOKSTRUCT keyboardHookStruct = (PKBDLLHOOKSTRUCT)lParam;
-		inputEvent.inputDataItem1 = GetKey(keyboardHookStruct->vkCode);
+		if (!doSafeKeyboardMode)
+		{
+			inputEvent.inputDataItem1 = GetKey(keyboardHookStruct->vkCode);
+		}
+		else
+		{
+			inputEvent.inputDataItem1 = Input::Space;
+		}
 
 		inputEventQueue.push(inputEvent);
     }
@@ -98,8 +107,36 @@ LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 	return(CallNextHookEx(NULL, nCode, wParam, lParam));
 }
 
-int main()
+int main(int argc, char** argv)
 {
+	// Handle input parameters
+	bool doPrintHelp = false;
+	if (argc == 2)
+	{
+		if (!strcmp(argv[1], "-s"))
+		{
+			doSafeKeyboardMode = true;
+		}
+		else if (!strcmp(argv[1], "-a"))
+		{
+			doSafeKeyboardMode = false;
+		}
+		else
+		{
+			doPrintHelp = true;
+		}
+	}
+	if (doPrintHelp || argc > 2)
+	{
+		std::cout << "PlayerInputSniffer [args]" << std::endl;
+		std::cout << "args:" << std::endl;
+		std::cout << "\t--help\tPrint this help menu" << std::endl;
+		std::cout << "\t-s\tRun in safe keyboard mode (default) where key codes are not sniffed" << std::endl;
+		std::cout << "\t-a\tRun in normal mode" << std::endl;
+		return EXIT_SUCCESS;
+	}
+	
+
     // Install the low-level keyboard & mouse hooks
     HHOOK hhkLowLevelKybd = SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc, 0, 0);
 	HHOOK hhkLowLevelMouse = SetWindowsHookEx(WH_MOUSE_LL, LowLevelMouseProc, 0, 0);
@@ -149,7 +186,7 @@ int main()
     UnhookWindowsHookEx(hhkLowLevelKybd);
 	UnhookWindowsHookEx(hhkLowLevelMouse);
 
-    return(0);
+    return EXIT_SUCCESS;
 }
 
 __int32 GetKey(DWORD keyCode)

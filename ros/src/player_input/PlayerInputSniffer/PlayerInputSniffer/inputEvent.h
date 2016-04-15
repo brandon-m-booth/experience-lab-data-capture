@@ -1,6 +1,4 @@
-#ifdef _WINDOWS
-   typedef __int32 int32_t;
-#endif
+typedef __int32 int32_t;
 
 namespace Input
 {

@@ -3,8 +3,8 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="PlayerInputSniffer"
-	ProjectGUID="{6916552E-C34A-428C-847E-2E77D441FAD8}"
-	RootNamespace="PlayerInputSniffer"
+	ProjectGUID="{B3CC991A-1713-4C2E-988B-CF8EDCE79E77}"
+	RootNamespace="CONS"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;ZMQ_STATIC"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;ZMQ_STATIC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -63,8 +63,7 @@
 				AdditionalDependencies="libzmq-v90-mt-3_2_4.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
-				SubSystem="2"
-				EntryPointSymbol="main"
+				SubSystem="1"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -116,7 +115,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;ZMQ_STATIC"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;ZMQ_STATIC"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -137,11 +136,9 @@
 				AdditionalDependencies="libzmq-v90-mt-3_2_4.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
-				SubSystem="2"
+				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				EntryPointSymbol="main"
-				ResourceOnlyDLL="false"
 				TargetMachine="1"
 			/>
 			<Tool
