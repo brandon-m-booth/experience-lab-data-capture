@@ -157,7 +157,7 @@ int main(int argc, char** argv)
 
 	ros::init(argc, argv, "visualizerEyePosition");
 	ros::NodeHandle nodeHandle;
-	ros::Subscriber gameVideoSub = nodeHandle.subscribe("/gameVideo", 1, GameVideoCallback);
+	ros::Subscriber gameVideoSub = nodeHandle.subscribe("/game_video/rgb/image", 1, GameVideoCallback);
    ros::Subscriber eyePosSub = nodeHandle.subscribe("/eye_position", 1, EyePositionCallback);
    ros::Publisher eyePosImagePub = nodeHandle.advertise<sensor_msgs::Image>("eye_position_image", 1);
    ros::Duration updateDurationWithoutGameVideo(0.0333333); // 30 Hertz
