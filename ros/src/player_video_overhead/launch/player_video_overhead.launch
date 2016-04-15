@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-   <include file="$(find pointgrey_camera_driver)/launch/camera.launch"/>
+   <include file="$(find pointgrey_camera_driver)/launch/camera.launch" ns="player_video_overhead"/>
    <param name="/camera/camera_nodelet/auto_exposure" value="false"/>
    <param name="/camera/camera_nodelet/exposure" value="-0.2"/>
 </launch>

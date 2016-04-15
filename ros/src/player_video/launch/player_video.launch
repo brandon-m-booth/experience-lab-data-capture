@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <launch>
-   <node name="player_video" pkg="kinect2_bridge" type="kinect2_bridge"/>
+   <node name="player_video" pkg="kinect2_bridge" type="kinect2_bridge" ns="player_video"/>
 </launch>

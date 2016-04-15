@@ -1,1 +1,1 @@
-rosbag record /audio /eye_position /game_video/rgb/image/compressed /kinect2/rgb_rect/camera_info /kinect2/rgb_rect/image/compressed /camera/camera_info /camera/image_mono/compressed /playerInput/cursorPosition /playerInput/keyEvents /player_app_activity /player_eeg
+rosbag record /audio /eye_position /game_video/rgb/image/compressed /kinect2/rgb_rect/camera_info /kinect2/rgb_rect/image/compressed /player_video_overhead/camera/camera_info /player_video_overhead/camera/image_mono/compressed /playerInput/cursorPosition /playerInput/keyEvents /player_app_activity /player_eeg
