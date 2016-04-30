@@ -10,4 +10,5 @@
    <include file="$(find data_visualizer)/launch/eye_position_visualizer.launch"/>
    <include file="$(find data_visualizer)/launch/player_input_visualizer.launch"/>
    <include file="$(find player_eeg)/launch/player_eeg.launch"/>
+   <include file="$(find valid_stream)/launch/valid_stream.launch"/>
 </launch>
