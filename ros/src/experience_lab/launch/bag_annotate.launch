@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+   <param name="/use_sim_time" type="bool" value="true"/>
+   <node name="annotation_listener" pkg="annotation_listener" type="annotation_listener.py"/>
+   <node name="annotation_gui" pkg="rqt_gui" type="rqt_gui"/>
+   <node name="rqt_bag" pkg="rqt_bag" type="rqt_bag" args="--clock"/>
+</launch>
