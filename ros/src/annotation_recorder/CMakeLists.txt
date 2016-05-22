@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(bag_stitcher)
+project(annotation_recorder)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -81,7 +81,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES bag_stitcher
+#  LIBRARIES annotation_recorder
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
@@ -98,14 +98,14 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(bag_stitcher
-#   src/${PROJECT_NAME}/bag_stitcher.cpp
+# add_library(annotation_recorder
+#   src/${PROJECT_NAME}/annotation_recorder.cpp
 # )
 
 ## Declare a cpp executable
-#add_executable(bagStitcher src/bag_stitcher.cpp)
-#target_link_libraries(bagStitcher ${catkin_LIBRARIES})
-#add_dependencies(bagStitcher bag_stitcher_generate_messages_cpp)
+#add_executable(annotationRecorder src/annotation_recorder.cpp)
+#target_link_libraries(annotationRecorder ${catkin_LIBRARIES})
+#add_dependencies(annotationRecorder annotation_recorder_generate_messages_cpp)
 
 #############
 ## Install ##
@@ -122,7 +122,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS bag_stitcher bag_stitcher_node
+# install(TARGETS annotation_recorder annotation_recorder_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -147,7 +147,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_bag_stitcher.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_annotation_recorder.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

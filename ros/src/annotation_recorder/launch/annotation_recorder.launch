@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="annotation_recorder" pkg="annotation_recorder" type="annotation_recorder.py"/>
+</launch>

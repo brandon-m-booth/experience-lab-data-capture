@@ -20,7 +20,7 @@ def doStitchBags():
          if t < lastTime:
             clipIndex = next(x[0] for x in enumerate(stitchList) if x[1][2] >= t)
             stitchList = stitchList[0:clipIndex]
-            lastTime = t
+         lastTime = t
          stitchList.append((topic, msg, t))
 
       # Write original topics
