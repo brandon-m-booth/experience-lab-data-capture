@@ -8,7 +8,7 @@ from std_msgs.msg import Float32
 def doSegmentBags():
    rospy.init_node('bag_segmenter')
 
-   bag_file = '/home/elab/Desktop/13_Participant_2016-05-04-20-35-37_annotated.bag'
+   bag_file = '/home/elab/Desktop/mooc_pilot_study_data/subject_11/11_Participant_2016-05-03-17-39-07_session_coded.bag'
 
    rospy.loginfo('Scanning session codes in bag...')
    session_time_bounds = {}

@@ -8,16 +8,16 @@ from std_msgs.msg import Float32
 def doStitchBags():
    rospy.init_node('bag_stitcher')
 
-   with rosbag.Bag('outbag.bag', 'w') as outbag:
-      bag = rosbag.Bag('/home/elab/Desktop/13_Participant_2016-05-04-20-35-37.bag', 'r')
-      stitchBag = rosbag.Bag('/home/elab/Desktop/2016-05-19-20-21-53_annotation_subj13.bag', 'r')
+   with rosbag.Bag('/home/elab/Desktop/outbag.bag', 'w') as outbag:
+      bag = rosbag.Bag('/home/elab/Desktop/mooc_pilot_study_data/original_bags/11_Participant_2016-05-03-17-39-07.bag', 'r')
+      stitchBag = rosbag.Bag('/home/elab/Desktop/mooc_pilot_study_data/11_session_coded.bag', 'r')
 
       # Obtain a sorted list of new topics to stitch in
       bagStartTime = rospy.Time(bag.get_start_time())
       stitchList = []
       lastTime = bagStartTime
       for topic, msg, t in stitchBag.read_messages():
-         if t < lastTime:
+         if t < lastTime and len(stitchList) > 0:
             clipIndex = next(x[0] for x in enumerate(stitchList) if x[1][2] >= t)
             stitchList = stitchList[0:clipIndex]
          lastTime = t
