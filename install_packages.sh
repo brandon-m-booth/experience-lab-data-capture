@@ -20,4 +20,6 @@ sudo git clone https://github.com/OTL/rqt_ez_publisher.git
 cd rqt_ez_publisher
 sudo python setup.py install
 rm ~/.config/ros.org/rqt_gui.ini
+cd ..
+sudo rm -rf rqt_ez_publisher
 popd
