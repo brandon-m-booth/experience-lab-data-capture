@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+   <arg name="input_bag"/>
+   <param name="annotation_recorder_input_bag" value="$(arg input_bag)"/>
    <node name="annotation_recorder" pkg="annotation_recorder" type="annotation_recorder.py"/>
 </launch>
