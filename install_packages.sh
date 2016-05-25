@@ -29,8 +29,8 @@ sudo apt-get install libmp3lame-dev
 pushd /opt/ros/indigo/share
 #sudo git clone https://github.com/OTL/rqt_ez_publisher.git
 sudo git clone https://github.com/brandon-m-booth/rqt_ez_publisher.git
-sudo git checkout indigo-devel-annotators
 cd rqt_ez_publisher
+sudo git checkout indigo-devel-annotators
 sudo python setup.py install
 rm ~/.config/ros.org/rqt_gui.ini
 popd
