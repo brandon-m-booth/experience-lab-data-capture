@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="bag_stitcher" pkg="bag_tools" type="bag_stitcher.py" launch-prefix="xterm -e python -m pdb"/>
+</launch>

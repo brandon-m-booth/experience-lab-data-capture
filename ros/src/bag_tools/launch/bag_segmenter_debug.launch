@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+   <node name="bag_segmenter" pkg="bag_tools" type="bag_segmenter.py" launch-prefix="xterm -e python -m pdb"/>
+</launch>

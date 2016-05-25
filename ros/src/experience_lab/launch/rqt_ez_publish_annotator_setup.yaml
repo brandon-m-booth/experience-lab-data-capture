@@ -1,0 +1,5 @@
+publish_interval: 100
+settings:
+  /annotation/engagement/data: {is_repeat: true, max: 1.0, min: 0.0}
+  /annotation/isTakingNotes/data: {is_repeat: true, max: 0, min: 0}
+texts: [/annotation/engagement/data, /annotation/isTakingNotes/data]
