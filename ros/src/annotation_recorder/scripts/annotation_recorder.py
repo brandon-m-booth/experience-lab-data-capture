@@ -11,12 +11,14 @@ ignoreMessages = False
 startTime = None
 lastTime = rospy.Time(0)
 topic_dict_time_series = {}
+input_bag_end_time = 0
 
 def callbackFunc(data, topic=None):
    global ignoreMessages
    global startTime
    global lastTime
    global topic_dict_time_series
+   global input_bag_end_time
 
    if ignoreMessages:
       return
@@ -31,7 +33,7 @@ def callbackFunc(data, topic=None):
       rospy.logerror("Callback function's topic is None, FIX ME!!")
 
    if now < lastTime:
-      if lastTime > (startTime + rospy.Duration(20*60)) and now < (startTime + rospy.Duration(20)): # If the bag has looped back to the beginning
+      if lastTime > (input_bag_end_time - rospy.Duration(20)) and now < (startTime + rospy.Duration(20)): # If the bag has looped back to the beginning
          ignoreMessages = True
          return
 
@@ -60,13 +62,25 @@ def writeAnnotationsBag():
 
 def doRecordAnnotations():
    global topic_dict_time_series
+   global input_bag_end_time
 
    # TODO - Make the list of subscriptions driven by a data file
    #        rather than hard-coded!
    rospy.init_node('annotationRecorder')
+
+   try:
+      input_bag_path = rospy.get_param('annotation_recorder_input_bag')
+   except KeyError:
+      rospy.logerr('ROS param "annotation_recorder_input_bag" was not set. Shutting down!')
+      return
+
    rospy.on_shutdown(writeAnnotationsBag)
 
-   topics_and_msgtypes = [("annotation/engagement",Float64), ("annotation/isTakingNotes", Bool), ("annotation/sessionCode", String)]
+   rospy.logwarn('ROS param "annotation_recorder_input_bag" is set to: '+input_bag_path)
+   input_bag = rosbag.Bag(input_bag_path, 'r')
+   input_bag_end_time = input_bag.get_end_time()
+
+   topics_and_msgtypes = [("annotation/engagement",Float64), ("annotation/isTakingNotes", Bool)]#, ("annotation/sessionCode", String)]
    for (topic, msg_type) in topics_and_msgtypes:
       sub = rospy.Subscriber(topic, msg_type, lambda data,tp=topic: callbackFunc(data, topic=tp))
       topic_dict_time_series[topic] = []

@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <launch>
+   <arg name="bag" default=""/>
+
    <param name="/use_sim_time" type="bool" value="true"/>
-   <include file="$(find annotation_recorder)/launch/annotation_recorder.launch"/>
+   <include file="$(find annotation_recorder)/launch/annotation_recorder.launch">
+      <arg name="input_bag" value="$(arg bag)"/> <!-- Needs to be set on the command line -->
+   </include>
    <node name="annotation_gui" pkg="rqt_gui" type="rqt_gui"/>
-   <node name="rqt_bag" pkg="rqt_bag" type="rqt_bag" args="--clock"/>
+   <node name="rqt_bag" pkg="rqt_bag" type="rqt_bag" args="$(arg bag) --clock"/>
 </launch>
