@@ -3,6 +3,8 @@
 import pdb
 import rospy
 import rosbag
+import os
+import platform
 from std_msgs.msg import Float64, Bool, String
 
 ignoreMessages = False
@@ -48,7 +50,8 @@ def writeAnnotationsBag():
    global topic_dict_time_series
 
    rospy.loginfo("Writing annotations to bag file, please wait...")
-   with rosbag.Bag('/home/elab/Desktop/outbag.bag', 'w') as outbag:
+   home_dir = os.path.expanduser('~')
+   with rosbag.Bag(home_dir+'/Desktop/outbag.bag', 'w') as outbag:
       for dict_topic in topic_dict_time_series.keys():
          for (topic, msg, t) in topic_dict_time_series[dict_topic]:
             outbag.write(topic, msg, t)
