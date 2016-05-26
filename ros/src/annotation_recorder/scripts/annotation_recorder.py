@@ -12,6 +12,7 @@ startTime = None
 lastTime = rospy.Time(0)
 topic_dict_time_series = {}
 input_bag_end_time = 0
+output_bag_filename = ''
 
 def callbackFunc(data, topic=None):
    global ignoreMessages
@@ -52,8 +53,8 @@ def writeAnnotationsBag():
    global topic_dict_time_series
 
    rospy.loginfo("Writing annotations to bag file, please wait...")
-   home_dir = os.path.expanduser('~')
-   with rosbag.Bag(home_dir+'/Desktop/outbag.bag', 'w') as outbag:
+   #home_dir = os.path.expanduser('~')
+   with rosbag.Bag(output_bag_filename, 'w') as outbag:
       for dict_topic in topic_dict_time_series.keys():
          for (topic, msg, t) in topic_dict_time_series[dict_topic]:
             outbag.write(topic, msg, t)
@@ -63,6 +64,7 @@ def writeAnnotationsBag():
 def doRecordAnnotations():
    global topic_dict_time_series
    global input_bag_end_time
+   global output_bag_filename
 
    # TODO - Make the list of subscriptions driven by a data file
    #        rather than hard-coded!
@@ -70,13 +72,15 @@ def doRecordAnnotations():
 
    try:
       input_bag_path = rospy.get_param('annotation_recorder_input_bag')
+      output_bag_filename = rospy.get_param('annotation_recorder_output_bag')
    except KeyError:
-      rospy.logerr('ROS param "annotation_recorder_input_bag" was not set. Shutting down!')
+      rospy.logerr('Either ROS param "annotation_recorder_input_bag" or "annotation_recorder_output_bag" was not set. Shutting down!')
       return
 
    rospy.on_shutdown(writeAnnotationsBag)
 
    rospy.logwarn('ROS param "annotation_recorder_input_bag" is set to: '+input_bag_path)
+   rospy.logwarn('ROS param "annotation_recorder_output_bag" is set to: '+output_bag_filename)
    input_bag = rosbag.Bag(input_bag_path, 'r')
    input_bag_end_time = input_bag.get_end_time()
 
