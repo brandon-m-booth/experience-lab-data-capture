@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 <launch>
+   <arg name="input_bags_path"/>
+   <arg name="input_annotated_bags_path"/>
+   <arg name="output_stitched_bags_path"/>
+   <param name="input_bags_path" value="$(arg input_bags_path)"/>
+   <param name="input_annotated_bags_path" value="$(arg input_annotated_bags_path)"/>
+   <param name="output_stitched_bags_path" value="$(arg output_stitched_bags_path)"/>
    <node name="bag_stitcher" pkg="bag_tools" type="bag_stitcher.py" launch-prefix="xterm -e python -m pdb"/>
 </launch>
