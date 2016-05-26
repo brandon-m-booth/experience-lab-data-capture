@@ -82,7 +82,7 @@ def doRecordAnnotations():
    rospy.logwarn('ROS param "annotation_recorder_input_bag" is set to: '+input_bag_path)
    rospy.logwarn('ROS param "annotation_recorder_output_bag" is set to: '+output_bag_filename)
    input_bag = rosbag.Bag(input_bag_path, 'r')
-   input_bag_end_time = input_bag.get_end_time()
+   input_bag_end_time = rospy.Time(input_bag.get_end_time())
 
    topics_and_msgtypes = [("annotation/engagement",Float64), ("annotation/isTakingNotes", Bool)]#, ("annotation/sessionCode", String)]
    for (topic, msg_type) in topics_and_msgtypes:
