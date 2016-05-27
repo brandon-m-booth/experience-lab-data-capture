@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="bag" default=""/>
+   <arg name="outbag" default=""/>
+
+   <param name="/use_sim_time" type="bool" value="true"/>
+   <include file="$(find annotation_recorder)/launch/annotation_recorder.launch">
+      <arg name="input_bag" value="$(arg bag)"/> <!-- Needs to be set on the command line -->
+      <arg name="output_bag" value="$(arg outbag)"/> <!-- Needs to be set on the command line -->
+   </include>
+   <node name="annotation_gui" pkg="rqt_gui" type="rqt_gui"/>
+   <node name="rosbagplayer" pkg="rosbag" type="play" output="screen" args="$(arg bag) --clock" launch-prefix="xterm -e"/>
+   <include file="$(find audio_play)/launch/play.launch"/>
+</launch>

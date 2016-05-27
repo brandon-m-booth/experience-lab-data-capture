@@ -33,7 +33,8 @@ def doAnnotationLaunch(data_folder, out_data_folder):
    for subject_data_file in subject_data_files:
       task = subject_data_file.split('_')[-1][:-4]
       out_bag_filename = str(subject_num)+'_'+task+'_'+user_name+'.bag'
-      os.system('roslaunch experience_lab bag_annotate.launch bag:='+subject_data_folder+'/'+subject_data_file+' outbag:='+out_data_folder+'/'+out_bag_filename)
+      launch_file = 'bag_annotate.launch' if pov == 'student' else 'bag_annotate_audio.launch'
+      os.system('roslaunch experience_lab '+launch_file+' bag:='+subject_data_folder+'/'+subject_data_file+' outbag:='+out_data_folder+'/'+out_bag_filename)
       print 'Finished running process, sleeping for 5 seconds...'
       time.sleep(5)
 
