@@ -9,7 +9,12 @@ import subprocess
 
 def doAnnotationLaunch(data_folder, out_data_folder):
    data_subfolders = os.listdir(data_folder)
-   if not 'subject_01' in data_subfolders:
+   found_subject_subfolder = False
+   for data_subfolder in data_subfolders:
+      if data_subfolder.startswith('subject_'):
+         found_subject_subfolder = True
+         break
+   if not found_subject_subfolder:
       print 'Please provide a valid data folder containing subfolders with names like "subject_01"'
       return
 
