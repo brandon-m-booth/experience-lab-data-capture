@@ -4,10 +4,24 @@ import subprocess
 import platform
 import os
 import sys
+import csv
 import pdb
 import rospy
 import rosbag
 from std_msgs.msg import Float32
+
+def doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder):
+   bag_start_time = rospy.Time(bag.get_start_time())
+   bag_name = os.path.basename(bag_path)
+   topic_file_suffix = topic.replace('/','_')
+   out_file_path = out_folder+'/'+bag_name[:-4]+topic_file_suffix+'.csv'
+   with open(out_file_path, 'wb') as csvfile:
+      csv_writer = csv.writer(csvfile, delimiter=',')
+      csv_writer.writerow(['Time(sec)','PosX(norm)','PosY(norm)'])
+      for bag_topic, msg, t in bag.read_messages():
+         if bag_topic == topic:
+            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.posX, msg.posY])
+   return
 
 def doExtractAudio(bag, bag_path, topic, out_folder):
    bag_name = os.path.basename(bag_path)
@@ -18,7 +32,7 @@ def doExtractAudio(bag, bag_path, topic, out_folder):
       if bag_topic == topic:
          mp3_file.write(''.join(msg.data))
    mp3_file.close()
-
+   return
 
 def doExtractCompressedFrames(bag, bag_path, topic, out_folder):
    frames_dir = '/tmp/temp_frames'
@@ -78,6 +92,8 @@ def doExtractTopic(bag_path, topic, out_folder):
          doExtractCompressedFrames(bag, bag_path, bag_topic, out_folder)
       elif msg_type == 'audio_common_msgs/AudioData':
          doExtractAudio(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'player_eye_tracking/Position2D':
+         doExtractPlayerEyeTracking(bag, bag_path, bag_topic, out_folder)
 
    bag.close()
    return
