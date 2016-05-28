@@ -9,6 +9,17 @@ import rospy
 import rosbag
 from std_msgs.msg import Float32
 
+def doExtractAudio(bag, bag_path, topic, out_folder):
+   bag_name = os.path.basename(bag_path)
+   topic_file_suffix = topic.replace('/','_')
+   out_file_path = out_folder+'/'+bag_name[:-4]+topic_file_suffix+'.mp3'
+   mp3_file = open(out_file_path, 'w')
+   for bag_topic, msg, t in bag.read_messages():
+      if bag_topic == topic:
+         mp3_file.write(''.join(msg.data))
+   mp3_file.close()
+
+
 def doExtractCompressedFrames(bag, bag_path, topic, out_folder):
    frames_dir = '/tmp/temp_frames'
    if os.path.isdir(frames_dir):
@@ -65,6 +76,8 @@ def doExtractTopic(bag_path, topic, out_folder):
       msg_type = msg_types[i]
       if msg_type == 'sensor_msgs/CompressedImage':
          doExtractCompressedFrames(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'audio_common_msgs/AudioData':
+         doExtractAudio(bag, bag_path, bag_topic, out_folder)
 
    bag.close()
    return
@@ -75,8 +88,9 @@ if __name__=='__main__':
 
    if len(sys.argv) < 4:
       print 'Please provide the following command line args:\n bag_topic_extractor.py [bag_name] [topic] [out_folder]'
-   bag_name = sys.argv[1]
-   topic = sys.argv[2]
-   out_folder = sys.argv[3]
+   else:
+      bag_name = sys.argv[1]
+      topic = sys.argv[2]
+      out_folder = sys.argv[3]
 
-   doExtractTopic(bag_name, topic, out_folder)
+      doExtractTopic(bag_name, topic, out_folder)
