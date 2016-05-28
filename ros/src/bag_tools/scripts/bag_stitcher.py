@@ -95,8 +95,9 @@ def doAnnotationStitching():
                input_bag_task = input_bag.split('_')[-1][:-4]
                if input_bag_task == task:
                   with rosbag.Bag(outbag_path, 'w') as out_bag:
-                     source_bag = rosbag.Bag(stitch_bag_source, 'r')
-                     stitch_bag = rosbag.Bag(input_annotated_bag_path+'/'+annotated_bag_filename, 'r')
+                     print 'Stitching annotations from: '+input_annotated_bag_path+'/'+annotated_bag_filename+'\n into bag: '+stitch_bag_source
+                     source_bag = rosbag.Bag(stitch_bag_source, 'r', allow_unindexed=True)
+                     stitch_bag = rosbag.Bag(input_annotated_bag_path+'/'+annotated_bag_filename, 'r', allow_unindexed=True)
                      stitchAnnotatorBag(source_bag, stitch_bag, unique_annotator_id, out_bag)
                      stitch_bag_source = outbag_path # Future annotations should stitch into this new output bag
                      
