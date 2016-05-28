@@ -10,6 +10,33 @@ import rospy
 import rosbag
 from std_msgs.msg import Float32
 
+def doExtractStringMessage(bag, bag_path, topic, out_folder):
+   bag_start_time = rospy.Time(bag.get_start_time())
+   bag_name = os.path.basename(bag_path)
+   topic_file_suffix = topic.replace('/','_')
+   out_file_path = out_folder+'/'+bag_name[:-4]+topic_file_suffix+'.csv'
+   with open(out_file_path, 'wb') as csvfile:
+      csv_writer = csv.writer(csvfile, delimiter=',')
+      csv_writer.writerow(['Time(sec)','Data'])
+      for bag_topic, msg, t in bag.read_messages():
+         if bag_topic == topic:
+            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.data])
+   return
+
+def doExtractPlayerEEG(bag, bag_path, topic, out_folder):
+   bag_start_time = rospy.Time(bag.get_start_time())
+   bag_name = os.path.basename(bag_path)
+   topic_file_suffix = topic.replace('/','_')
+   out_file_path = out_folder+'/'+bag_name[:-4]+topic_file_suffix+'.csv'
+   with open(out_file_path, 'wb') as csvfile:
+      csv_writer = csv.writer(csvfile, delimiter=',')
+      csv_writer.writerow(['Time(sec)','AF3','F7','F3','FC5','T7','P7','O1','O2','P8','T8','FC6','F4','F8','AF4','GyroX','GyroY','EEG Timestamp'])
+      for bag_topic, msg, t in bag.read_messages():
+         if bag_topic == topic:
+            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.af3,msg.f7,msg.f3,msg.fc5,msg.t7,msg.p7,msg.o1,msg.o2,msg.p8,msg.t8,msg.fc6,msg.f4,msg.f8,msg.af4,msg.gyrox,msg.gyroy,msg.timestamp])
+   return
+
+
 def doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder):
    bag_start_time = rospy.Time(bag.get_start_time())
    bag_name = os.path.basename(bag_path)
@@ -21,6 +48,11 @@ def doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder):
       for bag_topic, msg, t in bag.read_messages():
          if bag_topic == topic:
             csv_writer.writerow([(t-bag_start_time).to_sec(),msg.posX, msg.posY])
+   return
+
+def doExtractCursorPosition(bag, bag_path, topic, out_folder):
+   # BB - Thanks duck typing!
+   doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder)
    return
 
 def doExtractAudio(bag, bag_path, topic, out_folder):
@@ -94,6 +126,12 @@ def doExtractTopic(bag_path, topic, out_folder):
          doExtractAudio(bag, bag_path, bag_topic, out_folder)
       elif msg_type == 'player_eye_tracking/Position2D':
          doExtractPlayerEyeTracking(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'player_input/CursorPosition':
+         doExtractCursorPosition(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'player_eeg/EEGData':
+         doExtractPlayerEEG(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'std_msgs/String':
+         doExtractStringMessage(bag, bag_path, bag_topic, out_folder)
 
    bag.close()
    return
