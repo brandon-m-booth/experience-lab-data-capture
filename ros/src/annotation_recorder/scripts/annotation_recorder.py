@@ -51,6 +51,7 @@ def callbackFunc(data, topic=None):
 
 def writeAnnotationsBag():
    global topic_dict_time_series
+   global output_bag_filename
 
    rospy.loginfo("Writing annotations to bag file, please wait...")
    #home_dir = os.path.expanduser('~')

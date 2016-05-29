@@ -7,31 +7,32 @@ import rospy
 import rosbag
 from std_msgs.msg import Float32
 
-def stitchAnnotatorBags(bag, annotator_bags, annotator_ids, out_bag):
+def stitchAnnotatorBags(bag, annotator_bags, annotator_ids, annotation_categories, out_bag):
    # Obtain a sorted list of new topics to stitch in
    stitchList = []
    for i in range(len(annotator_bags)):
       annotator_bag = annotator_bags[i]
       annotator_id = annotator_ids[i]
+      annotation_category = annotation_categories[i]
       bagStartTime = rospy.Time(bag.get_start_time())
       lastTime = bagStartTime
       for topic, msg, t in annotator_bag.read_messages():
-         if t < lastTime and len(stitchList) > 0:
-            print 'DOES THIS EVER HAPPEN?!?!'
-            clipIndex = next(x[0] for x in enumerate(stitchList) if x[1][2] >= t)
-            stitchList = stitchList[0:clipIndex]
+         #if t < lastTime and len(stitchList) > 0:
+         #   print 'DOES THIS EVER HAPPEN?!?!'
+         #   clipIndex = next(x[0] for x in enumerate(stitchList) if x[1][2] >= t)
+         #   stitchList = stitchList[0:clipIndex]
          lastTime = t
-         stitchList.append((topic, msg, t, annotator_id))
+         stitchList.append((topic, msg, t, annotator_id, annotation_category))
 
    # Write original topics
    for topic, msg, t in bag.read_messages():
       out_bag.write(topic, msg, t)
       
    # Stitch in new topics
-   for (topic, msg, t, annotator_id) in stitchList:
+   for (topic, msg, t, annotator_id, annotation_category) in stitchList:
       if topic.startswith('annotation'):
          topic_suffix = '/'.join(topic.split('/')[1:])
-         topic = 'annotation/annotator'+str(annotator_id)+'/'+topic_suffix
+         topic = 'annotation/'+annotation_category+'/annotator'+str(annotator_id)+'/'+topic_suffix
       out_bag.write(topic, msg, t)
 
 
@@ -63,32 +64,32 @@ def doAnnotationStitching():
 
    # Count the number of unique user names
    user_names = []
-   subject_id_tasks = []
+   subject_id_task_categories = []
    for annotated_bag_filename in annotated_bag_filenames:
       split_bag_filename = annotated_bag_filename.split('_')
       subject_id = int(split_bag_filename[0])
       task = split_bag_filename[1]
+      category = split_bag_filename[2]
       user_name = split_bag_filename[-1][:-4]
-      subject_id_tasks.append((subject_id, task))
+      subject_id_task_categories.append((subject_id, task, category))
       user_names.append(user_name)
-   unique_subject_id_tasks = list(set(subject_id_tasks))
+   unique_subject_id_task_categories = list(set(subject_id_task_categories))
    unique_user_names = list(set(user_names))
 
-   for unique_subject_id_task in unique_subject_id_tasks:
+   for unique_subject_id_task_category in unique_subject_id_task_categories:
       # Find the original bag corresponding to this subject id and task
       stitch_bag_source = None
-      input_bags = os.listdir(input_bags_path+'/subject_%02d'%unique_subject_id_task[0])
+      input_bags = os.listdir(input_bags_path+'/subject_%02d'%unique_subject_id_task_category[0])
       for input_bag in input_bags:
          input_bag_task = input_bag.split('_')[-1][:-4]
-         if input_bag_task == unique_subject_id_task[1]:
+         if input_bag_task == unique_subject_id_task_category[1]:
             stitch_bag_filename = input_bag
-            stitch_bag_source = input_bags_path+'/subject_%02d/'%(unique_subject_id_task[0])+'/'+input_bag
+            stitch_bag_source = input_bags_path+'/subject_%02d/'%(unique_subject_id_task_category[0])+'/'+input_bag
             break
 
       if stitch_bag_source is None:
          rospy.logerr('Unable to find suitable source stitch file. FIX ME!')
          continue
-
       
       # Stitch in the correponding annotator bags
       outbag_path = output_stitched_bag_path+'/'+stitch_bag_filename[:-4]+'_annotated.bag'
@@ -96,23 +97,23 @@ def doAnnotationStitching():
       with rosbag.Bag(outbag_path, 'w') as out_bag:
          stitch_bags = []
          unique_annotator_ids = []
+         annotation_categories = []
          for annotated_bag_filename in annotated_bag_filenames:
             split_filename = annotated_bag_filename.split('_')
             subject_id = int(split_filename[0])
             task = split_filename[1]
-            if unique_subject_id_task[0] == subject_id and unique_subject_id_task[1] == task:
+            category = split_filename[2]
+            if unique_subject_id_task_category[0] == subject_id and unique_subject_id_task_category[1] == task:
                user_name = split_filename[-1][:-4]
                unique_annotator_id = unique_user_names.index(user_name)
-               for input_bag in input_bags:
-                  input_bag_task = input_bag.split('_')[-1][:-4]
-                  if input_bag_task == task:
-                     stitch_bag = rosbag.Bag(input_annotated_bag_path+'/'+annotated_bag_filename, 'r', allow_unindexed=True)
-                     stitch_bags.append(stitch_bag) # Push this bag and annotator id into the list of things to process
-                     unique_annotator_ids.append(unique_annotator_id)
+               stitch_bag = rosbag.Bag(input_annotated_bag_path+'/'+annotated_bag_filename, 'r', allow_unindexed=True)
+               stitch_bags.append(stitch_bag) # Push bags, annotator id and category into lists to be processed
+               unique_annotator_ids.append(unique_annotator_id)
+               annotation_categories.append(category)
 
          # Stitch 'em!
          source_bag = rosbag.Bag(stitch_bag_source, 'r', allow_unindexed=True)
-         stitchAnnotatorBags(source_bag, stitch_bags, unique_annotator_ids, out_bag)
+         stitchAnnotatorBags(source_bag, stitch_bags, unique_annotator_ids, annotation_categories, out_bag)
                      
 if __name__=='__main__':
    doAnnotationStitching()
