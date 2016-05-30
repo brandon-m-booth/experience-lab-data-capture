@@ -6,8 +6,8 @@ import pdb
 import platform
 
 def doExtractStreams():
-   #topics = ['/audio', '/eye_position', '/kinect2/rgb_rect/image', '/game_video/rgb/image', 'playerInput/cursorPosition', '/playerInput/keyEvents', '/player_app_activity', 'player_eeg', '/player_video/overhead/camera/image_mono']
-   topics = ['/audio', '/eye_position', 'playerInput/cursorPosition', '/playerInput/keyEvents', '/player_app_activity', 'player_eeg']
+   #topics = ['/audio', '/eye_position', '/kinect2/rgb_rect/image', '/game_video/rgb/image', '/playerInput/cursorPosition', '/playerInput/keyEvents', '/player_app_activity', '/player_eeg', '/player_video/overhead/camera/image_mono']
+   topics = ['/audio', '/eye_position', '/playerInput/cursorPosition', '/playerInput/keyEvents', '/player_app_activity', '/player_eeg']
    filter_re_prog = re.compile('.*[main|main2|b1|b2]')
    bag_file_paths = []
 
