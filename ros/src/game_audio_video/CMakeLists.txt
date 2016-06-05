@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  sensor_msgs
+  audio_common_msgs
   image_transport
 )
 
@@ -85,6 +85,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES game_audio_video
 #  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS message_runtime std_msgs audio_common_msgs image_transport
 #  DEPENDS system_lib
 )
 

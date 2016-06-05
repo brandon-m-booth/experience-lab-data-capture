@@ -1,8 +1,9 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROS_DISTRO=kinetic
 
-# Genera packages
+# General packages
 sudo apt-get install libtool
 sudo apt-get install pkg-config
 sudo apt-get install build-essential
@@ -18,19 +19,22 @@ if [ ! -f /etc/apt/sources.list.d/ros-latest.list ]; then
 fi
 
 # ROS dependencies
-sudo apt-get install ros-indigo-desktop-full -y
-sudo apt-get install ros-indigo-audio-common -y
-sudo apt-get install ros-indigo-freenect-stack -y
+sudo apt-get install ros-${ROS_DISTRO}-desktop-full -y
+sudo apt-get install ros-${ROS_DISTRO}-audio-common -y
+sudo apt-get install ros-${ROS_DISTRO}-freenect-stack -y
 
 # Audio dependencies
 sudo apt-get install libmp3lame-dev
 
+# Video dependencies
+sudo apt-get install libgstreamer1.0-dev
+
 # RQT dependencies
-pushd /opt/ros/indigo/share
+pushd /opt/ros/${ROS_DISTRO}/share
 #sudo git clone https://github.com/OTL/rqt_ez_publisher.git
 sudo git clone https://github.com/brandon-m-booth/rqt_ez_publisher.git
 cd rqt_ez_publisher
-sudo git checkout indigo-devel-annotators
+sudo git checkout ${ROS_DISTRO}-devel-annotators
 sudo python setup.py install
 rm ~/.config/ros.org/rqt_gui.ini
 popd
