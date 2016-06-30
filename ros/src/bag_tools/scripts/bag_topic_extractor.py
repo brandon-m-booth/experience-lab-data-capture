@@ -20,7 +20,7 @@ def doExtractStringMessage(bag, bag_path, topic, out_folder):
       csv_writer.writerow(['Time(sec)','Data'])
       for bag_topic, msg, t in bag.read_messages():
          if bag_topic == topic:
-            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.data])
+            csv_writer.writerow([(t-bag_start_time).to_sec(),str(msg.data)])
    return
 
 def doExtractPlayerEEG(bag, bag_path, topic, out_folder):
@@ -37,7 +37,7 @@ def doExtractPlayerEEG(bag, bag_path, topic, out_folder):
    return
 
 
-def doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder):
+def doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder, norm_factor=(1.0, 1.0)):
    bag_start_time = rospy.Time(bag.get_start_time())
    bag_name = os.path.basename(bag_path)
    topic_file_suffix = topic.replace('/','_')
@@ -47,12 +47,12 @@ def doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder):
       csv_writer.writerow(['Time(sec)','PosX(norm)','PosY(norm)'])
       for bag_topic, msg, t in bag.read_messages():
          if bag_topic == topic:
-            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.posX, msg.posY])
+            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.posX*norm_factor[0], msg.posY*norm_factor[1]])
    return
 
 def doExtractCursorPosition(bag, bag_path, topic, out_folder):
    # BB - Thanks duck typing!
-   doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder)
+   doExtractPlayerEyeTracking(bag, bag_path, topic, out_folder, norm_factor=(1.0/1920.0, 1.0/1080.0))
    return
 
 def doExtractAudio(bag, bag_path, topic, out_folder):
@@ -131,6 +131,10 @@ def doExtractTopic(bag_path, topic, out_folder):
       elif msg_type == 'player_eeg/EEGData':
          doExtractPlayerEEG(bag, bag_path, bag_topic, out_folder)
       elif msg_type == 'std_msgs/String':
+         doExtractStringMessage(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'std_msgs/Float64':
+         doExtractStringMessage(bag, bag_path, bag_topic, out_folder)
+      elif msg_type == 'std_msgs/Bool':
          doExtractStringMessage(bag, bag_path, bag_topic, out_folder)
 
    bag.close()

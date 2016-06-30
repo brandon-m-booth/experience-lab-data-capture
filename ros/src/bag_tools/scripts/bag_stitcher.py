@@ -69,6 +69,10 @@ def doAnnotationStitching():
       split_bag_filename = annotated_bag_filename.split('_')
       subject_id = int(split_bag_filename[0])
       task = split_bag_filename[1]
+      if task == "b1":
+         task = "boredom1"
+      elif task == "b2":
+         task = "boredom2"
       category = split_bag_filename[2]
       user_name = split_bag_filename[-1][:-4]
       subject_id_task_categories.append((subject_id, task, category))
@@ -88,6 +92,7 @@ def doAnnotationStitching():
             break
 
       if stitch_bag_source is None:
+         pdb.set_trace()
          rospy.logerr('Unable to find suitable source stitch file. FIX ME!')
          continue
       
@@ -103,6 +108,10 @@ def doAnnotationStitching():
             subject_id = int(split_filename[0])
             task = split_filename[1]
             category = split_filename[2]
+            if task == "b1":
+               task = "boredom1"
+            elif task == "b2":
+               task = "boredom2"
             if unique_subject_id_task_category[0] == subject_id and unique_subject_id_task_category[1] == task:
                user_name = split_filename[-1][:-4]
                unique_annotator_id = unique_user_names.index(user_name)
