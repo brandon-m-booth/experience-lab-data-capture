@@ -9,6 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   sensor_msgs
+  player_input
+  player_eye_tracking
 )
 
 ## System dependencies are found with CMake's conventions
@@ -45,11 +47,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+#add_message_files(
+#  DIRECTORY msg
+#  FILES
+#  Message1.msg
+#)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -83,7 +85,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES data_visualizer
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS message_runtime std_msgs sensor_msgs player_input player_eye_tracking
 #  DEPENDS system_lib
 )
 
@@ -110,7 +112,11 @@ add_executable(visualizePlayerEEG src/visualize_player_eeg.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-add_dependencies(visualizeEyePosition data_visualizer_generate_messages_cpp)
+#add_dependencies(visualizeEyePosition data_visualizer_generate_messages_cpp)
+add_dependencies(visualizeEyePosition
+   ${${player_eye_tracking}_EXPORTED_TARGETS}
+   ${catkin_EXPORTED_TARGETS}
+)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(visualizeEyePosition

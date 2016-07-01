@@ -1,3 +1,6 @@
 [submodule "ros/src/iai_kinect2"]
 	path = ros/src/iai_kinect2
 	url = https://github.com/code-iai/iai_kinect2.git
+[submodule "ros/src/audio_common"]
+	path = ros/src/audio_common
+	url = https://github.com/brandon-m-booth/audio_common.git
