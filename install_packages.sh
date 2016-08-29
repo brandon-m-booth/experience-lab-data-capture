@@ -58,3 +58,18 @@ make
 sudo make install
 sudo ldconfig
 popd
+
+#  Libfreenect2
+pushd /tmp
+git clone https://github.com/OpenKinect/libfreenect2.git
+cd libfreenect2/
+sudo apt-get install libusb-1.0-0-dev
+sudo apt-get install libturbojpeg libjpeg-turbo8-dev
+sudo apt-get install libglfw3-dev
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+make
+sudo make install
+sudo ldconfig
+popd
