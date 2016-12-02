@@ -9,6 +9,6 @@
       <arg name="output_bag" value="$(arg outbag)"/> <!-- Needs to be set on the command line -->
    </include>
    <node name="annotation_gui" pkg="rqt_gui" type="rqt_gui"/>
-   <node name="rosbagplayer" pkg="rosbag" type="play" output="screen" args="$(arg bag) --clock" launch-prefix="xterm -e"/>
+   <node name="rosbagplayer" pkg="rosbag" type="play" output="screen" args="$(arg bag) --clock --pause" launch-prefix="xterm -e"/>
    <include file="$(find audio_play)/launch/play.launch"/>
 </launch>

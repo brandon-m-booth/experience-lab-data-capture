@@ -2,7 +2,8 @@
 <launch>
    <arg name="input_bag"/>
    <arg name="output_bag"/>
-   <param name="annotation_recorder_input_bag" value="$(arg input_bag)"/>
-   <param name="annotation_recorder_output_bag" value="$(arg output_bag)"/>
-   <node name="annotation_recorder" pkg="annotation_recorder" type="annotation_recorder.py"/>
+   <include file="$(find annotation_recorder)/launch/annotation_recorder_float.launch">
+      <arg name="input_bag" value="$(arg input_bag)"/>
+      <arg name="output_bag" value="$(arg output_bag)"/>
+   </include>
 </launch>

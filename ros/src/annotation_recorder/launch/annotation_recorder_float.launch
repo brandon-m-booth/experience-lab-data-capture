@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="input_bag"/>
+   <arg name="output_bag"/>
+   <param name="annotation_recorder_input_bag" value="$(arg input_bag)"/>
+   <param name="annotation_recorder_output_bag" value="$(arg output_bag)"/>
+   <rosparam param="topics_and_msgtypes">
+      annotation/label: Float64
+   </rosparam>
+   <node name="annotation_recorder" pkg="annotation_recorder" type="annotation_recorder.py"/>
+</launch>

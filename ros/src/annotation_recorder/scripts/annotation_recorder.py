@@ -62,6 +62,25 @@ def writeAnnotationsBag():
 
 ###########################################################################
 
+def getTopicMsgPairs(topics_and_msgtypes_dict, prefix=''):
+   known_msg_types = {'Float64':Float64, 'Bool':Bool, 'String':String}
+   local_list = []
+   for key, value in topics_and_msgtypes_dict.iteritems():
+      if isinstance(value, dict):
+         topic_prefix = key if len(prefix)==0 else prefix+'/'+key
+         local_list.extend(getTopicMsgPairs(value, prefix=topic_prefix))
+      else:
+         try:
+            msg_type = known_msg_types[value]
+         except:
+            print 'Unknown message type %s, using Float64 instead.  FIX ME!'%(value)
+            msg_type = Float64
+         topic = key if len(prefix)==0 else prefix+'/'+key
+         local_list.append((topic, msg_type))
+   return local_list
+
+###########################################################################
+
 def doRecordAnnotations():
    global topic_dict_time_series
    global input_bag_end_time
@@ -85,7 +104,8 @@ def doRecordAnnotations():
    input_bag = rosbag.Bag(input_bag_path, 'r')
    input_bag_end_time = rospy.Time(input_bag.get_end_time())
 
-   topics_and_msgtypes = [("annotation/engagement",Float64), ("annotation/isTakingNotes", Bool)]#, ("annotation/sessionCode", String)]
+   topics_and_msgtypes = getTopicMsgPairs(rospy.get_param('topics_and_msgtypes'))
+
    for (topic, msg_type) in topics_and_msgtypes:
       sub = rospy.Subscriber(topic, msg_type, lambda data,tp=topic: callbackFunc(data, topic=tp))
       topic_dict_time_series[topic] = []
