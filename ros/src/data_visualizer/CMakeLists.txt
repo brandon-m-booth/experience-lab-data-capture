@@ -7,6 +7,7 @@ project(data_visualizer)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
+  roslib
   std_msgs
   sensor_msgs
   player_input
@@ -85,7 +86,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES data_visualizer
-  CATKIN_DEPENDS message_runtime std_msgs sensor_msgs player_input player_eye_tracking
+  CATKIN_DEPENDS message_runtime roslib std_msgs sensor_msgs player_input player_eye_tracking
 #  DEPENDS system_lib
 )
 

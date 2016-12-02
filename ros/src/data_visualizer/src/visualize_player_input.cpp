@@ -1,4 +1,5 @@
 #include "ros/ros.h"
+#include "ros/package.h"
 #include "std_msgs/String.h"
 #include "sensor_msgs/Image.h"
 #include "player_input/CursorPosition.h"
@@ -75,14 +76,15 @@ int main(int argc, char** argv)
    ros::Duration maxPublishDuration(0.0333333); // 30 Hertz
 
    // Load the default keyboard image (all keys not pressed)
-   std::string normalKeyboardFileName = "/elab_dev/usc-experience-lab/data_capture/ros/src/data_visualizer/assets/Keyboard.png";
+   std::string assetsPath = ros::package::getPath("data_visualizer")+"/assets/";
+   std::string normalKeyboardFileName = assetsPath+"Keyboard.png";
    if (!LoadPNG(keysNormalImage, normalKeyboardFileName))
    {
       std::string errorString = "Unable to load PNG file " + normalKeyboardFileName;
       ROS_ERROR("%s", errorString.c_str());
    }
 
-   std::string pressedKeyboardFileName = "/elab_dev/usc-experience-lab/data_capture/ros/src/data_visualizer/assets/KeyboardPressed.png";
+   std::string pressedKeyboardFileName = assetsPath+"KeyboardPressed.png";
    if (!LoadPNG(keysPressedImage, pressedKeyboardFileName))
    {
       std::string errorString = "Unable to load PNG file " + pressedKeyboardFileName;
