@@ -24,16 +24,38 @@ def doExtractStringMessage(bag, bag_path, topic, out_folder):
    return
 
 def doExtractPlayerEEG(bag, bag_path, topic, out_folder):
+   # ROS timestamps are less reliable than the EEG timestamps, so replace the
+   # first time(s) column with the EEG time
    bag_start_time = rospy.Time(bag.get_start_time())
+   bag_end_time = rospy.Time(bag.get_end_time())
    bag_name = os.path.basename(bag_path)
    topic_file_suffix = topic.replace('/','_')
    out_file_path = out_folder+'/'+bag_name[:-4]+topic_file_suffix+'.csv'
+
+   first_eeg_timestamp = None
+   last_eeg_timestamp = None
+   for bag_topic, msg, t in bag.read_messages():
+      if bag_topic == topic:
+         if first_eeg_timestamp is None:
+            first_eeg_timestamp = msg.timestamp
+         last_eeg_timestamp = msg.timestamp
+
+   time_rescale_factor = 1.0 # This is used to adjust the time to the EEG timestamps
+   if first_eeg_timestamp is not None and last_eeg_timestamp is not None:
+      diff_timestamp = (last_eeg_timestamp-first_eeg_timestamp).to_sec()
+      time_rescale_factor = (bag_end_time-bag_start_time).to_sec()/diff_timestamp
+
    with open(out_file_path, 'wb') as csvfile:
       csv_writer = csv.writer(csvfile, delimiter=',')
-      csv_writer.writerow(['Time(sec)','AF3','F7','F3','FC5','T7','P7','O1','O2','P8','T8','FC6','F4','F8','AF4','GyroX','GyroY','EEG Timestamp'])
+      csv_writer.writerow(['Time(sec)','AF3','F7','F3','FC5','T7','P7','O1','O2','P8','T8','FC6','F4','F8','AF4','GyroX','GyroY'])
+      first_eeg_timestamp = None
       for bag_topic, msg, t in bag.read_messages():
          if bag_topic == topic:
-            csv_writer.writerow([(t-bag_start_time).to_sec(),msg.af3,msg.f7,msg.f3,msg.fc5,msg.t7,msg.p7,msg.o1,msg.o2,msg.p8,msg.t8,msg.fc6,msg.f4,msg.f8,msg.af4,msg.gyrox,msg.gyroy,msg.timestamp])
+            if first_eeg_timestamp is None:
+               first_eeg_timestamp = msg.timestamp
+            reliable_time_sec = time_rescale_factor*(msg.timestamp-first_eeg_timestamp).to_sec()
+            #unreliable_time_sec = (t-bag_start_time).to_sec()
+            csv_writer.writerow([reliable_time_sec,msg.af3,msg.f7,msg.f3,msg.fc5,msg.t7,msg.p7,msg.o1,msg.o2,msg.p8,msg.t8,msg.fc6,msg.f4,msg.f8,msg.af4,msg.gyrox,msg.gyroy])
    return
 
 
@@ -79,7 +101,7 @@ def doExtractCompressedFrames(bag, bag_path, topic, out_folder):
          if 'jpeg' in image_format:
             image_format = 'jpg'
 
-         out_frame = open(frames_dir+'/frame%04d.'%(frame_count)+image_format, 'wb')
+         out_frame = open(frames_dir+'/frame%05d.'%(frame_count)+image_format, 'wb')
          out_frame.write(bytearray(msg.data))
          out_frame.close()
          frame_count = frame_count + 1
@@ -92,7 +114,7 @@ def doExtractCompressedFrames(bag, bag_path, topic, out_folder):
    out_file = out_folder+'/'+bag_name[:-4]+topic_file_suffix+'.mp4'
    if os.path.isfile(out_file):
       os.remove(out_file)
-   os.system('cd '+frames_dir+'; ffmpeg -framerate '+str(frame_rate)+' -i frame%04d.jpg -c:v libx264 -r '+str(frame_rate)+' -pix_fmt yuv420p '+out_file)
+   os.system('cd '+frames_dir+'; ffmpeg -framerate '+str(frame_rate)+' -i frame%05d.jpg -c:v libx264 -r '+str(frame_rate)+' -pix_fmt yuv420p '+out_file)
    return
 
 def doExtractTopic(bag_path, topic, out_folder):
