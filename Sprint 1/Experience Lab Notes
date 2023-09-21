@@ -1,0 +1,25 @@
+Needed tasks:
+-Modernize the platform using latest libs
+-Test data collection mode.  Do timestamps of sensor data packets align?
+-Test annotation mode.  Do annotations align with collected data?
+-Improve usability
+
+
+My questions:
+-What are the program's current shortcomings in usability?
+-What part of the software stack are we working on?
+-Any updates on what sensors we will have access to?
+-What sort of computer interactions are we gonna be testing?
+
+
+
+
+TODO:
+-Brush up on Python
+-Learn about ROS
+-
+
+
+Demo day:
+-Where are we at
+-Features that are interesting (Slide 4)
