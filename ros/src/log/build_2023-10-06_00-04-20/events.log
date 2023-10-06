@@ -1,0 +1,437 @@
+[0.000000] (-) TimerEvent: {}
+[0.000413] (annotation_recorder) JobQueued: {'identifier': 'annotation_recorder', 'dependencies': OrderedDict()}
+[0.000482] (bag_tools) JobQueued: {'identifier': 'bag_tools', 'dependencies': OrderedDict()}
+[0.000527] (experience_lab) JobQueued: {'identifier': 'experience_lab', 'dependencies': OrderedDict()}
+[0.002761] (fake_data_generator) JobQueued: {'identifier': 'fake_data_generator', 'dependencies': OrderedDict()}
+[0.002831] (game_audio_video) JobQueued: {'identifier': 'game_audio_video', 'dependencies': OrderedDict()}
+[0.002982] (hello_world) JobQueued: {'identifier': 'hello_world', 'dependencies': OrderedDict()}
+[0.003037] (player_app_activity) JobQueued: {'identifier': 'player_app_activity', 'dependencies': OrderedDict()}
+[0.003129] (player_biometrics) JobQueued: {'identifier': 'player_biometrics', 'dependencies': OrderedDict()}
+[0.003189] (player_eeg) JobQueued: {'identifier': 'player_eeg', 'dependencies': OrderedDict()}
+[0.003258] (player_eye_tracking) JobQueued: {'identifier': 'player_eye_tracking', 'dependencies': OrderedDict()}
+[0.003300] (player_input) JobQueued: {'identifier': 'player_input', 'dependencies': OrderedDict()}
+[0.003334] (player_video) JobQueued: {'identifier': 'player_video', 'dependencies': OrderedDict()}
+[0.003367] (player_video_overhead) JobQueued: {'identifier': 'player_video_overhead', 'dependencies': OrderedDict()}
+[0.003399] (valid_stream) JobQueued: {'identifier': 'valid_stream', 'dependencies': OrderedDict()}
+[0.003430] (data_visualizer) JobQueued: {'identifier': 'data_visualizer', 'dependencies': OrderedDict([('player_eye_tracking', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking'), ('player_input', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_input')])}
+[0.003469] (player_eye_tracking) JobStarted: {'identifier': 'player_eye_tracking'}
+[0.071406] (player_input) JobStarted: {'identifier': 'player_input'}
+[0.102100] (-) TimerEvent: {}
+[0.108203] (annotation_recorder) JobStarted: {'identifier': 'annotation_recorder'}
+[0.144981] (bag_tools) JobStarted: {'identifier': 'bag_tools'}
+[0.187416] (experience_lab) JobStarted: {'identifier': 'experience_lab'}
+[0.209137] (-) TimerEvent: {}
+[0.228252] (fake_data_generator) JobStarted: {'identifier': 'fake_data_generator'}
+[0.266553] (game_audio_video) JobStarted: {'identifier': 'game_audio_video'}
+[0.311705] (-) TimerEvent: {}
+[0.315025] (hello_world) JobStarted: {'identifier': 'hello_world'}
+[0.381179] (player_eye_tracking) JobProgress: {'identifier': 'player_eye_tracking', 'progress': 'cmake'}
+[0.385214] (player_eye_tracking) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eye_tracking', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_eye_tracking', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_eye_tracking'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.390830] (player_input) JobProgress: {'identifier': 'player_input', 'progress': 'cmake'}
+[0.391716] (player_input) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_input', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_input'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_input', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_input'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.404245] (annotation_recorder) JobProgress: {'identifier': 'annotation_recorder', 'progress': 'cmake'}
+[0.407901] (annotation_recorder) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/annotation_recorder', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/annotation_recorder'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/annotation_recorder', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/annotation_recorder'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.420275] (-) TimerEvent: {}
+[0.420376] (bag_tools) JobProgress: {'identifier': 'bag_tools', 'progress': 'cmake'}
+[0.425974] (bag_tools) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/bag_tools', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/bag_tools'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/bag_tools', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/bag_tools'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.439348] (experience_lab) JobProgress: {'identifier': 'experience_lab', 'progress': 'cmake'}
+[0.444764] (experience_lab) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/experience_lab', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/experience_lab'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/experience_lab', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/experience_lab'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.463104] (fake_data_generator) JobProgress: {'identifier': 'fake_data_generator', 'progress': 'cmake'}
+[0.463690] (fake_data_generator) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/fake_data_generator', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/fake_data_generator'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/fake_data_generator', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/fake_data_generator'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.486683] (game_audio_video) JobProgress: {'identifier': 'game_audio_video', 'progress': 'cmake'}
+[0.492652] (game_audio_video) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/game_audio_video'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.521565] (hello_world) JobProgress: {'identifier': 'hello_world', 'progress': 'cmake'}
+[0.521955] (-) TimerEvent: {}
+[0.522060] (hello_world) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world', 'env': OrderedDict([('rvm_use_flag', ''), ('rvm_bin_path', '/Users/calvingott/.rvm/bin'), ('TERM_PROGRAM', 'vscode'), ('PROJ_DATA', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj'), ('rvm_quiet_flag', ''), ('GEM_HOME', '/Users/calvingott/.rvm/gems/ruby-3.1.2'), ('rvm_gemstone_url', ''), ('TERM', 'xterm-256color'), ('SHELL', '/bin/zsh'), ('rvm_docs_type', ''), ('IRBRC', '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc'), ('TMPDIR', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/'), ('CONDA_SHLVL', '2'), ('CONDA_PROMPT_MODIFIER', '(experience-lab)'), ('TERM_PROGRAM_VERSION', '1.82.3'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ROS_PYTHON_VERSION', '3'), ('ZDOTDIR', '/Users/calvingott'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('rvm_hook', ''), ('ROS_VERSION', '2'), ('MY_RUBY_HOME', '/Users/calvingott/.rvm/rubies/ruby-3.1.2'), ('AMENT_PREFIX_PATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('ZSH', '/Users/calvingott/.oh-my-zsh'), ('USER', 'calvingott'), ('rvm_gemstone_package_file', ''), ('LS_COLORS', 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/usr/local/Caskroom/miniforge/base/bin/conda'), ('rvm_path', '/Users/calvingott/.rvm'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('ROS_OS_OVERRIDE', 'conda:osx'), ('rvm_proxy', ''), ('rvm_ruby_file', ''), ('PAGER', 'less'), ('_CE_CONDA', ''), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('CONDA_PREFIX_1', '/usr/local/Caskroom/miniforge/base'), ('rvm_silent_flag', ''), ('rvm_prefix', '/Users/calvingott'), ('rvm_ruby_make', ''), ('PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin'), ('PROJ_NETWORK', 'ON'), ('GSETTINGS_SCHEMA_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas'), ('XML_CATALOG_FILES', 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog'), ('CONDA_PREFIX', '/usr/local/Caskroom/miniforge/base/envs/experience-lab'), ('USER_ZDOTDIR', '/Users/calvingott'), ('__CFBundleIdentifier', 'com.microsoft.VSCode'), ('PWD', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world'), ('COLCON', '1'), ('rvm_sdk', ''), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', '--ms-enable-electron-run-as-node'), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('rvm_version', '1.29.12 (latest)'), ('VSCODE_INJECTION', '1'), ('rvm_script_name', ''), ('rvm_pretty_print_flag', ''), ('OPENSSL_ROOT_DIR', '/usr/local/opt/openssl@3'), ('SHLVL', '2'), ('HOME', '/Users/calvingott'), ('ROS_DISTRO', 'humble'), ('rvm_ruby_mode', ''), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PYTHONPATH', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages'), ('CONDA_PYTHON_EXE', '/usr/local/Caskroom/miniforge/base/bin/python'), ('LESS', '-R'), ('LOGNAME', 'calvingott'), ('rvm_alias_expanded', ''), ('GEM_PATH', '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/vscode-git-2674072f63.sock'), ('CONDA_DEFAULT_ENV', 'experience-lab'), ('rvm_nightly_flag', ''), ('rvm_ruby_make_install', ''), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('rvm_niceness', ''), ('ROS_LOCALHOST_ONLY', '0'), ('rvm_ruby_bits', ''), ('rvm_bin_flag', ''), ('rvm_only_path_flag', ''), ('RUBY_VERSION', 'ruby-3.1.2'), ('ROS_ETC_DIR', '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.622277] (-) TimerEvent: {}
+[0.723305] (-) TimerEvent: {}
+[0.823643] (-) TimerEvent: {}
+[0.926616] (-) TimerEvent: {}
+[1.031831] (-) TimerEvent: {}
+[1.135646] (-) TimerEvent: {}
+[1.236432] (-) TimerEvent: {}
+[1.340195] (-) TimerEvent: {}
+[1.440723] (-) TimerEvent: {}
+[1.543080] (-) TimerEvent: {}
+[1.643367] (-) TimerEvent: {}
+[1.744552] (-) TimerEvent: {}
+[1.844797] (-) TimerEvent: {}
+[1.948053] (-) TimerEvent: {}
+[2.051616] (-) TimerEvent: {}
+[2.156995] (-) TimerEvent: {}
+[2.257295] (-) TimerEvent: {}
+[2.359392] (-) TimerEvent: {}
+[2.459822] (-) TimerEvent: {}
+[2.460769] (experience_lab) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.461356] (experience_lab) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.461704] (experience_lab) StderrLine: {'line': b'  CMake.\n'}
+[2.461942] (experience_lab) StderrLine: {'line': b'\n'}
+[2.462159] (experience_lab) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.462390] (experience_lab) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.462621] (experience_lab) StderrLine: {'line': b'\n'}
+[2.462828] (experience_lab) StderrLine: {'line': b'\n'}
+[2.463029] (player_input) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.463398] (player_input) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.463617] (player_input) StderrLine: {'line': b'  CMake.\n'}
+[2.463919] (player_input) StderrLine: {'line': b'\n'}
+[2.464157] (player_input) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.464471] (player_input) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.464794] (player_input) StderrLine: {'line': b'\n'}
+[2.465015] (player_input) StderrLine: {'line': b'\n'}
+[2.465236] (game_audio_video) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.465676] (game_audio_video) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.465968] (game_audio_video) StderrLine: {'line': b'  CMake.\n'}
+[2.466230] (game_audio_video) StderrLine: {'line': b'\n'}
+[2.466454] (game_audio_video) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.466695] (game_audio_video) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.466900] (game_audio_video) StderrLine: {'line': b'\n'}
+[2.467103] (game_audio_video) StderrLine: {'line': b'\n'}
+[2.467330] (bag_tools) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.467714] (bag_tools) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.467932] (bag_tools) StderrLine: {'line': b'  CMake.\n'}
+[2.468147] (bag_tools) StderrLine: {'line': b'\n'}
+[2.468356] (bag_tools) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.468634] (bag_tools) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.468884] (bag_tools) StderrLine: {'line': b'\n'}
+[2.469101] (bag_tools) StderrLine: {'line': b'\n'}
+[2.469336] (player_eye_tracking) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.469763] (player_eye_tracking) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.470001] (player_eye_tracking) StderrLine: {'line': b'  CMake.\n'}
+[2.470265] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[2.470641] (player_eye_tracking) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.470873] (player_eye_tracking) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.471085] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[2.471819] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[2.472164] (hello_world) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.472577] (hello_world) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.472808] (hello_world) StderrLine: {'line': b'  CMake.\n'}
+[2.473016] (hello_world) StderrLine: {'line': b'\n'}
+[2.473232] (hello_world) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.473444] (hello_world) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.473647] (hello_world) StderrLine: {'line': b'\n'}
+[2.473857] (hello_world) StderrLine: {'line': b'\n'}
+[2.474047] (fake_data_generator) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.474408] (fake_data_generator) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.474713] (fake_data_generator) StderrLine: {'line': b'  CMake.\n'}
+[2.474936] (fake_data_generator) StderrLine: {'line': b'\n'}
+[2.475136] (fake_data_generator) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.475346] (fake_data_generator) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.475553] (fake_data_generator) StderrLine: {'line': b'\n'}
+[2.475751] (fake_data_generator) StderrLine: {'line': b'\n'}
+[2.475975] (annotation_recorder) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.476321] (annotation_recorder) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[2.476529] (annotation_recorder) StderrLine: {'line': b'  CMake.\n'}
+[2.476741] (annotation_recorder) StderrLine: {'line': b'\n'}
+[2.476956] (annotation_recorder) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[2.477157] (annotation_recorder) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[2.477414] (annotation_recorder) StderrLine: {'line': b'\n'}
+[2.477630] (annotation_recorder) StderrLine: {'line': b'\n'}
+[2.560078] (-) TimerEvent: {}
+[2.660347] (-) TimerEvent: {}
+[2.760727] (-) TimerEvent: {}
+[2.861108] (-) TimerEvent: {}
+[2.965086] (-) TimerEvent: {}
+[3.065555] (-) TimerEvent: {}
+[3.167561] (-) TimerEvent: {}
+[3.270822] (-) TimerEvent: {}
+[3.373945] (-) TimerEvent: {}
+[3.474580] (-) TimerEvent: {}
+[3.578447] (-) TimerEvent: {}
+[3.678747] (-) TimerEvent: {}
+[3.782719] (-) TimerEvent: {}
+[3.885618] (-) TimerEvent: {}
+[3.986038] (-) TimerEvent: {}
+[4.090923] (-) TimerEvent: {}
+[4.091306] (annotation_recorder) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.091932] (player_eye_tracking) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.093779] (experience_lab) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.094323] (bag_tools) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.094664] (player_input) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.112698] (game_audio_video) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.118221] (fake_data_generator) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.129019] (hello_world) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.191490] (-) TimerEvent: {}
+[4.293279] (-) TimerEvent: {}
+[4.396937] (-) TimerEvent: {}
+[4.497203] (-) TimerEvent: {}
+[4.597447] (-) TimerEvent: {}
+[4.608467] (game_audio_video) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.610623] (bag_tools) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.611866] (experience_lab) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.612393] (hello_world) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.613850] (player_input) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.618906] (player_eye_tracking) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.619389] (annotation_recorder) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.620756] (fake_data_generator) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 14.0.3.14030022\n'}
+[4.664461] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.664938] (player_input) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.665200] (annotation_recorder) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.665439] (bag_tools) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.665664] (game_audio_video) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.665894] (hello_world) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.666873] (experience_lab) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.667463] (fake_data_generator) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.698840] (-) TimerEvent: {}
+[4.799178] (-) TimerEvent: {}
+[4.903311] (-) TimerEvent: {}
+[5.005579] (-) TimerEvent: {}
+[5.110913] (-) TimerEvent: {}
+[5.215217] (-) TimerEvent: {}
+[5.319604] (-) TimerEvent: {}
+[5.419915] (-) TimerEvent: {}
+[5.523547] (-) TimerEvent: {}
+[5.594079] (fake_data_generator) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.594611] (experience_lab) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.595530] (hello_world) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.596732] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.606838] (bag_tools) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.619417] (annotation_recorder) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.621472] (experience_lab) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.623001] (experience_lab) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.623637] (-) TimerEvent: {}
+[5.625359] (experience_lab) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.626330] (fake_data_generator) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.627129] (hello_world) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.627418] (player_eye_tracking) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.628092] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.628959] (hello_world) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.629456] (fake_data_generator) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.630744] (hello_world) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.631236] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.631778] (fake_data_generator) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.632098] (bag_tools) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.632994] (bag_tools) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.635050] (bag_tools) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.647447] (annotation_recorder) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.648704] (annotation_recorder) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.651467] (annotation_recorder) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.655190] (experience_lab) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.661235] (bag_tools) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.664851] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.670879] (fake_data_generator) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.677273] (hello_world) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.702183] (annotation_recorder) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[5.727387] (-) TimerEvent: {}
+[5.828201] (-) TimerEvent: {}
+[5.960749] (game_audio_video) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.961089] (-) TimerEvent: {}
+[5.961154] (player_input) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[5.980942] (player_input) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.981842] (player_input) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.985707] (game_audio_video) StdoutLine: {'line': b'-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n'}
+[5.986070] (game_audio_video) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[5.986267] (player_input) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[5.988283] (game_audio_video) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[6.008864] (player_input) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[6.010063] (game_audio_video) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[6.061254] (-) TimerEvent: {}
+[6.164269] (-) TimerEvent: {}
+[6.265858] (-) TimerEvent: {}
+[6.366200] (-) TimerEvent: {}
+[6.466904] (-) TimerEvent: {}
+[6.568069] (-) TimerEvent: {}
+[6.601686] (annotation_recorder) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.602570] (hello_world) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.603421] (experience_lab) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.606634] (bag_tools) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.607211] (fake_data_generator) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.607670] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.625934] (hello_world) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.626952] (hello_world) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.628332] (experience_lab) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.629375] (experience_lab) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.629854] (player_eye_tracking) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.630272] (bag_tools) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.630714] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.631716] (bag_tools) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.632032] (experience_lab) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.633123] (hello_world) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.634363] (bag_tools) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.635211] (player_eye_tracking) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.637562] (annotation_recorder) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.638052] (fake_data_generator) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.638507] (annotation_recorder) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.639082] (fake_data_generator) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.640533] (annotation_recorder) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.641517] (fake_data_generator) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.668560] (-) TimerEvent: {}
+[6.764004] (player_input) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.764626] (game_audio_video) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.768830] (-) TimerEvent: {}
+[6.790125] (player_input) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.791166] (player_input) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.792063] (game_audio_video) StdoutLine: {'line': b'-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n'}
+[6.793276] (game_audio_video) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.797868] (player_input) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.799114] (game_audio_video) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.836234] (player_eye_tracking) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.837386] (player_eye_tracking) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.838625] (player_eye_tracking) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.838975] (player_eye_tracking) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.839206] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[6.839417] (player_eye_tracking) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.839633] (player_eye_tracking) StderrLine: {'line': b'  of the following names:\n'}
+[6.839835] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[6.840028] (player_eye_tracking) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.840212] (player_eye_tracking) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.840391] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[6.840651] (player_eye_tracking) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.840864] (player_eye_tracking) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.841057] (player_eye_tracking) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.841276] (player_eye_tracking) StderrLine: {'line': b'  installed.\n'}
+[6.841458] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[6.841645] (player_eye_tracking) StderrLine: {'line': b'\n'}
+[6.841833] (player_eye_tracking) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.842025] (annotation_recorder) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.842221] (annotation_recorder) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.842407] (annotation_recorder) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.842592] (annotation_recorder) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.842808] (annotation_recorder) StderrLine: {'line': b'\n'}
+[6.842995] (annotation_recorder) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.843179] (annotation_recorder) StderrLine: {'line': b'  of the following names:\n'}
+[6.843357] (annotation_recorder) StderrLine: {'line': b'\n'}
+[6.843535] (annotation_recorder) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.843724] (annotation_recorder) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.843902] (annotation_recorder) StderrLine: {'line': b'\n'}
+[6.844084] (annotation_recorder) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.844262] (annotation_recorder) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.844446] (annotation_recorder) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.844646] (annotation_recorder) StderrLine: {'line': b'  installed.\n'}
+[6.844844] (annotation_recorder) StderrLine: {'line': b'\n'}
+[6.845054] (annotation_recorder) StderrLine: {'line': b'\n'}
+[6.845264] (annotation_recorder) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.845472] (hello_world) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.845684] (hello_world) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.845867] (hello_world) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.846047] (hello_world) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.846227] (hello_world) StderrLine: {'line': b'\n'}
+[6.846417] (hello_world) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.846613] (hello_world) StderrLine: {'line': b'  of the following names:\n'}
+[6.846794] (hello_world) StderrLine: {'line': b'\n'}
+[6.846977] (hello_world) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.847155] (hello_world) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.847409] (hello_world) StderrLine: {'line': b'\n'}
+[6.847566] (hello_world) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.847734] (hello_world) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.847927] (hello_world) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.848117] (hello_world) StderrLine: {'line': b'  installed.\n'}
+[6.848306] (hello_world) StderrLine: {'line': b'\n'}
+[6.848490] (hello_world) StderrLine: {'line': b'\n'}
+[6.848680] (hello_world) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.848894] (experience_lab) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.849096] (experience_lab) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.849291] (experience_lab) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.849705] (experience_lab) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.849926] (experience_lab) StderrLine: {'line': b'\n'}
+[6.850127] (experience_lab) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.850328] (experience_lab) StderrLine: {'line': b'  of the following names:\n'}
+[6.850516] (experience_lab) StderrLine: {'line': b'\n'}
+[6.850710] (experience_lab) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.850901] (experience_lab) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.851083] (experience_lab) StderrLine: {'line': b'\n'}
+[6.851262] (experience_lab) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.851538] (experience_lab) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.852552] (experience_lab) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.854846] (experience_lab) StderrLine: {'line': b'  installed.\n'}
+[6.861002] (experience_lab) StderrLine: {'line': b'\n'}
+[6.861829] (experience_lab) StderrLine: {'line': b'\n'}
+[6.862147] (experience_lab) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.862404] (bag_tools) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.862668] (bag_tools) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.862905] (bag_tools) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.863122] (bag_tools) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.863342] (bag_tools) StderrLine: {'line': b'\n'}
+[6.863559] (bag_tools) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.863783] (bag_tools) StderrLine: {'line': b'  of the following names:\n'}
+[6.864003] (bag_tools) StderrLine: {'line': b'\n'}
+[6.864221] (bag_tools) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.864428] (bag_tools) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.864643] (bag_tools) StderrLine: {'line': b'\n'}
+[6.866444] (bag_tools) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.873454] (-) TimerEvent: {}
+[6.874278] (bag_tools) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.874861] (bag_tools) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.875092] (bag_tools) StderrLine: {'line': b'  installed.\n'}
+[6.875296] (bag_tools) StderrLine: {'line': b'\n'}
+[6.875593] (bag_tools) StderrLine: {'line': b'\n'}
+[6.875823] (fake_data_generator) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.876390] (fake_data_generator) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.876598] (fake_data_generator) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.877088] (fake_data_generator) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.877297] (fake_data_generator) StderrLine: {'line': b'\n'}
+[6.877487] (fake_data_generator) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.877673] (fake_data_generator) StderrLine: {'line': b'  of the following names:\n'}
+[6.880918] (fake_data_generator) StderrLine: {'line': b'\n'}
+[6.887521] (fake_data_generator) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.887844] (fake_data_generator) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.888050] (fake_data_generator) StderrLine: {'line': b'\n'}
+[6.888242] (fake_data_generator) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.888440] (fake_data_generator) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.888625] (fake_data_generator) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.888807] (fake_data_generator) StderrLine: {'line': b'  installed.\n'}
+[6.888989] (fake_data_generator) StderrLine: {'line': b'\n'}
+[6.889188] (fake_data_generator) StderrLine: {'line': b'\n'}
+[6.891722] (bag_tools) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.896922] (fake_data_generator) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.899946] (hello_world) CommandEnded: {'returncode': 1}
+[6.902997] (player_eye_tracking) CommandEnded: {'returncode': 1}
+[6.906279] (experience_lab) CommandEnded: {'returncode': 1}
+[6.915775] (bag_tools) CommandEnded: {'returncode': 1}
+[6.917151] (player_input) StderrLine: {'line': b'CMake Error at CMakeLists.txt:9 (find_package):\n'}
+[6.917478] (player_input) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.917721] (player_input) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.924114] (player_input) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.926628] (player_input) StderrLine: {'line': b'\n'}
+[6.926925] (player_input) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.927164] (player_input) StderrLine: {'line': b'  of the following names:\n'}
+[6.927479] (player_input) StderrLine: {'line': b'\n'}
+[6.927707] (player_input) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.927917] (player_input) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.928127] (player_input) StderrLine: {'line': b'\n'}
+[6.928763] (player_input) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.928915] (player_input) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.929678] (player_input) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.929914] (player_input) StderrLine: {'line': b'  installed.\n'}
+[6.930127] (player_input) StderrLine: {'line': b'\n'}
+[6.930325] (player_input) StderrLine: {'line': b'\n'}
+[6.930615] (player_input) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.935221] (game_audio_video) StderrLine: {'line': b'CMake Error at CMakeLists.txt:7 (find_package):\n'}
+[6.936089] (game_audio_video) StderrLine: {'line': b'  By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has\n'}
+[6.943257] (game_audio_video) StderrLine: {'line': b'  asked CMake to find a package configuration file provided by "catkin", but\n'}
+[6.943515] (game_audio_video) StderrLine: {'line': b'  CMake did not find one.\n'}
+[6.943711] (game_audio_video) StderrLine: {'line': b'\n'}
+[6.943895] (game_audio_video) StderrLine: {'line': b'  Could not find a package configuration file provided by "catkin" with any\n'}
+[6.944078] (game_audio_video) StderrLine: {'line': b'  of the following names:\n'}
+[6.944265] (game_audio_video) StderrLine: {'line': b'\n'}
+[6.944458] (game_audio_video) StderrLine: {'line': b'    catkinConfig.cmake\n'}
+[6.944649] (game_audio_video) StderrLine: {'line': b'    catkin-config.cmake\n'}
+[6.944836] (game_audio_video) StderrLine: {'line': b'\n'}
+[6.945016] (game_audio_video) StderrLine: {'line': b'  Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set\n'}
+[6.945214] (game_audio_video) StderrLine: {'line': b'  "catkin_DIR" to a directory containing one of the above files.  If "catkin"\n'}
+[6.945393] (game_audio_video) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[6.945577] (game_audio_video) StderrLine: {'line': b'  installed.\n'}
+[6.945760] (game_audio_video) StderrLine: {'line': b'\n'}
+[6.945937] (game_audio_video) StderrLine: {'line': b'\n'}
+[6.948508] (game_audio_video) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[6.958069] (fake_data_generator) CommandEnded: {'returncode': 1}
+[6.960525] (annotation_recorder) CommandEnded: {'returncode': 1}
+[6.961592] (player_input) CommandEnded: {'returncode': 1}
+[6.965800] (game_audio_video) CommandEnded: {'returncode': 1}
+[6.982169] (-) TimerEvent: {}
+[7.094344] (-) TimerEvent: {}
+[7.113660] (hello_world) JobEnded: {'identifier': 'hello_world', 'rc': 1}
+[7.161315] (player_eye_tracking) JobEnded: {'identifier': 'player_eye_tracking', 'rc': 1}
+[7.165282] (experience_lab) JobEnded: {'identifier': 'experience_lab', 'rc': 'SIGINT'}
+[7.166699] (bag_tools) JobEnded: {'identifier': 'bag_tools', 'rc': 'SIGINT'}
+[7.168063] (fake_data_generator) JobEnded: {'identifier': 'fake_data_generator', 'rc': 'SIGINT'}
+[7.169342] (annotation_recorder) JobEnded: {'identifier': 'annotation_recorder', 'rc': 'SIGINT'}
+[7.170494] (player_input) JobEnded: {'identifier': 'player_input', 'rc': 'SIGINT'}
+[7.171681] (game_audio_video) JobEnded: {'identifier': 'game_audio_video', 'rc': 'SIGINT'}
+[7.176583] (player_app_activity) JobSkipped: {'identifier': 'player_app_activity'}
+[7.176692] (player_biometrics) JobSkipped: {'identifier': 'player_biometrics'}
+[7.176748] (player_eeg) JobSkipped: {'identifier': 'player_eeg'}
+[7.176797] (player_video) JobSkipped: {'identifier': 'player_video'}
+[7.176847] (player_video_overhead) JobSkipped: {'identifier': 'player_video_overhead'}
+[7.176894] (valid_stream) JobSkipped: {'identifier': 'valid_stream'}
+[7.176940] (data_visualizer) JobSkipped: {'identifier': 'data_visualizer'}
+[7.176988] (-) EventReactorShutdown: {}

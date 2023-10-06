@@ -1,0 +1,40 @@
+[0.211s] Invoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world
+[2.157s] CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[2.157s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[2.157s]   CMake.
+[2.158s] 
+[2.158s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[2.158s]   CMake that the project does not need compatibility with older versions.
+[2.158s] 
+[2.158s] 
+[3.814s] -- The C compiler identification is AppleClang 14.0.3.14030022
+[4.297s] -- The CXX compiler identification is AppleClang 14.0.3.14030022
+[4.350s] -- Detecting C compiler ABI info
+[5.280s] -- Detecting C compiler ABI info - done
+[5.312s] -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+[5.314s] -- Detecting C compile features
+[5.316s] -- Detecting C compile features - done
+[5.365s] -- Detecting CXX compiler ABI info
+[6.287s] -- Detecting CXX compiler ABI info - done
+[6.311s] -- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+[6.312s] -- Detecting CXX compile features
+[6.318s] -- Detecting CXX compile features - done
+[6.530s] CMake Error at CMakeLists.txt:7 (find_package):
+[6.530s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[6.530s]   asked CMake to find a package configuration file provided by "catkin", but
+[6.531s]   CMake did not find one.
+[6.531s] 
+[6.531s]   Could not find a package configuration file provided by "catkin" with any
+[6.531s]   of the following names:
+[6.531s] 
+[6.532s]     catkinConfig.cmake
+[6.532s]     catkin-config.cmake
+[6.532s] 
+[6.532s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[6.532s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[6.533s]   provides a separate development package or SDK, be sure it has been
+[6.533s]   installed.
+[6.533s] 
+[6.533s] 
+[6.533s] -- Configuring incomplete, errors occurred!
+[6.585s] Invoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world

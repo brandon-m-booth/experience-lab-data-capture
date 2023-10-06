@@ -1,0 +1,43 @@
+*YOU CAN DELETE THIS LATER*
+But following this instructions should allow you to be able to automatically script it for Bash users
+
+I am using ZSH and have it where i can use both
+
+my source path looks like this 
+
+~experience_lab/experience-lab-data-F23/ros2
+
+When ever you run ros2 you have to do install/setup.bash, but using the install/local_setup.bash, then it will automatically do it across terminals
+
+Certainly! Here are the instructions for Bash users to set up their environment for ROS 2 using the `.bashrc` file, accommodating both Zsh and Bash users:
+
+**Instructions for Bash Users:**
+
+1. **Open the Bash Configuration File**: Open your `.bashrc` file for editing:
+
+   ```bash
+   nano ~/.bashrc
+   ```
+
+2. **Add the ROS 2 Setup Script Sourcing Command**: Add the following lines at the end of your `.bashrc` file to source the ROS 2 setup script:
+
+   ```bash
+   # Check if the ROS 2 setup script exists and source it
+   if [ -f /path/to/your/ros2/workspace/install/local_setup.bash ]; then
+     source /path/to/your/ros2/workspace/install/local_setup.bash
+   fi
+   ```
+
+   Replace `/path/to/your/ros2/workspace/` with the actual path to your ROS 2 workspace's `install` directory where the `local_setup.bash` script is located.
+
+3. **Save and Exit**: If you are using `nano` to edit the file, press `Ctrl` + `O` to save the changes and `Ctrl` + `X` to exit.
+
+4. **Activate the Changes**: Restart your terminal session or run the following command in your current terminal:
+
+   ```bash
+   source ~/.bashrc
+   ```
+
+   This will reload the `.bashrc` file, and the ROS 2 environment will be set up automatically.
+
+With these instructions, Bash users will be able to source the ROS 2 setup script from their `.bashrc` file, making the ROS 2 environment available in their terminal sessions, while still accommodating Zsh users.
