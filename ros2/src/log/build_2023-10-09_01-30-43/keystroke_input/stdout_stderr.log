@@ -1,0 +1,31 @@
+running egg_info
+creating ../build/keystroke_input/keystroke_input.egg-info
+writing ../build/keystroke_input/keystroke_input.egg-info/PKG-INFO
+writing dependency_links to ../build/keystroke_input/keystroke_input.egg-info/dependency_links.txt
+writing entry points to ../build/keystroke_input/keystroke_input.egg-info/entry_points.txt
+writing requirements to ../build/keystroke_input/keystroke_input.egg-info/requires.txt
+writing top-level names to ../build/keystroke_input/keystroke_input.egg-info/top_level.txt
+writing manifest file '../build/keystroke_input/keystroke_input.egg-info/SOURCES.txt'
+reading manifest file '../build/keystroke_input/keystroke_input.egg-info/SOURCES.txt'
+writing manifest file '../build/keystroke_input/keystroke_input.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib/keystroke_input
+copying keystroke_input/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib/keystroke_input
+running install
+running install_lib
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input
+copying /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib/keystroke_input/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input
+byte-compiling /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index/resource_index
+creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index/resource_index/packages
+copying resource/keystroke_input -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index/resource_index/packages
+copying package.xml -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/keystroke_input
+running install_egg_info
+Copying ../build/keystroke_input/keystroke_input.egg-info to /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/install.log'

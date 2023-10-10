@@ -1,0 +1,33 @@
+[1.928s] Invoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/keystroke_input': CONDA_PROMPT_MODIFIER=(experience-lab) PYTHONPATH=/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/prefix_override:/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages:${PYTHONPATH} SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/python3.10 setup.py egg_info --egg-base ../build/keystroke_input build --build-base /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build install --record /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/install.log --single-version-externally-managed
+[2.435s] running egg_info
+[2.437s] creating ../build/keystroke_input/keystroke_input.egg-info
+[2.437s] writing ../build/keystroke_input/keystroke_input.egg-info/PKG-INFO
+[2.438s] writing dependency_links to ../build/keystroke_input/keystroke_input.egg-info/dependency_links.txt
+[2.439s] writing entry points to ../build/keystroke_input/keystroke_input.egg-info/entry_points.txt
+[2.439s] writing requirements to ../build/keystroke_input/keystroke_input.egg-info/requires.txt
+[2.440s] writing top-level names to ../build/keystroke_input/keystroke_input.egg-info/top_level.txt
+[2.441s] writing manifest file '../build/keystroke_input/keystroke_input.egg-info/SOURCES.txt'
+[2.446s] reading manifest file '../build/keystroke_input/keystroke_input.egg-info/SOURCES.txt'
+[2.448s] writing manifest file '../build/keystroke_input/keystroke_input.egg-info/SOURCES.txt'
+[2.449s] running build
+[2.449s] running build_py
+[2.450s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build
+[2.450s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib
+[2.451s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib/keystroke_input
+[2.451s] copying keystroke_input/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib/keystroke_input
+[2.451s] running install
+[2.452s] running install_lib
+[2.453s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input
+[2.455s] copying /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build/lib/keystroke_input/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input
+[2.456s] byte-compiling /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input/__init__.py to __init__.cpython-310.pyc
+[2.457s] running install_data
+[2.458s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index
+[2.459s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index/resource_index
+[2.459s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index/resource_index/packages
+[2.460s] copying resource/keystroke_input -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/ament_index/resource_index/packages
+[2.460s] copying package.xml -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/share/keystroke_input
+[2.461s] running install_egg_info
+[2.464s] Copying ../build/keystroke_input/keystroke_input.egg-info to /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages/keystroke_input-0.0.0-py3.10.egg-info
+[2.473s] running install_scripts
+[2.547s] writing list of installed files to '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/install.log'
+[2.749s] Invoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/keystroke_input' returned '0': CONDA_PROMPT_MODIFIER=(experience-lab) PYTHONPATH=/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/prefix_override:/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/install/keystroke_input/lib/python3.10/site-packages:${PYTHONPATH} SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/python3.10 setup.py egg_info --egg-base ../build/keystroke_input build --build-base /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/build install --record /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/build/keystroke_input/install.log --single-version-externally-managed
