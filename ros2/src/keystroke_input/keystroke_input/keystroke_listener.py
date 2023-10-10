@@ -4,7 +4,7 @@ from pynput.keyboard import Listener
 
 def on_key_press(key):
     try:
-        key_char = key.char
+        key_char = key.char 
     except AttributeError:
         key_char = str(key)
 

@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.000260] (hello_world) JobQueued: {'identifier': 'hello_world', 'dependencies': OrderedDict()}
+[0.001019] (hello_world) JobStarted: {'identifier': 'hello_world'}
+[0.103714] (-) TimerEvent: {}
+[0.205327] (-) TimerEvent: {}
+[0.309177] (-) TimerEvent: {}
+[0.413305] (-) TimerEvent: {}
+[0.517631] (-) TimerEvent: {}
+[0.621066] (-) TimerEvent: {}
+[0.724505] (-) TimerEvent: {}
+[0.828360] (-) TimerEvent: {}
+[0.933471] (-) TimerEvent: {}
+[1.035627] (-) TimerEvent: {}
+[1.139977] (-) TimerEvent: {}
+[1.241877] (-) TimerEvent: {}
+[1.311854] (hello_world) Command: {'cmd': ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/python3.10', 'setup.py', 'egg_info', '--egg-base', '../../build/hello_world', 'build', '--build-base', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build', 'install', '--record', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/install.log', '--single-version-externally-managed'], 'cwd': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world', 'env': {'rvm_use_flag': '', 'rvm_bin_path': '/Users/calvingott/.rvm/bin', 'TERM_PROGRAM': 'Apple_Terminal', 'PROJ_DATA': '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/proj', 'rvm_quiet_flag': '', 'GEM_HOME': '/Users/calvingott/.rvm/gems/ruby-3.1.2', 'rvm_gemstone_url': '', 'SHELL': '/bin/zsh', 'TERM': 'xterm-256color', 'rvm_docs_type': '', 'IRBRC': '/Users/calvingott/.rvm/rubies/ruby-3.1.2/.irbrc', 'TMPDIR': '/var/folders/60/kskrm75n2q9dt06jtdw9lt4c0000gn/T/', 'CONDA_SHLVL': '2', 'CONDA_PROMPT_MODIFIER': '(experience-lab)', 'TERM_PROGRAM_VERSION': '447', 'GSETTINGS_SCHEMA_DIR_CONDA_BACKUP': '', 'ROS_PYTHON_VERSION': '3', 'rvm_hook': '', 'ROS_VERSION': '2', 'MY_RUBY_HOME': '/Users/calvingott/.rvm/rubies/ruby-3.1.2', 'COLCON_PREFIX_PATH': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install', 'TERM_SESSION_ID': '551EFDB5-FC88-44BD-BF23-C72A3226011B', 'AMENT_PREFIX_PATH': '/usr/local/Caskroom/miniforge/base/envs/experience-lab', 'ZSH': '/Users/calvingott/.oh-my-zsh', 'USER': 'calvingott', 'rvm_gemstone_package_file': '', 'LS_COLORS': 'di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43', 'CONDA_EXE': '/usr/local/Caskroom/miniforge/base/bin/conda', 'rvm_path': '/Users/calvingott/.rvm', 'SSH_AUTH_SOCK': '/private/tmp/com.apple.launchd.g3D51tTvU5/Listeners', '__CF_USER_TEXT_ENCODING': '0x1F5:0x0:0x0', 'rvm_proxy': '', 'ROS_OS_OVERRIDE': 'conda:osx', 'rvm_ruby_file': '', 'PAGER': 'less', '_CE_CONDA': '', 'LSCOLORS': 'Gxfxcxdxbxegedabagacad', 'rvm_silent_flag': '', 'CONDA_PREFIX_1': '/usr/local/Caskroom/miniforge/base', 'rvm_prefix': '/Users/calvingott', 'rvm_ruby_make': '', 'PATH': '/Users/calvingott/.rvm/gems/ruby-3.1.2/bin:/Users/calvingott/.rvm/gems/ruby-3.1.2@global/bin:/Users/calvingott/.rvm/rubies/ruby-3.1.2/bin:/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin:/usr/local/Caskroom/miniforge/base/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/calvingott/.rvm/bin', 'PROJ_NETWORK': 'ON', 'GSETTINGS_SCHEMA_DIR': '/usr/local/Caskroom/miniforge/base/envs/experience-lab/share/glib-2.0/schemas', 'XML_CATALOG_FILES': 'file:///usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/xml/catalog file:///etc/xml/catalog', 'CONDA_PREFIX': '/usr/local/Caskroom/miniforge/base/envs/experience-lab', '__CFBundleIdentifier': 'com.apple.Terminal', 'PWD': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world', 'COLCON': '1', 'LANG': 'en_US.UTF-8', 'rvm_sdk': '', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XPC_FLAGS': '0x0', '_CE_M': '', 'XPC_SERVICE_NAME': '0', 'rvm_version': '1.29.12 (latest)', 'rvm_script_name': '', 'rvm_pretty_print_flag': '', 'OPENSSL_ROOT_DIR': '/usr/local/opt/openssl@3', 'SHLVL': '2', 'HOME': '/Users/calvingott', 'rvm_ruby_mode': '', 'ROS_DISTRO': 'humble', 'CONDA_PYTHON_EXE': '/usr/local/Caskroom/miniforge/base/bin/python', 'PYTHONPATH': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/prefix_override:/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages:/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages:/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello-world/lib/python3.10/site-packages', 'LESS': '-R', 'LOGNAME': 'calvingott', 'rvm_alias_expanded': '', 'GEM_PATH': '/Users/calvingott/.rvm/gems/ruby-3.1.2:/Users/calvingott/.rvm/gems/ruby-3.1.2@global', 'CONDA_DEFAULT_ENV': 'experience-lab', 'rvm_nightly_flag': '', 'rvm_ruby_make_install': '', 'rvm_niceness': '', 'rvm_ruby_bits': '', 'ROS_LOCALHOST_ONLY': '0', 'rvm_bin_flag': '', 'rvm_only_path_flag': '', 'RUBY_VERSION': 'ruby-3.1.2', 'ROS_ETC_DIR': '/usr/local/Caskroom/miniforge/base/envs/experience-lab/etc/ros', '_': '/usr/bin/env'}, 'shell': False}
+[1.343422] (-) TimerEvent: {}
+[1.445095] (-) TimerEvent: {}
+[1.548807] (-) TimerEvent: {}
+[1.653245] (-) TimerEvent: {}
+[1.757798] (-) TimerEvent: {}
+[1.781761] (hello_world) StdoutLine: {'line': b'running egg_info\n'}
+[1.782955] (hello_world) StdoutLine: {'line': b'creating ../../build/hello_world/hello_world.egg-info\n'}
+[1.783445] (hello_world) StdoutLine: {'line': b'writing ../../build/hello_world/hello_world.egg-info/PKG-INFO\n'}
+[1.784168] (hello_world) StdoutLine: {'line': b'writing dependency_links to ../../build/hello_world/hello_world.egg-info/dependency_links.txt\n'}
+[1.784568] (hello_world) StdoutLine: {'line': b'writing entry points to ../../build/hello_world/hello_world.egg-info/entry_points.txt\n'}
+[1.785057] (hello_world) StdoutLine: {'line': b'writing requirements to ../../build/hello_world/hello_world.egg-info/requires.txt\n'}
+[1.785554] (hello_world) StdoutLine: {'line': b'writing top-level names to ../../build/hello_world/hello_world.egg-info/top_level.txt\n'}
+[1.786157] (hello_world) StdoutLine: {'line': b"writing manifest file '../../build/hello_world/hello_world.egg-info/SOURCES.txt'\n"}
+[1.790037] (hello_world) StdoutLine: {'line': b"reading manifest file '../../build/hello_world/hello_world.egg-info/SOURCES.txt'\n"}
+[1.791402] (hello_world) StdoutLine: {'line': b"writing manifest file '../../build/hello_world/hello_world.egg-info/SOURCES.txt'\n"}
+[1.792032] (hello_world) StdoutLine: {'line': b'running build\n'}
+[1.792620] (hello_world) StdoutLine: {'line': b'running build_py\n'}
+[1.793023] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build\n'}
+[1.793484] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib\n'}
+[1.793634] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib/hello_world\n'}
+[1.793982] (hello_world) StdoutLine: {'line': b'copying hello_world/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib/hello_world\n'}
+[1.794329] (hello_world) StdoutLine: {'line': b'running install\n'}
+[1.794574] (hello_world) StdoutLine: {'line': b'running install_lib\n'}
+[1.796101] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world\n'}
+[1.796716] (hello_world) StdoutLine: {'line': b'copying /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib/hello_world/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world\n'}
+[1.798637] (hello_world) StdoutLine: {'line': b'byte-compiling /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world/__init__.py to __init__.cpython-310.pyc\n'}
+[1.799525] (hello_world) StdoutLine: {'line': b'running install_data\n'}
+[1.800704] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index\n'}
+[1.801356] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index/resource_index\n'}
+[1.801727] (hello_world) StdoutLine: {'line': b'creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index/resource_index/packages\n'}
+[1.802540] (hello_world) StdoutLine: {'line': b'copying resource/hello_world -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index/resource_index/packages\n'}
+[1.802957] (hello_world) StdoutLine: {'line': b'copying package.xml -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/hello_world\n'}
+[1.803187] (hello_world) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.807186] (hello_world) StdoutLine: {'line': b'Copying ../../build/hello_world/hello_world.egg-info to /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world-0.0.0-py3.10.egg-info\n'}
+[1.814504] (hello_world) StdoutLine: {'line': b'running install_scripts\n'}
+[1.858620] (-) TimerEvent: {}
+[1.889747] (hello_world) StdoutLine: {'line': b"writing list of installed files to '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/install.log'\n"}
+[1.951122] (hello_world) CommandEnded: {'returncode': 0}
+[1.959272] (-) TimerEvent: {}
+[2.022273] (hello_world) JobEnded: {'identifier': 'hello_world', 'rc': 0}
+[2.024055] (-) EventReactorShutdown: {}

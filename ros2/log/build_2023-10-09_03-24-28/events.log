@@ -1,0 +1,30 @@
+[0.000000] (-) TimerEvent: {}
+[0.000138] (hello_world) JobQueued: {'identifier': 'hello_world', 'dependencies': OrderedDict()}
+[0.000193] (keystroke_input) JobQueued: {'identifier': 'keystroke_input', 'dependencies': OrderedDict()}
+[0.001578] (hello_world) JobStarted: {'identifier': 'hello_world'}
+[0.060861] (keystroke_input) JobStarted: {'identifier': 'keystroke_input'}
+[0.100193] (-) TimerEvent: {}
+[0.204794] (-) TimerEvent: {}
+[0.306113] (-) TimerEvent: {}
+[0.406541] (-) TimerEvent: {}
+[0.509176] (-) TimerEvent: {}
+[0.612530] (-) TimerEvent: {}
+[0.715734] (-) TimerEvent: {}
+[0.816157] (-) TimerEvent: {}
+[0.920461] (-) TimerEvent: {}
+[1.024978] (-) TimerEvent: {}
+[1.129412] (-) TimerEvent: {}
+[1.241176] (-) TimerEvent: {}
+[1.348153] (-) TimerEvent: {}
+[1.448626] (-) TimerEvent: {}
+[1.553864] (-) TimerEvent: {}
+[1.658567] (-) TimerEvent: {}
+[1.761475] (-) TimerEvent: {}
+[1.861722] (-) TimerEvent: {}
+[1.965422] (-) TimerEvent: {}
+[2.069225] (-) TimerEvent: {}
+[2.170400] (-) TimerEvent: {}
+[2.192382] (hello_world) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_ros/task/ament_python/build.py", line 105, in build\n    return await extension.build(additional_hooks=additional_hooks)\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/task/python/build.py", line 81, in build\n    available_commands = await self._get_available_commands(\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/task/python/build.py", line 171, in _get_available_commands\n    output = await check_output(\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/subprocess.py", line 128, in check_output\n    assert not rc, f\'Expected {args} to pass: {stderr_data}\'\nAssertionError: Expected [\'/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/bin/python3.9\', \'setup.py\', \'--help-commands\'] to pass: Traceback (most recent call last):\n  File "/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world/setup.py", line 5, in <module>\n    setup(\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/__init__.py", line 153, in setup\n    return distutils.core.setup(**attrs)\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 134, in setup\n    ok = dist.parse_command_line()\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 481, in parse_command_line\n    if self.handle_display_options(option_order):\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/dist.py", line 1120, in handle_display_options\n    return _Distribution.handle_display_options(self, option_order)\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 684, in handle_display_options\n    self.print_commands()\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/dist.py", line 896, in print_commands\n    cmdclass = ep.resolve()\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/pkg_resources/__init__.py", line 2456, in resolve\n    module = __import__(self.module_name, fromlist=[\'__name__\'], level=0)\n  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools_lint/setuptools_command.py", line 10, in <module>\n    _opts = lint.Run.LinterClass.make_options()\nAttributeError: type object \'PyLinter\' has no attribute \'make_options\'\n\n'}
+[2.194289] (hello_world) JobEnded: {'identifier': 'hello_world', 'rc': 1}
+[2.195126] (keystroke_input) JobEnded: {'identifier': 'keystroke_input', 'rc': 'SIGINT'}
+[2.205653] (-) EventReactorShutdown: {}

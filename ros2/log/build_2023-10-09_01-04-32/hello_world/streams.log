@@ -1,0 +1,33 @@
+[1.313s] Invoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world': CONDA_PROMPT_MODIFIER=(experience-lab) PYTHONPATH=/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/prefix_override:/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages:${PYTHONPATH} SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/python3.10 setup.py egg_info --egg-base ../../build/hello_world build --build-base /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build install --record /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/install.log --single-version-externally-managed
+[1.781s] running egg_info
+[1.782s] creating ../../build/hello_world/hello_world.egg-info
+[1.783s] writing ../../build/hello_world/hello_world.egg-info/PKG-INFO
+[1.783s] writing dependency_links to ../../build/hello_world/hello_world.egg-info/dependency_links.txt
+[1.784s] writing entry points to ../../build/hello_world/hello_world.egg-info/entry_points.txt
+[1.784s] writing requirements to ../../build/hello_world/hello_world.egg-info/requires.txt
+[1.785s] writing top-level names to ../../build/hello_world/hello_world.egg-info/top_level.txt
+[1.785s] writing manifest file '../../build/hello_world/hello_world.egg-info/SOURCES.txt'
+[1.789s] reading manifest file '../../build/hello_world/hello_world.egg-info/SOURCES.txt'
+[1.791s] writing manifest file '../../build/hello_world/hello_world.egg-info/SOURCES.txt'
+[1.791s] running build
+[1.792s] running build_py
+[1.792s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build
+[1.793s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib
+[1.793s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib/hello_world
+[1.793s] copying hello_world/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib/hello_world
+[1.793s] running install
+[1.794s] running install_lib
+[1.795s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world
+[1.796s] copying /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build/lib/hello_world/__init__.py -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world
+[1.798s] byte-compiling /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world/__init__.py to __init__.cpython-310.pyc
+[1.799s] running install_data
+[1.800s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index
+[1.801s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index/resource_index
+[1.801s] creating /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index/resource_index/packages
+[1.802s] copying resource/hello_world -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/ament_index/resource_index/packages
+[1.802s] copying package.xml -> /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/share/hello_world
+[1.802s] running install_egg_info
+[1.806s] Copying ../../build/hello_world/hello_world.egg-info to /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages/hello_world-0.0.0-py3.10.egg-info
+[1.814s] running install_scripts
+[1.889s] writing list of installed files to '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/install.log'
+[1.951s] Invoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world' returned '0': CONDA_PROMPT_MODIFIER=(experience-lab) PYTHONPATH=/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/prefix_override:/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello_world/lib/python3.10/site-packages:${PYTHONPATH} SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/python3.10 setup.py egg_info --egg-base ../../build/hello_world build --build-base /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/build install --record /Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build/hello_world/install.log --single-version-externally-managed

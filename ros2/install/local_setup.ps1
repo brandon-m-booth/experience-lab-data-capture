@@ -12,7 +12,7 @@ if ($env:COLCON_PYTHON_EXECUTABLE) {
   $_colcon_python_executable="$env:COLCON_PYTHON_EXECUTABLE"
 } else {
   # use the Python executable known at configure time
-  $_colcon_python_executable="/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/python3.10"
+  $_colcon_python_executable="/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/bin/python3.9"
   # if it doesn't exist try a fall back
   if (!(Test-Path "$_colcon_python_executable" -PathType Leaf)) {
     if (!(Get-Command "python3" -ErrorAction SilentlyContinue)) {
@@ -50,4 +50,6 @@ if ($env:COLCON_TRACE) {
   $_colcon_ordered_commands.Split([Environment]::NewLine, [StringSplitOptions]::RemoveEmptyEntries) | Write-Output
   echo ">>>"
 }
-$_colcon_ordered_commands.Split([Environment]::NewLine, [StringSplitOptions]::RemoveEmptyEntries) | Invoke-Expression
+if ($_colcon_ordered_commands) {
+  $_colcon_ordered_commands.Split([Environment]::NewLine, [StringSplitOptions]::RemoveEmptyEntries) | Invoke-Expression
+}

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
-import rclpy
-from rclpy.node import Node
+import rclpy 
+from rclpy.node import Node 
 from std_msgs.msg import String
-from pynput import keyboard
+from pynput import keyboard 
 
 class KeystrokePublisher(Node):
 
     def __init__(self):
-        super().__init__('keystroke_publisher')
+        super().__init__('keystroke_publisher') 
         self.publisher_ = self.create_publisher(String, 'keystrokes', 10)
-        self.keyboard_listener = keyboard.Listener(on_press=self.on_key_press)
+        self.keyboard_listener = keyboard.Listener(on_press=self.on_key_press) 
         self.keyboard_listener.start()
 
     def on_key_press(self, key):
