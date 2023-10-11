@@ -1,0 +1,42 @@
+[1.522s] Traceback (most recent call last):
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/colcon_core/executor/__init__.py", line 91, in __call__
+    rc = await self.task(*args, **kwargs)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/colcon_core/task/__init__.py", line 93, in __call__
+    return await task_method(*args, **kwargs)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/colcon_ros/task/ament_python/build.py", line 102, in build
+    return await extension.build(additional_hooks=additional_hooks)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/colcon_core/task/python/build.py", line 85, in build
+    available_commands = await self._get_available_commands(
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/colcon_core/task/python/build.py", line 175, in _get_available_commands
+    output = await check_output(
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/colcon_core/subprocess.py", line 129, in check_output
+    assert not rc, f'Expected {args} to pass: {stderr_data}'
+AssertionError: Expected ['/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/bin/python3.9', 'setup.py', '--help-commands'] to pass: Traceback (most recent call last):
+  File "/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world/setup.py", line 5, in <module>
+    setup(
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/__init__.py", line 103, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/_distutils/core.py", line 172, in setup
+    ok = dist.parse_command_line()
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 472, in parse_command_line
+    if self.handle_display_options(option_order):
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/dist.py", line 965, in handle_display_options
+    return _Distribution.handle_display_options(self, option_order)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 686, in handle_display_options
+    self.print_commands()
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/dist.py", line 744, in print_commands
+    cmdclass = ep.load()
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools/_vendor/importlib_metadata/__init__.py", line 208, in load
+    module = import_module(match.group('module'))
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools_lint/setuptools_command.py", line 10, in <module>
+    _opts = lint.Run.LinterClass.make_options()
+AttributeError: type object 'PyLinter' has no attribute 'make_options'
+

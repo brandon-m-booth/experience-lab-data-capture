@@ -1,0 +1,34 @@
+[2.593s] Traceback (most recent call last):
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/executor/__init__.py", line 91, in __call__
+    rc = await self.task(*args, **kwargs)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/task/__init__.py", line 93, in __call__
+    return await task_method(*args, **kwargs)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_ros/task/ament_python/build.py", line 105, in build
+    return await extension.build(additional_hooks=additional_hooks)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/task/python/build.py", line 81, in build
+    available_commands = await self._get_available_commands(
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/task/python/build.py", line 171, in _get_available_commands
+    output = await check_output(
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/colcon_core/subprocess.py", line 128, in check_output
+    assert not rc, f'Expected {args} to pass: {stderr_data}'
+AssertionError: Expected ['/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/bin/python3.9', 'setup.py', '--help-commands'] to pass: Traceback (most recent call last):
+  File "/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/keystroke_input/setup.py", line 5, in <module>
+    setup(
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 134, in setup
+    ok = dist.parse_command_line()
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 481, in parse_command_line
+    if self.handle_display_options(option_order):
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/dist.py", line 1120, in handle_display_options
+    return _Distribution.handle_display_options(self, option_order)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 684, in handle_display_options
+    self.print_commands()
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/setuptools/dist.py", line 896, in print_commands
+    cmdclass = ep.resolve()
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages/pkg_resources/__init__.py", line 2456, in resolve
+    module = __import__(self.module_name, fromlist=['__name__'], level=0)
+  File "/usr/local/Caskroom/miniforge/base/envs/experience-lab3.9/lib/python3.9/site-packages/setuptools_lint/setuptools_command.py", line 10, in <module>
+    _opts = lint.Run.LinterClass.make_options()
+AttributeError: type object 'PyLinter' has no attribute 'make_options'
+

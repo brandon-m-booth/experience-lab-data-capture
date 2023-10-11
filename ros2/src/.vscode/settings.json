@@ -1,0 +1,7 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python310/site-packages",
+        "/usr/local/Caskroom/miniforge/base/envs/experience-lab/lib/python3.10/site-packages",
+        "/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install/hello-world/lib/python3.10/site-packages"
+    ]
+}
