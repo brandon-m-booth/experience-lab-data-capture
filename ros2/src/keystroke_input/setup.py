@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'keystroke_publisher = keystroke_input.keystroke_publisher:main'
+            'keystroke_publisher = keystroke_input.keystroke_publisher:main',
+            'keystroke_listener = keystroke_input.keystroke_listener:main'
         ],
     },
 )
