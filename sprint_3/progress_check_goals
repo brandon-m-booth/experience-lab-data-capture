@@ -1,0 +1,7 @@
+progress_check_goals: 
+
+Set our workspaces up so we can record both keyboard and camera input to a bag simultaneously, and see if playback works and the timeline is synchronized   
+
+Get to work on screen and audio capture  
+
+Look into making an easy-to-use GUI to activate nodes and bag recording 
