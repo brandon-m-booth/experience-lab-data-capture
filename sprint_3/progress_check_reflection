@@ -2,4 +2,8 @@
 
 progress_check_reflection: 
 
-Things are a little rocky, as we are using Ros 2, differently from what it is designed for. Ros2 does not like working with different OS that went through the installation differently. For example, will the usb-cam work for linux ros2 on mac does not use the same libraries that linux uses like LIB4VL. So, while the usb-cam works, it will not work for Mac because of linux on libraries. We made progress, but it came with a lot of backtracking as Ros is not very flexible or intuitive. 
+Things are a little rocky, as we are using Ros 2, differently from what it is designed for. 
+Ros2 does not like working with different OS that went through the installation differently.
+For example, will the usb-cam work for linux ros2 on mac does not use the same libraries that linux uses like LIB4VL. 
+So, while the usb-cam works, it will not work for Mac because of linux on libraries. 
+We made progress, but it came with a lot of backtracking as Ros is not very flexible or intuitive. 
