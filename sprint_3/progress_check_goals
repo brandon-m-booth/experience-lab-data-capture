@@ -1,7 +1,39 @@
-progress_check_goals: 
 
-Set our workspaces up so we can record both keyboard and camera input to a bag simultaneously, and see if playback works and the timeline is synchronized   
+Goal: Implement ROS2 Functionality and Capture Inputs on One Machine
 
-Get to work on screen and audio capture  
+Specific: Integrate ROS2 functionality into the project and ensure that camera input and keystroke input are captured and recorded successfully on one machine.
+Measurable: Verify that the ROS2 integration is functional, and data capture for both camera and keystrokes is working without issues on the designated machine.
+Achievable: Leverage available ROS2 libraries and tools, as well as camera and input capture libraries, to achieve this goal.
+Relevant: Enhance the project's compatibility and capabilities by integrating ROS2 and demonstrating data capture functionality.
+Time-Based: Complete this implementation within Sprint 3, the current sprint.
 
-Look into making an easy-to-use GUI to activate nodes and bag recording 
+Goal: Implement Keyboard Visualizer during Playback
+
+Specific: Develop and integrate a keyboard visualizer that works during playback from the rosbag.
+Measurable: Ensure the keyboard visualizer accurately reflects keyboard input during playback.
+Achievable: Leverage appropriate visualization tools and APIs.
+Relevant: Enhance the project's functionality and user experience.
+Time-Based: Complete the implementation within sprint 3
+
+Goal: Ensure Workspace Setup and Functionality
+
+Specific: Complete the setup of workspaces to record both keyboard and camera input to a bag simultaneously, ensuring synchronization.
+Measurable: Verify successful recording and playback of synchronized data.
+Achievable: Leverage available resources and expertise to set up workspaces effectively.
+Relevant: This aligns with the client's expectation of functional data capture.
+Time-Based: Complete this by then end of Sprint 4.
+Goal: Implement Screen and Audio Capture
+
+Specific: Develop and integrate screen and audio capture functionalities into the project.
+Measurable: Verify the successful capture of screen and audio data.
+Achievable: Utilize appropriate libraries and tools for screen and audio capture.
+Relevant: This expands the project's capabilities and meets client expectations.
+Time-Based: Ensure this is completed by the end of Sprint 4.
+
+Goal: Design User-Friendly GUI for Node Activation and Bag Recording
+
+Specific: Create a user-friendly graphical interface to control nodes and record bags.
+Measurable: Test the GUI's usability and efficiency in controlling the project.
+Achievable: Utilize GUI development frameworks and best practices.
+Relevant: Enhance user experience and meet client expectations.
+Time-Based: Have a prototype of the GUI ready for client review by then end of sprint 4.
