@@ -13,8 +13,9 @@ class ElDemoNode(Node):
     def run_scripts(self):
         # Execute your different scripts here
         script_paths = [
-            'script1.py',
-            'script2.py',
+            'scripts/keystroke_listener.py',
+            'scripts/keystroke_publisher.py',
+            'scripts/my_screen_recorder_node.py',
             # Add more script paths as needed
         ]
 
