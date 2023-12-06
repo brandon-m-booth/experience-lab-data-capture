@@ -1,0 +1,54 @@
+### ROS 2 Tools Documentation
+
+#### 1. **ROS 2 Command-line Interface (CLI)**
+The ROS 2 Command-line Interface provides a set of tools for managing and debugging ROS 2 systems. Here's a brief overview of some essential commands:
+
+- **`ros2 node`**: Lists information about nodes in the ROS 2 system.
+  - Example: `ros2 node list`
+
+- **`ros2 topic`**: Provides information about ROS 2 topics.
+  - Example: `ros2 topic list`
+
+- **`ros2 service`**: Handles ROS 2 services.
+  - Example: `ros2 service list`
+
+- **`ros2 action`**: Deals with ROS 2 actions.
+  - Example: `ros2 action list`
+
+- **`ros2 param`**: Allows working with parameters.
+  - Example: `ros2 param list`
+
+- **`ros2 bag`**: Records, plays back, and inspects data in ROS 2 bags.
+  - Example: `ros2 bag record -a`
+
+For more details on each command and their options, use the `--help` flag.
+
+#### 2. **RQT and RViz**
+
+- **RQT**: RQT is a plugin-based framework for ROS GUI tools. It provides a variety of GUI plugins for visualization, debugging, and interaction.
+  - Example: `rqt_graph` to visualize the ROS graph.
+  - Example: `rqt_console` to view log messages.
+
+- **RViz**: RViz is a 3D visualization tool for ROS. It allows users to visualize sensor data, robot models, and other information.
+  - Example: `rviz2` to launch RViz 2.
+
+#### Additional Visualization Tools
+
+Apart from RQT and RViz, several other visualization tools are available in the ROS 2 ecosystem:
+
+- **ros2-web-bridge**: Provides a bridge between ROS 2 and web-based visualizers.
+- **ros2bag**: GUI-based tool for recording and playing back ROS 2 messages.
+- **ros2cli**: Set of command-line tools for ROS 2.
+
+### Usage Examples:
+
+- **Launching RViz**:
+  - Open a terminal and run `rviz2` to start RViz 2.
+
+- **Using RQT Tools**:
+  - Run `rqt` in a terminal, then navigate to different plugins such as `rqt_graph` or `rqt_console` from the GUI.
+
+- **Command-line Interaction**:
+  - Use various `ros2` commands in the terminal to list nodes, topics, services, actions, and handle other ROS 2 functionalities.
+
+These tools significantly aid in debugging, monitoring, and visualizing data within ROS 2, enabling users to interact with the system effectively. For comprehensive details and usage options, refer to the ROS 2 documentation and tool-specific documentation.
