@@ -1,0 +1,110 @@
+### Writing ROS 2 Nodes
+
+#### Introduction to Nodes
+Nodes are the basic processing units in ROS 2 that perform specific tasks. They communicate with each other by publishing and subscribing to topics, requesting and providing services, or executing actions.
+
+#### Creating a ROS 2 Node
+To create a ROS 2 node:
+
+1. **Initialize ROS 2**:
+   - Import the `rclpy` library and initialize the ROS 2 context in your Python script:
+     ```python
+     import rclpy
+     from rclpy.node import Node
+
+     def main():
+         rclpy.init()
+         node = Node("my_node_name")
+         # ... rest of the code ...
+     ```
+
+2. **Define Node Functionality**:
+   - Implement the functionality of your node within the main loop of the node.
+
+3. **Spin the Node**:
+   - Use `rclpy.spin(node)` to keep the node running:
+     ```python
+     if __name__ == '__main__':
+         main()
+     ```
+
+### Communication in ROS 2
+
+#### Publishing and Subscribing to Topics
+ROS 2 nodes communicate by publishing messages to topics and subscribing to receive messages from topics.
+
+##### Publishing to a Topic
+To publish messages to a topic:
+
+1. **Create a Publisher**:
+   - Instantiate a publisher with the desired message type and topic name:
+     ```python
+     publisher = node.create_publisher(MessageType, 'topic_name', queue_size)
+     ```
+
+2. **Publish Messages**:
+   - Publish messages to the topic using the publisher:
+     ```python
+     msg = MessageType()
+     # Fill in message fields
+     publisher.publish(msg)
+     ```
+
+##### Subscribing to a Topic
+To subscribe to messages from a topic:
+
+1. **Create a Subscriber**:
+   - Define a callback function to handle received messages:
+     ```python
+     def callback(msg):
+         # Process received messages
+         pass
+
+     subscriber = node.create_subscription(MessageType, 'topic_name', callback, queue_size)
+     ```
+
+#### Requesting and Providing Services
+ROS 2 services enable request-response communication between nodes.
+
+##### Providing a Service
+To provide a service:
+
+1. **Define a Service Callback**:
+   - Implement a callback function to handle incoming service requests:
+     ```python
+     def service_callback(request, response):
+         # Process request and generate response
+         pass
+     ```
+
+2. **Create a Service Server**:
+   - Create a service server that uses the defined callback:
+     ```python
+     service = node.create_service(ServiceType, 'service_name', service_callback)
+     ```
+
+##### Requesting a Service
+To request a service:
+
+1. **Create a Client**:
+   - Instantiate a client to call the service:
+     ```python
+     client = node.create_client(ServiceType, 'service_name')
+     ```
+
+2. **Send Service Request**:
+   - Prepare the request and send it to the service server using the client:
+     ```python
+     request = ServiceType.Request()
+     future = client.call_async(request)
+     ```
+
+#### Executing Actions
+ROS 2 actions allow for asynchronous long-running goals with preemption and feedback.
+
+##### Implementing an Action Server and Client
+The process involves defining an action message, creating an action server for the action type, and implementing an action client to send goals and receive feedback/results asynchronously.
+
+**Note**: Action implementation typically requires more detailed steps and may involve creating action definitions (.action files) and specific action-related libraries.
+
+This provides a general overview of Writing ROS 2 Nodes and Communication mechanisms using topics, services, and actions in ROS 2. For detailed implementations and more complex examples, refer to ROS 2 official documentation and tutorials.

@@ -1,0 +1,69 @@
+# `my_screen_recorder_node.py` Documentation
+
+This Python script captures the screen display and records it into a video file. It utilizes libraries like OpenCV, PIL, NumPy, and screeninfo to perform these tasks.
+
+## Functionality:
+
+- **Screen Recording:** Captures the content displayed on the monitor screen.
+- **Video Creation:** Records the screen content into a video file in real-time.
+- **User Input:** Requests the user to input a filename for the recorded video.
+
+## Running the `my_screen_recorder_node.py` Executable
+
+### Steps:
+
+1. **Navigate to the Directory:**
+   Open a terminal or command prompt and navigate to the `my_screen_recorder` directory located in the `src` folder of your ROS 2 workspace named `experience-lab-data-F23`.
+   ```bash
+   cd /path/to/experience-lab-data-F23/src/my_screen_recorder
+
+
+python3 my_screen_recorder_node.py
+#### Provide a Filename:
+**The script prompts you to enter a filename for the recorded video (e.g., recorded_video.mp4). Input the desired filename and press Enter.**
+
+#### Record Screen:
+ **The script will start recording the screen content across all monitors.**
+
+#### Stop Recording:
+**To stop the recording, press the Esc key/ctrl+c. This terminates the script and closes the video file.**
+
+#### Steps to Convert to ROS 2 Node:
+**To convert my_screen_recorder_node.py into a ROS 2 node, follow these steps:**
+
+
+
+#### Initialize ROS 2 Node:
+
+**Import rclpy library to initialize the ROS 2 node.**
+**Create ROS 2 Publishers and Subscribers:**
+
+**Create a publisher to publish the screen image data as a ROS 2 message.**
+**Implement a subscriber to receive the filename input as a ROS 2 message.**
+**Implement ROS 2 Lifecycle and Callbacks:**
+
+**Integrate the screen capture logic into ROS 2 callbacks or timers.**
+**Modify the code to publish captured images using ROS 2 publishers.**
+**Utilize ROS 2 Parameters:**
+
+**Use ROS 2 parameters to dynamically manage monitor resolution or other configurable options.**
+#### Update Documentation:
+
+Provide instructions on setting up the script as a ROS 2 node.
+Include guidance on configuring ROS 2 parameters for resolution or other settings.
+Test and Execute:
+
+Test the ROS 2 node within a ROS 2 workspace.
+Ensure that the ROS 2 node works as expected, capturing and publishing screen data.
+
+#### Additional Considerations:
+#### Message Format: Use ROS 2 message types like sensor_msgs/Image for image data.
+#### Optimization: Optimize the code for real-time performance in ROS 2.
+#### Error Handling: Implement error handling mechanisms for robustness.
+#### Conclusion:
+
+Transforming my_screen_recorder_node.py into a ROS 2 node involves integrating ROS 2 functionality for publishing and subscribing to data streams. This process requires understanding ROS 2 concepts and modifying the script to align with ROS 2 node principles and message passing mechanisms.
+
+For detailed steps and guidance on converting the script into a ROS 2 node, refer to the modified version and instructions provided in the repository's README.md file.
+
+Please note that ROS 2 development may require familiarity with ROS 2 concepts, Python programming, and using the rclpy library for ROS 2 node development.

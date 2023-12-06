@@ -1,0 +1,49 @@
+## Troubleshooting and Debugging in ROS 2
+
+### Common Errors and Solutions
+
+#### 1. Node Initialization Issues:
+- **Problem**: Nodes fail to initialize or crash during startup.
+  - **Solution**: Check for errors in node names, namespaces, or parameters. Ensure dependencies are correctly installed.
+
+#### 2. Communication Failures:
+- **Problem**: Issues in publishing/subscribing to topics, services, or actions.
+  - **Solution**: Verify topic names, message types, and data formats. Check for connectivity between nodes.
+
+#### 3. Parameter Handling Errors:
+- **Problem**: Unexpected behavior due to parameter handling issues.
+  - **Solution**: Confirm parameter names, types, and values. Ensure proper handling during node initialization.
+
+#### 4. Resource Conflicts:
+- **Problem**: Conflicts in resource usage, such as multiple nodes using the same resource.
+  - **Solution**: Investigate topics/services/actions that might interfere. Implement proper locking or synchronization mechanisms.
+
+#### 5. Dependency and Build Errors:
+- **Problem**: Compilation or runtime issues related to missing or incompatible dependencies.
+  - **Solution**: Check ROS 2 and package dependencies. Ensure correct installation and version compatibility.
+
+### Tools for Debugging ROS 2 Applications
+
+#### 1. `ros2` Command-Line Tools:
+- **Description**: Includes various commands (`ros2 topic`, `ros2 service`, etc.) for inspecting and debugging ROS 2 entities.
+- **Usage**: Use these tools to list topics/services, display messages, and check node status.
+
+#### 2. `rqt` and Visualization Tools:
+- **Description**: `rqt` offers GUI plugins for introspecting nodes, topics, and services visually.
+- **Usage**: Visualize and monitor ROS 2 entities in real-time using `rqt_graph`, `rqt_plot`, `rviz`, etc.
+
+#### 3. `rclcpp` Logging:
+- **Description**: ROS 2 logging utilities (`rclcpp` logging) allow printing messages at different verbosity levels.
+- **Usage**: Insert debug logs in code to track node behavior and identify potential issues.
+
+#### 4. ROS 2 GDB Integration:
+- **Description**: Debug nodes using GDB (GNU Debugger) by attaching GDB to a running ROS 2 node.
+- **Usage**: Helps in examining node state, stack traces, and variable values during execution.
+
+#### 5. System Monitoring Tools:
+- **Description**: Tools like `top`, `htop`, or ROS 2-specific tools like `ros2 perf` to monitor system resource usage.
+- **Usage**: Identify performance bottlenecks, CPU/memory usage, etc., affecting ROS 2 applications.
+
+---
+
+This documentation provides insights into troubleshooting common errors in ROS 2 and introduces various tools available for debugging and diagnosing issues in ROS 2 applications. Users can refer to this guide when encountering problems during development and utilize the suggested tools to effectively troubleshoot and debug their ROS 2 projects.
