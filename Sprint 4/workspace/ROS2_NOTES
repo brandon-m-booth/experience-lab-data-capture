@@ -1,0 +1,40 @@
+# TODO:
+# Figure out why rqt_bag can't display the default image type when reading off the compressed image node.  Maybe we need to force a certain format?
+# Relevant error:
+# ImageView.callback_image() while trying to convert image from 'yuv422_yuy2' to 'rgb8' an exception was thrown (Image is wrongly formed: step < width * byte_depth * num_channels or 640 != 640 * 1 * 2)
+
+#############################################
+#############################################
+#############################################
+
+# Killing nodes
+ps aux | grep <node_name>
+kill -9 <PPID>
+
+
+## Launch camera
+	# run the executable with default settings (without params file)
+	ros2 run usb_cam usb_cam_node_exe
+
+	# run the executable while passing in parameters via a yaml file
+	# CURRENT CONFIG
+	ros2 run usb_cam usb_cam_node_exe --ros-args --params-file /opt/ros/humble/share/usb_cam/config/params_1.yaml
+	
+	# launch the usb_cam executable that loads parameters from the same `usb_cam/config/params.yaml` file as above
+	# along with an additional image viewer node
+	ros2 launch usb_cam camera.launch.py
+
+
+## bags	
+	# how to play back a bag
+	ros2 bag play <bag path>
+
+	# recording bags
+	ros2 topic list
+	ros2 bag record <topic name>
+
+	# recording multiple bags
+	ros2 bag record -o <chosen name> <topic 1 name> <topic 2 name> <topic ...>
+
+	# bag info
+	ros2 bag info <bag dir>
