@@ -1,0 +1,56 @@
+[1.440s] colcon DEBUG Command line arguments: ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/colcon', 'list', '-p', '--base-paths', '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2']
+[1.441s] colcon DEBUG Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/Users/calvingott/experience_lab/experience-lab-data-F23/ros2'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x109dcfe50>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x109dceec0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x109dceec0>>)
+[1.521s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) check parameters
+[1.521s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) check parameters
+[1.521s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) check parameters
+[1.521s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) check parameters
+[1.521s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) discover
+[1.521s] colcon.colcon_core.package_discovery INFO Crawling recursively for packages in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2'
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extensions ['ignore', 'ignore_ament_install']
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'ignore'
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'ignore_ament_install'
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extensions ['colcon_pkg']
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'colcon_pkg'
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extensions ['colcon_meta']
+[1.522s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'colcon_meta'
+[1.523s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extensions ['ros']
+[1.523s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'ros'
+[1.578s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extensions ['cmake', 'python']
+[1.579s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'cmake'
+[1.579s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'python'
+[1.579s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extensions ['python_setup_py']
+[1.579s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2) by extension 'python_setup_py'
+[1.580s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build) by extensions ['ignore', 'ignore_ament_install']
+[1.580s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build) by extension 'ignore'
+[1.581s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/build) ignored
+[1.582s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install) by extensions ['ignore', 'ignore_ament_install']
+[1.582s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install) by extension 'ignore'
+[1.582s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/install) ignored
+[1.583s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/log) by extensions ['ignore', 'ignore_ament_install']
+[1.584s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/log) by extension 'ignore'
+[1.584s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/log) ignored
+[1.584s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extensions ['ignore', 'ignore_ament_install']
+[1.584s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'ignore'
+[1.584s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'ignore_ament_install'
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extensions ['colcon_pkg']
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'colcon_pkg'
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extensions ['colcon_meta']
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'colcon_meta'
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extensions ['ros']
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'ros'
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extensions ['cmake', 'python']
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'cmake'
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'python'
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extensions ['python_setup_py']
+[1.585s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src) by extension 'python_setup_py'
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extensions ['ignore', 'ignore_ament_install']
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extension 'ignore'
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extension 'ignore_ament_install'
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extensions ['colcon_pkg']
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extension 'colcon_pkg'
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extensions ['colcon_meta']
+[1.586s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extension 'colcon_meta'
+[1.587s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extensions ['ros']
+[1.587s] colcon.colcon_core.package_identification Level 1 _identify(/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world) by extension 'ros'
+[1.592s] colcon.colcon_core.package_identification DEBUG Package '/Users/calvingott/experience_lab/experience-lab-data-F23/ros2/src/hello_world' with type 'ros.ament_python' and name 'hello_world'
+[1.592s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) using defaults

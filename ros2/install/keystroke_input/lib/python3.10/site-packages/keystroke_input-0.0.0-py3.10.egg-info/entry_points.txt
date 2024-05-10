@@ -1,0 +1,4 @@
+[console_scripts]
+keystroke_listener = keystroke_input.keystroke_listener:main
+keystroke_publisher = keystroke_input.keystroke_publisher:main
+

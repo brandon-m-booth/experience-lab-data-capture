@@ -1,0 +1,48 @@
+## Writing ROS 2 Nodes
+
+### Creating a Simple Publisher and Subscriber
+
+ROS 2 nodes facilitate communication within the ROS graph. Publishers and subscribers enable nodes to send and receive messages across various topics.
+
+#### Example: Creating a Simple ROS 2 Node
+
+Consider the following Python script, `my_first_node.py`, which creates a basic ROS 2 node:
+
+```python
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+
+class MyNode(Node):
+
+    def __init__(self):
+        super().__init__("First_node")
+        self.get_logger().info("Hello From Ros 2")
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = MyNode()
+    rclpy.spin(node)
+    rclpy.shutdown
+
+if __name__ == '__main__':
+    main()
+```
+
+- **Explanation**:
+  - This script initializes a ROS 2 node named "First_node" using the `rclpy.node.Node` class.
+  - The node logs a greeting message "Hello From Ros 2" upon initialization.
+  - It then spins the node to keep it active and listening for events.
+
+### Node Lifecycle, Initialization, and Shutdown
+
+#### Node Lifecycle:
+- **Initialization**: Nodes are initialized using their constructors where essential setup tasks occur, like logging or setting up publishers/subscribers.
+- **Spinning**: The node enters the spinning state, where it remains active to handle incoming events, messages, or callbacks.
+- **Shutdown**: Nodes are shutdown using `rclpy.shutdown()` to release resources and properly terminate the node.
+
+#### Best Practices:
+- Nodes should be properly initialized within their constructor (`__init__`).
+- Avoid blocking operations in the main thread to keep the spinning process responsive.
+- Always perform cleanup and release resources in the shutdown phase.
+

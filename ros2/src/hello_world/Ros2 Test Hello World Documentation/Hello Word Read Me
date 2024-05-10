@@ -1,0 +1,50 @@
+# ROS2 My First Node
+
+This repository contains a basic ROS2 node that prints "Hello From Ros 2".
+
+## Prerequisites
+
+If you need help with your ROS 2 installation or setting up keystroke input, please refer to the following:
+
+- **MacOS Setup Guide**: Instructions on setting up ROS 2 on MacOS.
+- **Scripting Instructions**: Details on how to run scripts and commands.
+- **Keystroke Input Setup Guide**: Guidelines to configure and use keystroke input in your project.
+
+Feel free to explore the different sections and get started with the project!
+
+## Usage
+
+1. **Clone the repository:**
+    ```bash
+    git clone git@github.com:gunnerysurgeon/experience-lab-data-F23.git
+    ```
+   
+2. **Build the ROS2 workspace:**
+    ```bash
+    cd experience-lab-data-F23/ros2
+    colcon build --symlink-install
+    ```
+
+3. **Source your workspace:**
+    ```bash
+    source install/setup.bash
+    ```
+
+4. **Run the ROS2 node:**
+    ```bash
+    ros2 run my_first_node my_first_node
+    ```
+   
+   This command starts the ROS2 node, which prints "Hello From Ros 2".
+
+## Code Details
+
+The code contains a basic ROS2 node written in Python. It initializes a ROS2 node named `First_node` and logs "Hello From Ros 2" to the console.
+
+- **File:** `my_first_node.py`
+
+## Contribution
+
+Contributions are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+IF YOU WANT TO SEE THE OUTPUT LOOK AT THE OUTPUT FOLDER

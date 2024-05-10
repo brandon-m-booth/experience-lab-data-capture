@@ -1,0 +1,469 @@
+[1.786s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/colcon', 'build'][0m
+[1.787s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x106bfd240>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x1066a8610>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x1066a8610>>)[0m
+[1.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[1.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[1.988s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[1.988s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[1.988s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[1.988s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[1.988s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src'
+[1.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[1.989s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[2.050s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[2.050s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[2.051s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[2.051s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[2.051s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[2.051s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extensions ['ignore', 'ignore_ament_install']
+[2.051s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extension 'ignore'
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extension 'ignore_ament_install'
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extensions ['colcon_pkg']
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extension 'colcon_pkg'
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extensions ['colcon_meta']
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extension 'colcon_meta'
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extensions ['ros']
+[2.052s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(annotation_recorder) by extension 'ros'
+[2.060s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'annotation_recorder' with type 'ros.catkin' and name 'annotation_recorder'[0m
+[2.060s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extensions ['ignore', 'ignore_ament_install']
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'ignore'
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'ignore_ament_install'
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extensions ['colcon_pkg']
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'colcon_pkg'
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extensions ['colcon_meta']
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'colcon_meta'
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extensions ['ros']
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'ros'
+[2.061s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extensions ['cmake', 'python']
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'cmake'
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'python'
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extensions ['python_setup_py']
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(audio_common) by extension 'python_setup_py'
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extensions ['ignore', 'ignore_ament_install']
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extension 'ignore'
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extension 'ignore_ament_install'
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extensions ['colcon_pkg']
+[2.062s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extension 'colcon_pkg'
+[2.063s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extensions ['colcon_meta']
+[2.063s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extension 'colcon_meta'
+[2.063s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extensions ['ros']
+[2.063s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(bag_tools) by extension 'ros'
+[2.064s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'bag_tools' with type 'ros.catkin' and name 'bag_tools'[0m
+[2.065s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.065s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[2.065s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[2.065s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extensions ['ignore', 'ignore_ament_install']
+[2.065s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extension 'ignore'
+[2.065s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extension 'ignore_ament_install'
+[2.066s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extensions ['colcon_pkg']
+[2.066s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extension 'colcon_pkg'
+[2.066s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extensions ['colcon_meta']
+[2.066s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extension 'colcon_meta'
+[2.066s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extensions ['ros']
+[2.066s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(data_visualizer) by extension 'ros'
+[2.068s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'data_visualizer' with type 'ros.catkin' and name 'data_visualizer'[0m
+[2.068s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extensions ['ignore', 'ignore_ament_install']
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extension 'ignore'
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extension 'ignore_ament_install'
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extensions ['colcon_pkg']
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extension 'colcon_pkg'
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extensions ['colcon_meta']
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extension 'colcon_meta'
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extensions ['ros']
+[2.069s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(experience_lab) by extension 'ros'
+[2.071s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'experience_lab' with type 'ros.catkin' and name 'experience_lab'[0m
+[2.071s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extensions ['ignore', 'ignore_ament_install']
+[2.071s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extension 'ignore'
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extension 'ignore_ament_install'
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extensions ['colcon_pkg']
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extension 'colcon_pkg'
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extensions ['colcon_meta']
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extension 'colcon_meta'
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extensions ['ros']
+[2.072s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(fake_data_generator) by extension 'ros'
+[2.074s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'fake_data_generator' with type 'ros.catkin' and name 'fake_data_generator'[0m
+[2.074s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extensions ['ignore', 'ignore_ament_install']
+[2.074s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extension 'ignore'
+[2.074s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extension 'ignore_ament_install'
+[2.075s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extensions ['colcon_pkg']
+[2.075s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extension 'colcon_pkg'
+[2.075s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extensions ['colcon_meta']
+[2.075s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extension 'colcon_meta'
+[2.075s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extensions ['ros']
+[2.075s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(game_audio_video) by extension 'ros'
+[2.077s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'game_audio_video' with type 'ros.catkin' and name 'game_audio_video'[0m
+[2.077s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extensions ['ignore', 'ignore_ament_install']
+[2.077s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extension 'ignore'
+[2.077s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extension 'ignore_ament_install'
+[2.078s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extensions ['colcon_pkg']
+[2.078s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extension 'colcon_pkg'
+[2.078s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extensions ['colcon_meta']
+[2.078s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extension 'colcon_meta'
+[2.078s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extensions ['ros']
+[2.078s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(hello_world) by extension 'ros'
+[2.080s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'hello_world' with type 'ros.catkin' and name 'hello_world'[0m
+[2.080s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extensions ['ignore', 'ignore_ament_install']
+[2.080s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'ignore'
+[2.080s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'ignore_ament_install'
+[2.080s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extensions ['colcon_pkg']
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'colcon_pkg'
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extensions ['colcon_meta']
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'colcon_meta'
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extensions ['ros']
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'ros'
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extensions ['cmake', 'python']
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'cmake'
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'python'
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extensions ['python_setup_py']
+[2.081s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(iai_kinect2) by extension 'python_setup_py'
+[2.082s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.082s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[2.082s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[2.082s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.082s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[2.082s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extensions ['ignore', 'ignore_ament_install']
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extension 'ignore'
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extension 'ignore_ament_install'
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extensions ['colcon_pkg']
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extension 'colcon_pkg'
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extensions ['colcon_meta']
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extension 'colcon_meta'
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extensions ['ros']
+[2.083s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_app_activity) by extension 'ros'
+[2.085s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_app_activity' with type 'ros.catkin' and name 'player_app_activity'[0m
+[2.085s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extensions ['ignore', 'ignore_ament_install']
+[2.085s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extension 'ignore'
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extension 'ignore_ament_install'
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extensions ['colcon_pkg']
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extension 'colcon_pkg'
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extensions ['colcon_meta']
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extension 'colcon_meta'
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extensions ['ros']
+[2.086s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_biometrics) by extension 'ros'
+[2.088s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_biometrics' with type 'ros.catkin' and name 'player_biometrics'[0m
+[2.088s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extensions ['ignore', 'ignore_ament_install']
+[2.088s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extension 'ignore'
+[2.088s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extension 'ignore_ament_install'
+[2.088s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extensions ['colcon_pkg']
+[2.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extension 'colcon_pkg'
+[2.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extensions ['colcon_meta']
+[2.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extension 'colcon_meta'
+[2.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extensions ['ros']
+[2.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eeg) by extension 'ros'
+[2.090s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_eeg' with type 'ros.catkin' and name 'player_eeg'[0m
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extensions ['ignore', 'ignore_ament_install']
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extension 'ignore'
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extension 'ignore_ament_install'
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extensions ['colcon_pkg']
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extension 'colcon_pkg'
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extensions ['colcon_meta']
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extension 'colcon_meta'
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extensions ['ros']
+[2.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_eye_tracking) by extension 'ros'
+[2.093s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_eye_tracking' with type 'ros.catkin' and name 'player_eye_tracking'[0m
+[2.093s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extensions ['ignore', 'ignore_ament_install']
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extension 'ignore'
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extension 'ignore_ament_install'
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extensions ['colcon_pkg']
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extension 'colcon_pkg'
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extensions ['colcon_meta']
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extension 'colcon_meta'
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extensions ['ros']
+[2.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_input) by extension 'ros'
+[2.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_input' with type 'ros.catkin' and name 'player_input'[0m
+[2.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extensions ['ignore', 'ignore_ament_install']
+[2.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extension 'ignore'
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extension 'ignore_ament_install'
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extensions ['colcon_pkg']
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extension 'colcon_pkg'
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extensions ['colcon_meta']
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extension 'colcon_meta'
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extensions ['ros']
+[2.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video) by extension 'ros'
+[2.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_video' with type 'ros.catkin' and name 'player_video'[0m
+[2.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extensions ['ignore', 'ignore_ament_install']
+[2.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extension 'ignore'
+[2.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extension 'ignore_ament_install'
+[2.100s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extensions ['colcon_pkg']
+[2.100s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extension 'colcon_pkg'
+[2.100s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extensions ['colcon_meta']
+[2.100s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extension 'colcon_meta'
+[2.100s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extensions ['ros']
+[2.100s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(player_video_overhead) by extension 'ros'
+[2.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'player_video_overhead' with type 'ros.catkin' and name 'player_video_overhead'[0m
+[2.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extensions ['ignore', 'ignore_ament_install']
+[2.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extension 'ignore'
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extension 'ignore_ament_install'
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extensions ['colcon_pkg']
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extension 'colcon_pkg'
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extensions ['colcon_meta']
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extension 'colcon_meta'
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extensions ['ros']
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) by extension 'ros'
+[2.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(procrob_functional) ignored
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extensions ['ignore', 'ignore_ament_install']
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extension 'ignore'
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extension 'ignore_ament_install'
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extensions ['colcon_pkg']
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extension 'colcon_pkg'
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extensions ['colcon_meta']
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extension 'colcon_meta'
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extensions ['ros']
+[2.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(valid_stream) by extension 'ros'
+[2.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'valid_stream' with type 'ros.catkin' and name 'valid_stream'[0m
+[2.106s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[2.106s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[2.106s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[2.106s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[2.106s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'cmake_args' from command line to 'None'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'cmake_target' from command line to 'None'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'cmake_clean_cache' from command line to 'False'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'cmake_clean_first' from command line to 'False'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'cmake_force_configure' from command line to 'False'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'ament_cmake_args' from command line to 'None'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'catkin_cmake_args' from command line to 'None'
+[2.263s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'annotation_recorder' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.264s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'annotation_recorder' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/annotation_recorder', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/annotation_recorder', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/annotation_recorder', 'symlink_install': False, 'test_result_base': None}[0m
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'cmake_args' from command line to 'None'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'cmake_target' from command line to 'None'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'cmake_clean_cache' from command line to 'False'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'cmake_clean_first' from command line to 'False'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'cmake_force_configure' from command line to 'False'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'ament_cmake_args' from command line to 'None'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'catkin_cmake_args' from command line to 'None'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'bag_tools' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.277s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'bag_tools' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/bag_tools', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/bag_tools', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/bag_tools', 'symlink_install': False, 'test_result_base': None}[0m
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'cmake_args' from command line to 'None'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'cmake_target' from command line to 'None'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'cmake_clean_cache' from command line to 'False'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'cmake_clean_first' from command line to 'False'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'cmake_force_configure' from command line to 'False'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'ament_cmake_args' from command line to 'None'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'catkin_cmake_args' from command line to 'None'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'experience_lab' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.291s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'experience_lab' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/experience_lab', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/experience_lab', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/experience_lab', 'symlink_install': False, 'test_result_base': None}[0m
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'cmake_args' from command line to 'None'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'cmake_target' from command line to 'None'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'cmake_clean_cache' from command line to 'False'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'cmake_clean_first' from command line to 'False'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'cmake_force_configure' from command line to 'False'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'ament_cmake_args' from command line to 'None'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'catkin_cmake_args' from command line to 'None'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'fake_data_generator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.305s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'fake_data_generator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/fake_data_generator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/fake_data_generator', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/fake_data_generator', 'symlink_install': False, 'test_result_base': None}[0m
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'cmake_args' from command line to 'None'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'cmake_target' from command line to 'None'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'cmake_clean_cache' from command line to 'False'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'cmake_clean_first' from command line to 'False'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'cmake_force_configure' from command line to 'False'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'ament_cmake_args' from command line to 'None'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'catkin_cmake_args' from command line to 'None'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_audio_video' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.319s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'game_audio_video' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/game_audio_video', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video', 'symlink_install': False, 'test_result_base': None}[0m
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'cmake_args' from command line to 'None'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'cmake_target' from command line to 'None'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'cmake_clean_cache' from command line to 'False'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'cmake_clean_first' from command line to 'False'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'cmake_force_configure' from command line to 'False'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'ament_cmake_args' from command line to 'None'
+[2.332s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'catkin_cmake_args' from command line to 'None'
+[2.333s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'hello_world' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.333s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'hello_world' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world', 'symlink_install': False, 'test_result_base': None}[0m
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'cmake_args' from command line to 'None'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'cmake_target' from command line to 'None'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'cmake_clean_cache' from command line to 'False'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'cmake_clean_first' from command line to 'False'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'cmake_force_configure' from command line to 'False'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'ament_cmake_args' from command line to 'None'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'catkin_cmake_args' from command line to 'None'
+[2.347s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_app_activity' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.348s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_app_activity' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_app_activity', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_app_activity', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_app_activity', 'symlink_install': False, 'test_result_base': None}[0m
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'cmake_args' from command line to 'None'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'cmake_target' from command line to 'None'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'cmake_clean_cache' from command line to 'False'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'cmake_clean_first' from command line to 'False'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'cmake_force_configure' from command line to 'False'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'ament_cmake_args' from command line to 'None'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'catkin_cmake_args' from command line to 'None'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_biometrics' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.362s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_biometrics' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_biometrics', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_biometrics', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_biometrics', 'symlink_install': False, 'test_result_base': None}[0m
+[2.375s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'cmake_args' from command line to 'None'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'cmake_target' from command line to 'None'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'cmake_clean_cache' from command line to 'False'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'cmake_clean_first' from command line to 'False'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'cmake_force_configure' from command line to 'False'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'ament_cmake_args' from command line to 'None'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'catkin_cmake_args' from command line to 'None'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eeg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.376s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_eeg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_eeg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eeg', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eeg', 'symlink_install': False, 'test_result_base': None}[0m
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'cmake_args' from command line to 'None'
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'cmake_target' from command line to 'None'
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'cmake_clean_cache' from command line to 'False'
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'cmake_clean_first' from command line to 'False'
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'cmake_force_configure' from command line to 'False'
+[2.389s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'ament_cmake_args' from command line to 'None'
+[2.390s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'catkin_cmake_args' from command line to 'None'
+[2.390s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_eye_tracking' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.390s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_eye_tracking' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_eye_tracking', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eye_tracking', 'symlink_install': False, 'test_result_base': None}[0m
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'cmake_args' from command line to 'None'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'cmake_target' from command line to 'None'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'cmake_clean_cache' from command line to 'False'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'cmake_clean_first' from command line to 'False'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'cmake_force_configure' from command line to 'False'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'ament_cmake_args' from command line to 'None'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'catkin_cmake_args' from command line to 'None'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_input' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.403s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_input' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_input', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_input', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_input', 'symlink_install': False, 'test_result_base': None}[0m
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'cmake_args' from command line to 'None'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'cmake_target' from command line to 'None'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'cmake_clean_cache' from command line to 'False'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'cmake_clean_first' from command line to 'False'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'cmake_force_configure' from command line to 'False'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'ament_cmake_args' from command line to 'None'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'catkin_cmake_args' from command line to 'None'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.417s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_video' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_video', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_video', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_video', 'symlink_install': False, 'test_result_base': None}[0m
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'cmake_args' from command line to 'None'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'cmake_target' from command line to 'None'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'cmake_clean_cache' from command line to 'False'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'cmake_clean_first' from command line to 'False'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'cmake_force_configure' from command line to 'False'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'ament_cmake_args' from command line to 'None'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'catkin_cmake_args' from command line to 'None'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'player_video_overhead' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.431s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'player_video_overhead' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_video_overhead', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_video_overhead', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_video_overhead', 'symlink_install': False, 'test_result_base': None}[0m
+[2.445s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'cmake_args' from command line to 'None'
+[2.445s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'cmake_target' from command line to 'None'
+[2.445s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.445s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'cmake_clean_cache' from command line to 'False'
+[2.445s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'cmake_clean_first' from command line to 'False'
+[2.446s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'cmake_force_configure' from command line to 'False'
+[2.446s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'ament_cmake_args' from command line to 'None'
+[2.446s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'catkin_cmake_args' from command line to 'None'
+[2.446s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'valid_stream' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.446s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'valid_stream' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/valid_stream', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/valid_stream', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/valid_stream', 'symlink_install': False, 'test_result_base': None}[0m
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'cmake_args' from command line to 'None'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'cmake_target' from command line to 'None'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'cmake_clean_cache' from command line to 'False'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'cmake_clean_first' from command line to 'False'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'cmake_force_configure' from command line to 'False'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'ament_cmake_args' from command line to 'None'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'catkin_cmake_args' from command line to 'None'
+[2.460s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'data_visualizer' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.461s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'data_visualizer' with the following arguments: {'ament_cmake_args': None, 'build_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/data_visualizer', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/data_visualizer', 'merge_install': False, 'path': '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/data_visualizer', 'symlink_install': False, 'test_result_base': None}[0m
+[2.464s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[2.487s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[2.488s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eye_tracking' with build type 'catkin'
+[2.488s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eye_tracking'
+[2.526s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.527s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.527s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.558s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_input' with build type 'catkin'
+[2.558s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_input'
+[2.571s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.572s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.595s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/annotation_recorder' with build type 'catkin'
+[2.596s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/annotation_recorder'
+[2.608s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.608s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.631s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/bag_tools' with build type 'catkin'
+[2.632s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/bag_tools'
+[2.644s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.645s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.668s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/experience_lab' with build type 'catkin'
+[2.669s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/experience_lab'
+[2.684s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.685s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.715s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/fake_data_generator' with build type 'catkin'
+[2.717s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/fake_data_generator'
+[2.729s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.729s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.753s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video' with build type 'catkin'
+[2.754s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video'
+[2.770s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.770s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.802s] [34mcolcon.colcon_ros.task.catkin.build[0m [1;30mINFO[0m Building ROS package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world' with build type 'catkin'
+[2.803s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world'
+[2.825s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.825s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.875s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_eye_tracking': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eye_tracking -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking[0m
+[2.886s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_input': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_input -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_input[0m
+[2.907s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/annotation_recorder': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/annotation_recorder -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/annotation_recorder[0m
+[2.919s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/bag_tools': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/bag_tools -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/bag_tools[0m
+[2.939s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/experience_lab': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/experience_lab -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/experience_lab[0m
+[2.969s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/fake_data_generator': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/fake_data_generator -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/fake_data_generator[0m
+[2.987s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/game_audio_video[0m
+[3.014s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world[0m
+[9.389s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/hello_world' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/hello_world -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world[0m
+[9.392s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_eye_tracking' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_eye_tracking -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking[0m
+[9.400s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/experience_lab' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/experience_lab -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/experience_lab[0m
+[9.404s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/bag_tools' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/bag_tools -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/bag_tools[0m
+[9.447s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/fake_data_generator' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/fake_data_generator -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/fake_data_generator[0m
+[9.449s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/annotation_recorder' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/annotation_recorder -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/annotation_recorder[0m
+[9.453s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/player_input' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/player_input -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_input[0m
+[9.454s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/game_audio_video[0m
+[9.458s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(hello_world)
+[9.561s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world' for CMake module files
+[9.563s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world' for CMake config files
+[9.564s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/lib'
+[9.565s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/bin'
+[9.566s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/lib/pkgconfig/hello_world.pc'
+[9.567s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/lib/python3.10/site-packages'
+[9.568s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/bin'
+[9.583s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/share/hello_world/package.ps1'
+[9.586s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/share/hello_world/package.dsv'
+[9.590s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/share/hello_world/package.sh'
+[9.593s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/share/hello_world/package.bash'
+[9.596s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/share/hello_world/package.zsh'
+[9.600s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/hello_world/share/colcon-core/packages/hello_world)
+[9.602s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(player_eye_tracking)
+[9.620s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking' for CMake module files
+[9.621s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking' for CMake config files
+[9.622s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/lib'
+[9.622s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/bin'
+[9.622s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/lib/pkgconfig/player_eye_tracking.pc'
+[9.623s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/lib/python3.10/site-packages'
+[9.624s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/bin'
+[9.639s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/share/player_eye_tracking/package.ps1'
+[9.641s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/share/player_eye_tracking/package.dsv'
+[9.642s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/share/player_eye_tracking/package.sh'
+[9.643s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/share/player_eye_tracking/package.bash'
+[9.644s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/share/player_eye_tracking/package.zsh'
+[9.647s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/player_eye_tracking/share/colcon-core/packages/player_eye_tracking)
+[9.663s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[9.663s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[9.663s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '1'[0m
+[9.664s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[9.666s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[9.683s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/local_setup.ps1'
+[9.687s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/_local_setup_util_ps1.py'
+[9.691s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/setup.ps1'
+[9.710s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/local_setup.sh'
+[9.712s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/_local_setup_util_sh.py'
+[9.714s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/setup.sh'
+[9.731s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/local_setup.bash'
+[9.733s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/setup.bash'
+[9.748s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/local_setup.zsh'
+[9.750s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/setup.zsh'

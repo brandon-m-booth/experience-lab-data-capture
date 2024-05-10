@@ -1,0 +1,40 @@
+[0.232s] Invoking command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/game_audio_video
+[2.198s] CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[2.199s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[2.199s]   CMake.
+[2.199s] 
+[2.199s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[2.200s]   CMake that the project does not need compatibility with older versions.
+[2.200s] 
+[2.200s] 
+[3.846s] -- The C compiler identification is AppleClang 14.0.3.14030022
+[4.342s] -- The CXX compiler identification is AppleClang 14.0.3.14030022
+[4.399s] -- Detecting C compiler ABI info
+[5.694s] -- Detecting C compiler ABI info - done
+[5.719s] -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+[5.719s] -- Detecting C compile features
+[5.721s] -- Detecting C compile features - done
+[5.743s] -- Detecting CXX compiler ABI info
+[6.498s] -- Detecting CXX compiler ABI info - done
+[6.525s] -- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+[6.526s] -- Detecting CXX compile features
+[6.532s] -- Detecting CXX compile features - done
+[6.669s] CMake Error at CMakeLists.txt:7 (find_package):
+[6.676s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[6.676s]   asked CMake to find a package configuration file provided by "catkin", but
+[6.676s]   CMake did not find one.
+[6.677s] 
+[6.677s]   Could not find a package configuration file provided by "catkin" with any
+[6.677s]   of the following names:
+[6.677s] 
+[6.677s]     catkinConfig.cmake
+[6.678s]     catkin-config.cmake
+[6.678s] 
+[6.678s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[6.678s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[6.678s]   provides a separate development package or SDK, be sure it has been
+[6.679s]   installed.
+[6.679s] 
+[6.680s] 
+[6.689s] -- Configuring incomplete, errors occurred!
+[6.699s] Invoked command in '/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/build/game_audio_video' returned '1': CONDA_PROMPT_MODIFIER=(experience-lab) SHLVL=2 _=/usr/bin/env /usr/local/Caskroom/miniforge/base/envs/experience-lab/bin/cmake /Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/game_audio_video -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/Users/calvingott/experience_lab/experience-lab-data-F23/ros/src/install/game_audio_video

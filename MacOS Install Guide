@@ -1,0 +1,182 @@
+<center><h1><b>Experience Lab</b></h1></center>
+
+
+- **Experience Lab Description**Welcome to Experience Lab! Our primary objective is to harness the power of ROS 2 (Robot Operating System 2) for the purpose of tracking, monitoring, and recording a wide range of user data, including keystrokes, brainwave activity, eye movements, and more. This documentation is tailored to users on both MacOS and Ubuntu platforms, and it will guide you through the process of downloading, installing, and running ROS 2 on your respective system. Whether you are interested in exploring the potential of ROS 2 or contributing to our exciting project, this documentation will provide you with the essential steps to get started. Join us on this journey of innovation and data analysis with Experience Lab and ROS 2. (ROS 2 HUMBLE HAWKSBILL was used) 
+
+
+# Mac OS Installation
+
+- [**RoboStack**](https://robostack.github.io/GettingStarted.html) (Mac Installation Documentation)
+-   **Conda Installation:** Must install first. You can download MiniForge from [here](https://github.com/conda-forge/miniforge).
+     # Setting Up Conda and Creating a ROS 2 Environment
+
+    **Step 1: Install Conda**
+
+            1. Download and install Conda for your operating system from the official Anaconda website: [Anaconda Downloads](https://www.anaconda.com/products/distribution).
+
+            2. Open a new terminal or command prompt to ensure that Conda is installed correctly.
+            
+            ```bash
+            conda --version
+            ```
+            If you see the Conda version, the installation was successful.
+
+    **Step 2: Create a New Conda Environment (Optional)**
+
+            If you want to create a new Conda environment for your project, follow these steps:
+
+            1. Create a new Conda environment. Replace `<environment_name>` with your preferred environment name.
+
+            ```bash
+            conda create -n <environment_name> python=3.9
+            ```
+
+            2. Activate the new environment.
+
+            ```bash
+            conda activate <environment_name>
+            ```
+
+    **Step 3: Install Mamba**
+
+            1. Activate your base environment (the default Conda environment).
+
+            ```bash
+            conda activate base
+            ```
+
+            2. Install Mamba using Conda. Mamba is a faster alternative to Conda for package management.
+
+            ```bash
+            conda install mamba -c conda-forge
+            ```
+
+            This step is essential for managing complex dependencies like ROS 2 packages.
+
+    **Step 4: Create a ROS 2 Environment**
+
+            1. Create a new Conda environment for ROS 2. Replace `<environment_name>` with your preferred environment name.
+
+            ```bash
+            mamba create -n <environment_name> ros-humble-desktop
+            ```
+
+            This command installs ROS 2 packages into the specified environment.
+
+            2. Activate the ROS 2 environment.
+
+            ```bash
+            conda activate <environment_name>
+            ```
+
+            Now, you can work with ROS 2 within this environment.
+
+    **Common Errors and Solutions**
+
+     - **Error: "Your shell has not been properly configured to use 'conda activate'"**
+
+            Solution: Initialize your shell by running the following command:
+
+            ```bash
+            conda init <SHELL_NAME>
+            ```
+
+            Replace `<SHELL_NAME>` with your shell (e.g., `bash`, `zsh`, or `fish`).
+
+         - **Error: Unable to resolve package dependencies when creating the ROS 2 environment.**
+
+            Solution: Ensure that you have configured the correct ROS 2 channels and repositories. You might need to update your ROS 2 sources list or specify compatible package versions.
+
+        - **Error: Compatibility issues with ROS 2 packages.**
+
+            Solution: Verify that your ROS 2 environment is correctly configured with compatible package versions. Sometimes, updating packages or configuring different channels can resolve compatibility issues.
+
+        - **Error: Unable to find 'mamba' command.**
+
+            Solution: Ensure that you have installed Mamba in your base environment using `conda install mamba -c conda-forge`.
+
+**MacOS ROS 2 Installation**
+    **important Information** Please activate your Environment, and Install ROS2 there, the packages in ROS 2 can affect your machine and change files there. Creating an Environment will host your ROS 2 Packages independently from your base Packages.
+
+    ALSO CONDA AND MAMBA ARE INTERCHANGEABLE WHEN USING COMMANDS. 
+        for example 
+        mamba create -n ros_env &
+        conda create -n ros_env are interchangeble only if both are installed.
+
+
+1. Creating and Activating you ROS 2 Environment
+    mamba create -n ros_env
+    mamba activate ros_env
+
+# this adds the conda-forge channel to the new created environment configuration 
+conda config --env --add channels conda-forge
+# and the robostack channel
+conda config --env --add channels robostack-staging
+# remove the defaults channel just in case, this might return an error if it is not in the list which is ok
+conda config --env --remove channels defaults
+
+2. Installing ROS2 Humble
+    mamba install ros-humble-desktop
+
+3. Restarting your Environment
+    mamba deactivate
+    mamba activate ros_env
+
+4. Testing 
+    mamba activate ros_env
+    rviz2
+
+# Ubuntu Installation **https://docs.ros.org/en/humble/Installation.html**
+    -
+    -
+    -
+    -
+# ROS2 Testing To Make Sure It Works
+    - They're a few test you can do within your Conda Environment to make sure that it is Working
+    -REMEMBER TO BE IN YOUR ENVIRONMENT BEFORE USING THESE COMMANDS
+
+1. You will need to install Colcon
+    conda install -c conda-forge colcon-common-extensions
+
+2.  Verify Colcon has been installed
+    colcon --help 
+    **You will see usage: colcon [-h] [--log-base LOG_BASE] in your terminal**
+
+3.  You will need to Build the Dependencies and Packages
+    colcon build
+
+4. Test Using Talker/Listener
+    - In The Terminal RUN  
+        ros2 run demo_nodes_cpp talker 
+    - Open a New Terminal Window and Run
+        ros2 run demo_nodes_cpp listener 
+
+      You should see it Hello World Incrementing, with the Listener Listen to the Message
+
+    - Quit Out
+        CTRL+C will exit ROS2 Nodes
+5. Testing Using Turtle Sim
+    - IN TERMINAL RUN 
+        ros2 run turtlesim turtlesim_node  
+    - Open a New Terminal Window and Run
+         ros2 run turtlesim turtle_teleop_key 
+
+         You Should See a Turtle and Be Able to Control It
+
+    - Quit Out
+
+6. Miscellaneous 
+    - Running  rqt_graph                                                 
+        Will allow you to be visual all of the active Nodes Running
+
+
+
+
+**Academic Sources Used**
+@article{FischerRAM2021,
+    title={A RoboStack Tutorial: Using the Robot Operating System Alongside the Conda and Jupyter Data Science Ecosystems},
+    author={Tobias Fischer and Wolf Vollprecht and Silvio Traversaro and Sean Yen and Carlos Herrero and Michael Milford},
+    journal={IEEE Robotics and Automation Magazine},
+    year={2021},
+    doi={10.1109/MRA.2021.3128367},
+}

@@ -1,0 +1,7 @@
+progress_check_client_feedback: 
+
+We met with our client on Tuesday Oct 24, at 5:15pm, we told our client about the hardships we are having using ROS 2 with different OS systems. 
+Our client wants us to focus on getting things running for one system. 
+Our client emphasized that if some of our nodes only work for a certain system (Linux) but not the other (Mac) then it is not the end of the world.
+What is important is that we have a working product that we know works for at least one system, and trying to get it to work for both may be another sprint or another semester. 
+We should also focus on building GUIs for what we have, so that we can go into sprint 4 with the goal of putting it all together.  
